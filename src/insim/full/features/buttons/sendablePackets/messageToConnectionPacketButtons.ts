@@ -5,7 +5,7 @@ import {
   IS_Y_MIN,
   TypeIn,
 } from 'node-insim/packets';
-import { MessageSounds } from 'node-insim/packets/enums/MessageSounds';
+import { MessageSound } from 'node-insim/packets/enums/MessageSound';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
@@ -14,7 +14,7 @@ import { BUTTON_HEIGHT } from '../constants';
 export function drawMessageToConnectionPacketButtons(inSim: InSim) {
   let UCID = 0,
     PLID = 0;
-  let sound: MessageSounds = MessageSounds.SND_SILENT;
+  let sound: MessageSound = MessageSound.SND_SILENT;
 
   drawButton(inSim, {
     Text: buttonTextWithCaption('Message', 'IS_MTC'),
@@ -122,7 +122,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
   });
 
   drawButton(inSim, {
-    Text: `[${MessageSounds[sound]}]`,
+    Text: `[${MessageSound[sound]}]`,
     ReqI: 1,
     L: 139,
     T: IS_Y_MIN + BUTTON_HEIGHT * 7,
@@ -130,11 +130,11 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_CLICK | ButtonStyle.ISB_C2,
     onClick: ({ button }) => {
-      const viewIdentifierIds = Object.keys(MessageSounds).filter(
-        (key) => !isNaN(Number(MessageSounds[key as unknown as number])),
+      const viewIdentifierIds = Object.keys(MessageSound).filter(
+        (key) => !isNaN(Number(MessageSound[key as unknown as number])),
       );
       const identifierId = viewIdentifierIds.findIndex(
-        (identifier) => identifier === MessageSounds[sound],
+        (identifier) => identifier === MessageSound[sound],
       );
 
       sound =
@@ -142,7 +142,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
 
       button.update({
         ReqI: 1,
-        Text: `[${MessageSounds[sound]}]`,
+        Text: `[${MessageSound[sound]}]`,
       });
     },
   });
