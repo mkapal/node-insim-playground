@@ -19,6 +19,7 @@ import { onSmall } from './onSmall';
 import { onState } from './onState';
 import { onTiny } from './onTiny';
 import { onVersion } from './onVersion';
+import { onVoteNotify } from './onVoteNotify';
 
 export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_VER, onVersion);
@@ -28,6 +29,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_ISM, onMultiplayer);
   inSim.on(PacketType.ISP_MSO, onMessageOut);
   inSim.on(PacketType.ISP_III, onInSimInfo);
+  inSim.on(PacketType.ISP_VTN, onVoteNotify);
   inSim.on(PacketType.ISP_STA, onState);
   inSim.on(PacketType.ISP_NCN, onNewConnection);
   inSim.on(PacketType.ISP_CNL, onConnectionLeave);
