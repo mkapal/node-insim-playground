@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Node InSim Playground",
   "main": "index.js",
-  "repository": "git@github.com:simbroadcasts/node-insim-playground.git",
+  "repository": "git@github.com:mkapal/node-insim-playground.git",
   "author": "Martin Kapal <flamecze@gmail.com>",
   "license": "MIT",
   "scripts": {
