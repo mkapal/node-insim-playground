@@ -3,6 +3,7 @@ import type { InSim } from 'node-insim/protocols';
 
 import { onButtonClick } from './onButtonClick';
 import { onButtonType } from './onButtonType';
+import { onCameraChange } from './onCameraChange';
 import { onCamPosPack } from './onCamPosPack';
 import { onCarReset } from './onCarReset';
 import { onConnectionLeave } from './onConnectionLeave';
@@ -46,6 +47,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_PIT, onPitStop);
   inSim.on(PacketType.ISP_PSF, onPitStopFinished);
   inSim.on(PacketType.ISP_PLA, onPitLane);
+  inSim.on(PacketType.ISP_CCH, onCameraChange);
   inSim.on(PacketType.ISP_CRS, onCarReset);
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
