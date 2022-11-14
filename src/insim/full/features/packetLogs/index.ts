@@ -8,6 +8,7 @@ import { onCamPosPack } from './onCamPosPack';
 import { onCarReset } from './onCarReset';
 import { onConnectionLeave } from './onConnectionLeave';
 import { onConnectionPlayerRename } from './onConnectionPlayerRename';
+import { onFinish } from './onFinish';
 import { onFlag } from './onFlag';
 import { onInSimInfo } from './onInSimInfo';
 import { onLapTime } from './onLapTime';
@@ -56,6 +57,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_TOC, onTakeOverCar);
   inSim.on(PacketType.ISP_FLG, onFlag);
   inSim.on(PacketType.ISP_PFL, onPlayerFlagsChanged);
+  inSim.on(PacketType.ISP_FIN, onFinish);
   inSim.on(PacketType.ISP_CRS, onCarReset);
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
