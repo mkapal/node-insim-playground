@@ -23,6 +23,7 @@ import { onPlayerPit } from './onPlayerPit';
 import { onSmall } from './onSmall';
 import { onSplitTime } from './onSplitTime';
 import { onState } from './onState';
+import { onTakeOverCar } from './onTakeOverCar';
 import { onTiny } from './onTiny';
 import { onVersion } from './onVersion';
 import { onVoteNotify } from './onVoteNotify';
@@ -50,6 +51,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_PLA, onPitLane);
   inSim.on(PacketType.ISP_CCH, onCameraChange);
   inSim.on(PacketType.ISP_PEN, onPenalty);
+  inSim.on(PacketType.ISP_TOC, onTakeOverCar);
   inSim.on(PacketType.ISP_CRS, onCarReset);
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
