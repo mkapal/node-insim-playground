@@ -23,6 +23,7 @@ import { onPitStopFinished } from './onPitStopFinished';
 import { onPlayerFlagsChanged } from './onPlayerFlagsChanged';
 import { onPlayerLeave } from './onPlayerLeave';
 import { onPlayerPit } from './onPlayerPit';
+import { onResult } from './onResult';
 import { onSmall } from './onSmall';
 import { onSplitTime } from './onSplitTime';
 import { onState } from './onState';
@@ -58,6 +59,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_FLG, onFlag);
   inSim.on(PacketType.ISP_PFL, onPlayerFlagsChanged);
   inSim.on(PacketType.ISP_FIN, onFinish);
+  inSim.on(PacketType.ISP_RES, onResult);
   inSim.on(PacketType.ISP_CRS, onCarReset);
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
