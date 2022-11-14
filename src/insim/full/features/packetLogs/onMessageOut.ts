@@ -4,5 +4,5 @@ import { UserType } from 'node-insim/packets';
 import { log } from '../../log';
 
 export function onMessageOut(packet: IS_MSO) {
-  log.info(`Message received (${UserType[packet.UserType]}): ${packet.Msg} `);
+  log(`Message received (${UserType[packet.UserType]}): ${packet.Msg}`);
 }

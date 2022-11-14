@@ -1,7 +1,8 @@
 import type { IS_NCN } from 'node-insim/packets';
+import type { InSim } from 'node-insim/protocols';
 
-import { log } from '../../log';
+import { log } from './log';
 
-export function onNewConnection(packet: IS_NCN) {
-  log.info(`New connection: ${packet.UName} (UCID ${packet.UCID})`);
+export function onNewConnection(packet: IS_NCN, inSim: InSim) {
+  log(packet, inSim, `New connection: ${packet.UName} (UCID ${packet.UCID})`);
 }

@@ -1,5 +1,3 @@
-import { createLog } from 'node-insim/utils';
+import debug from 'debug';
 
-import { APP_NAME } from './constants';
-
-export const log = createLog(APP_NAME, 'debug');
+export const log = debug('node-insim-full');

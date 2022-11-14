@@ -31,7 +31,7 @@ export function drawTinyPacketButtons(inSim: InSim) {
     const tinyType = packet.ReqI - TINY_BUTTON_ID_OFFSET;
 
     if (SENDABLE_TINY_TYPES.includes(tinyType)) {
-      log.info(`Send IS_TINY - ${TinyType[tinyType]} (${tinyType})`);
+      log(`Send IS_TINY - ${TinyType[tinyType]} (${tinyType})`);
       inSim.send(
         new IS_TINY({
           ReqI: 2,

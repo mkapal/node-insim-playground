@@ -1,7 +1,8 @@
 import type { IS_III } from 'node-insim/packets';
+import type { InSim } from 'node-insim/protocols';
 
-import { log } from '../../log';
+import { log } from './log';
 
-export function onInSimInfo(packet: IS_III) {
-  log.info(`InSim info message received: ${packet.Msg}`);
+export function onInSimInfo(packet: IS_III, inSim: InSim) {
+  log(packet, inSim, `InSim info message received: ${packet.Msg}`);
 }

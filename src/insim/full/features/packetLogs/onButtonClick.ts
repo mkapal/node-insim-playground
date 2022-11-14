@@ -1,7 +1,12 @@
 import type { IS_BTC } from 'node-insim/packets';
+import type { InSim } from 'node-insim/protocols';
 
-import { log } from '../../log';
+import { log } from './log';
 
-export function onButtonClick(packet: IS_BTC) {
-  log.info(`Button clicked: ClickID ${packet.ClickID}, ReqI ${packet.ReqI}`);
+export function onButtonClick(packet: IS_BTC, inSim: InSim) {
+  log(
+    packet,
+    inSim,
+    `Button clicked: ClickID ${packet.ClickID}, ReqI ${packet.ReqI}`,
+  );
 }

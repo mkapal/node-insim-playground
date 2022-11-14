@@ -46,11 +46,11 @@ function onButtonType(packet: IS_BTT, inSim: InSim) {
       const uVal = parseInt(packet.Text, 10);
 
       if (isNaN(uVal)) {
-        log.warn('UVal must be a number');
+        log('UVal must be a number');
         return;
       }
 
-      log.info(`Send IS_SMALL - ${SmallType[smallType]} (${smallType})`);
+      log(`Send IS_SMALL - ${SmallType[smallType]} (${smallType})`);
       inSim.send(
         new IS_SMALL({
           ReqI: 2,

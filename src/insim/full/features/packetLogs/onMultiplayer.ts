@@ -1,12 +1,13 @@
 import type { IS_ISM } from 'node-insim/packets';
 import { MultiplayerHostMode } from 'node-insim/packets';
+import type { InSim } from 'node-insim/protocols';
 
-import { log } from '../../log';
+import { log } from './log';
 
-export function onMultiplayer(packet: IS_ISM) {
+export function onMultiplayer(packet: IS_ISM, inSim: InSim) {
   if (packet.Host === MultiplayerHostMode.GUEST) {
-    log.info('Multiplayer host joined:', packet.HName);
+    log(packet, inSim, `Multiplayer host joined: ${packet.HName}`);
   } else if (packet.Host === MultiplayerHostMode.HOST) {
-    log.info('Multiplayer host started', packet.HName);
+    log(packet, inSim, `Multiplayer host started ${packet.HName}`);
   }
 }

@@ -26,9 +26,9 @@ inSim.connect({
     InSimFlags.ISF_REQ_JOIN,
 });
 
-inSim.on('connect', () => log.info('Connected'));
-inSim.on('disconnect', () => log.info('Disconnected'));
-inSim.on('error', (error) => log.error('Error:', error.name, error.message));
+inSim.on('connect', () => log('Connected'));
+inSim.on('disconnect', () => log('Disconnected'));
+inSim.on('error', (error) => log('Error:', error.name, error.message));
 
 logPackets(inSim);
 drawTestButtons(inSim);

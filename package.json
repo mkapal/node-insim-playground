@@ -7,19 +7,23 @@
   "author": "Martin Kapal <flamecze@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:insim:full": "ts-node-dev --respawn ./src/insim/full/index.ts",
-    "start:insim:minimal": "ts-node-dev --respawn ./src/insim/minimal/index.ts",
+    "start:insim:full": "cross-env DEBUG=* ts-node-dev --respawn ./src/insim/full/index.ts",
+    "start:insim:minimal": "cross-env DEBUG=* ts-node-dev --respawn ./src/insim/minimal/index.ts",
     "format": "prettier --write \"./**/*.{js,ts,md,json,yml,yaml}\"",
     "lint": "eslint \"./src/**/*\" --ext .js,.ts",
     "lint:fix": "eslint \"./src/**/*\" --ext .js,.ts --fix"
   },
   "dependencies": {
-    "node-insim": "file:../node-insim/dist/"
+    "cross-env": "^7.0.3",
+    "debug": "^4.3.4",
+    "node-insim": "file:../node-insim/dist/",
+    "supports-color": "^9.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-typescript": "^7.16.7",
+    "@types/debug": "^4.1.7",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
