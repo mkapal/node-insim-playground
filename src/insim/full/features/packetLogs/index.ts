@@ -19,6 +19,7 @@ import { onPenalty } from './onPenalty';
 import { onPitLane } from './onPitLane';
 import { onPitStop } from './onPitStop';
 import { onPitStopFinished } from './onPitStopFinished';
+import { onPlayerFlagsChanged } from './onPlayerFlagsChanged';
 import { onPlayerLeave } from './onPlayerLeave';
 import { onPlayerPit } from './onPlayerPit';
 import { onSmall } from './onSmall';
@@ -54,6 +55,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_PEN, onPenalty);
   inSim.on(PacketType.ISP_TOC, onTakeOverCar);
   inSim.on(PacketType.ISP_FLG, onFlag);
+  inSim.on(PacketType.ISP_PFL, onPlayerFlagsChanged);
   inSim.on(PacketType.ISP_CRS, onCarReset);
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
