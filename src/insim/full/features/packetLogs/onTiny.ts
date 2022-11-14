@@ -5,5 +5,5 @@ import type { InSim } from 'node-insim/protocols';
 import { log } from './log';
 
 export function onTiny(packet: IS_TINY, inSim: InSim) {
-  log(packet, inSim, `Received IS_TINY packet ${TinyType[packet.SubT]}`);
+  log(packet, inSim, TinyType[packet.SubT]);
 }
