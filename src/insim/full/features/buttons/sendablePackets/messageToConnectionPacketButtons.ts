@@ -9,6 +9,7 @@ import { MessageSound } from 'node-insim/packets/enums/MessageSound';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
+import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
 export function drawMessageToConnectionPacketButtons(inSim: InSim) {
@@ -17,7 +18,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
   let sound: MessageSound = MessageSound.SND_SILENT;
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', 'IS_MTC'),
+    Text: buttonTextWithCaption('Message', getPacketLabel(IS_MTC, true)),
     ReqI: 1,
     L: 97,
     T: IS_Y_MIN + BUTTON_HEIGHT * 7,

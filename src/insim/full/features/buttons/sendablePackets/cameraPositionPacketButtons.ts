@@ -12,6 +12,7 @@ import type { InSim } from 'node-insim/protocols';
 import { VIEW_IDENTIFIERS } from '../../../constants';
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';
+import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
 export function drawCameraPositionPacketButtons(inSim: InSim) {
@@ -28,7 +29,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim) {
   const flags: AllowedStateFlags = 0;
 
   drawButton(inSim, {
-    Text: 'IS_CPP',
+    Text: getPacketLabel(IS_CPP),
     ReqI: 1,
     L: 97,
     T: IS_Y_MIN + BUTTON_HEIGHT * 3,

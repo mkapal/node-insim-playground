@@ -2,11 +2,12 @@ import { ButtonStyle, IS_MSX, IS_Y_MIN } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
+import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
 export function drawMessageExtendedPacketButton(inSim: InSim) {
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', 'IS_MSX'),
+    Text: buttonTextWithCaption('Message', getPacketLabel(IS_MSX, true)),
     ReqI: 1,
     L: 97,
     T: IS_Y_MIN + BUTTON_HEIGHT * 6,

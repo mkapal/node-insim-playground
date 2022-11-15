@@ -7,6 +7,7 @@ import { drawCameraPositionPacketButtons } from './cameraPositionPacketButtons';
 import { drawMessageExtendedPacketButton } from './messageExtendedPacketButton';
 import { drawMessageToConnectionPacketButtons } from './messageToConnectionPacketButtons';
 import { drawMessageTypePacketButton } from './messageTypePacketutton';
+import { drawReorderPacketButton } from './reorderPacketutton';
 import { drawScreenModePacketButtons } from './screenModePacketButtons';
 import { drawSimplifiedCameraPacketButtons } from './simplifiedCameraPacketButtons';
 import { drawSingleCharacterPacketButtons } from './singleCharacterPacketButtons';
@@ -29,4 +30,5 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawMessageExtendedPacketButton(inSim);
   drawMessageToConnectionPacketButtons(inSim);
   drawScreenModePacketButtons(inSim);
+  drawReorderPacketButton(inSim);
 }

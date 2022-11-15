@@ -1,9 +1,20 @@
+import type { IPacket } from 'node-insim/packets';
+
 export function getStringEnumValues<T extends Record<number, string>>(
   enumVar: T,
 ): (keyof T)[] {
   return (Object.keys(enumVar) as unknown as number[]).filter(
     (key) => !isNaN(Number(enumVar[key])),
   );
+}
+
+export function getPacketLabel<
+  Packet extends IPacket,
+  Data extends Record<string, unknown>,
+>(packetConstructor: new (data?: Data) => Packet, hasModal = false): string {
+  return `${packetConstructor.name} (${new packetConstructor().Type})${
+    hasModal ? ' ...' : '   '
+  }`;
 }
 
 export function lfsRaceLapsToLapsOrHours(raceLaps: number): string {

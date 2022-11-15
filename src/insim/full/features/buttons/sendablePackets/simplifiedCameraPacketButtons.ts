@@ -10,6 +10,7 @@ import type { InSim } from 'node-insim/protocols';
 
 import { VIEW_IDENTIFIERS } from '../../../constants';
 import { buttonTextWithCaption, drawButton } from '../../../ui';
+import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
 export function drawSimplifiedCameraPacketButtons(inSim: InSim) {
@@ -17,7 +18,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim) {
   let inGameCam: ViewIdentifier = ViewIdentifier.VIEW_FOLLOW;
 
   drawButton(inSim, {
-    Text: 'IS_SCC',
+    Text: getPacketLabel(IS_SCC),
     ReqI: 1,
     L: 97,
     T: IS_Y_MIN + BUTTON_HEIGHT * 2,

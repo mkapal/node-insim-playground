@@ -9,6 +9,7 @@ import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';
+import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
 export function drawSingleCharacterPacketButtons(inSim: InSim) {
@@ -20,7 +21,10 @@ export function drawSingleCharacterPacketButtons(inSim: InSim) {
     Boolean(flags & CharacterModifiers.CTRL);
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Enter a character to send', 'IS_SCH'),
+    Text: buttonTextWithCaption(
+      'Enter a character to send',
+      getPacketLabel(IS_SCH, true),
+    ),
     ReqI: 1,
     L: 97,
     T: IS_Y_MIN + BUTTON_HEIGHT,
