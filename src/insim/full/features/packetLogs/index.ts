@@ -13,6 +13,7 @@ import { onFlag } from './onFlag';
 import { onInSimInfo } from './onInSimInfo';
 import { onLapTime } from './onLapTime';
 import { onMessageOut } from './onMessageOut';
+import { onMultiCarInfo } from './onMultiCarInfo';
 import { onMultiplayer } from './onMultiplayer';
 import { onNewConnection } from './onNewConnection';
 import { onNewPlayer } from './onNewPlayer';
@@ -64,6 +65,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_RES, onResult);
   inSim.on(PacketType.ISP_REO, onReorder);
   inSim.on(PacketType.ISP_NLP, onNodeLap);
+  inSim.on(PacketType.ISP_MCI, onMultiCarInfo);
   inSim.on(PacketType.ISP_CRS, onCarReset);
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
