@@ -9,8 +9,8 @@ const log = debug('node-insim-minimal');
 const logError = debug('node-insim-minimal:error');
 
 inSim.connect({
-  Host: '127.0.0.1',
-  Port: 29999,
+  Host: process.env.HOST ?? '127.0.0.1',
+  Port: process.env.PORT ? parseInt(process.env.PORT) : 29999,
   ReqI: IS_ISI_ReqI.SEND_VERSION,
   IName: insimName,
 });

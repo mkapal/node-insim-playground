@@ -9,8 +9,9 @@ import { log } from './log';
 const inSim = new NodeInSim.InSim();
 
 inSim.connect({
-  Host: '127.0.0.1',
-  Port: 29999,
+  Host: process.env.HOST ?? '127.0.0.1',
+  Port: process.env.PORT ? parseInt(process.env.PORT) : 29999,
+  Interval: 1000,
   ReqI: IS_ISI_ReqI.SEND_VERSION,
   IName: APP_NAME,
   Flags:
@@ -22,8 +23,7 @@ inSim.connect({
     InSimFlags.ISF_OBH |
     InSimFlags.ISF_HLV |
     InSimFlags.ISF_AXM_LOAD |
-    InSimFlags.ISF_AXM_EDIT |
-    InSimFlags.ISF_REQ_JOIN,
+    InSimFlags.ISF_AXM_EDIT,
 });
 
 inSim.on('connect', () => log('Connected'));
