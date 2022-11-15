@@ -1,4 +1,10 @@
-import { ButtonStyle, IS_MST, IS_REO, IS_Y_MIN } from 'node-insim/packets';
+import {
+  ButtonStyle,
+  IS_MSL,
+  IS_REO,
+  IS_Y_MIN,
+  MessageSound,
+} from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
@@ -25,8 +31,9 @@ export function drawReorderPacketButton(inSim: InSim) {
 
       if (plIds.length === 0) {
         inSim.send(
-          new IS_MST({
-            Msg: '^3PLID array must not be empty',
+          new IS_MSL({
+            Sound: MessageSound.SND_ERROR,
+            Msg: '^1PLID array must not be empty',
           }),
         );
         return;
@@ -34,8 +41,9 @@ export function drawReorderPacketButton(inSim: InSim) {
 
       if (plIds.length > 40) {
         inSim.send(
-          new IS_MST({
-            Msg: '^3PLID array must not be longer than 40',
+          new IS_MSL({
+            Sound: MessageSound.SND_ERROR,
+            Msg: '^1PLID array must not be longer than 40',
           }),
         );
         return;

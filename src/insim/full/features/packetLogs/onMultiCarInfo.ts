@@ -7,8 +7,8 @@ export function onMultiCarInfo(packet: IS_MCI, inSim: InSim) {
   log(
     packet,
     inSim,
-    `(${packet.NumC}) ${packet.Info.slice(0, 3)
-      .map((info) => `${info.PLID}[${info.X},${info.Y}]`)
+    `(${packet.NumC}) Speeds: ${packet.Info.slice(0, 9)
+      .map((info) => `${info.PLID}:${info.Speed}`)
       .join(' ')}...`,
   );
 }
