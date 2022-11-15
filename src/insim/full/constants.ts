@@ -8,4 +8,5 @@ export const VIEW_IDENTIFIERS: Record<ViewIdentifier, string> = {
   [ViewIdentifier.VIEW_CAM]: 'external',
   [ViewIdentifier.VIEW_DRIVER]: 'in car',
   [ViewIdentifier.VIEW_CUSTOM]: 'custom',
+  [ViewIdentifier.VIEW_ANOTHER]: 'another car',
 };

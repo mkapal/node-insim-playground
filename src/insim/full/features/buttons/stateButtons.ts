@@ -5,11 +5,11 @@ import {
   PacketType,
   RaceState,
   ServerStatus,
-  ViewIdentifier,
   Wind,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
+import { VIEW_IDENTIFIERS } from '../../constants';
 import { drawButtonList } from '../../ui';
 import { lfsRaceLapsToLapsOrHours } from '../../utils';
 import { BUTTON_HEIGHT } from './constants';
@@ -57,7 +57,7 @@ export function drawStateButtons(inSim: InSim) {
   inSim.on(PacketType.ISP_STA, (packet) => {
     const buttonPairs: Record<string, string> = {
       'Replay speed': packet.ReplaySpeed.toFixed(3),
-      'Selected camera': views[packet.InGameCam],
+      'Selected camera': VIEW_IDENTIFIERS[packet.InGameCam],
       'View PLID': packet.ViewPLID.toString(10),
       'Players on track': packet.NumP.toString(10),
       Connections: packet.NumConns.toString(10),
@@ -91,14 +91,6 @@ function getServerStatus(status: ServerStatus) {
 
   return 'fail';
 }
-
-const views: Record<ViewIdentifier, string> = {
-  [ViewIdentifier.VIEW_FOLLOW]: 'follow',
-  [ViewIdentifier.VIEW_HELI]: 'heli',
-  [ViewIdentifier.VIEW_CAM]: 'external',
-  [ViewIdentifier.VIEW_DRIVER]: 'in car',
-  [ViewIdentifier.VIEW_CUSTOM]: 'custom',
-};
 
 const raceStates: Record<RaceState, string> = {
   [RaceState.Race]: 'race',
