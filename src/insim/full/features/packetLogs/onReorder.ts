@@ -7,6 +7,6 @@ export function onReorder(packet: IS_REO, inSim: InSim) {
   log(
     packet,
     inSim,
-    `Grid reordered ${packet.NumP} ${packet.PLID.slice(0, 20).join()}...`,
+    `Grid reordered (${packet.NumP}) ${packet.PLID.slice(0, 20).join()}...`,
   );
 }
