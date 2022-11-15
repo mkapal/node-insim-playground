@@ -7,6 +7,6 @@ export function onResult(packet: IS_RES, inSim: InSim) {
   log(
     packet,
     inSim,
-    `PLID ${packet.PLID} (${packet.PName}) - result ${packet.ResultNum}`,
+    `${packet.PName}^8 (PLID ${packet.PLID}) - result ${packet.ResultNum}`,
   );
 }

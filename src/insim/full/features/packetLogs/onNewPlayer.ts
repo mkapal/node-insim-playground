@@ -7,6 +7,6 @@ export function onNewPlayer(packet: IS_NPL, inSim: InSim) {
   log(
     packet,
     inSim,
-    `New player: ${packet.PName} (PLID ${packet.PLID}, UCID ${packet.UCID})`,
+    `New player: ${packet.PName}^8 (PLID ${packet.PLID}, UCID ${packet.UCID})`,
   );
 }

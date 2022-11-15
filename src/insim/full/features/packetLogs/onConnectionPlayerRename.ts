@@ -4,5 +4,5 @@ import type { InSim } from 'node-insim/protocols';
 import { log } from './log';
 
 export function onConnectionPlayerRename(packet: IS_CPR, inSim: InSim) {
-  log(packet, inSim, `Player renamed: ${packet.PName} (UCID ${packet.UCID})`);
+  log(packet, inSim, `Player renamed: ${packet.PName}^8 (UCID ${packet.UCID})`);
 }
