@@ -3,6 +3,7 @@ import type { InSim } from 'node-insim/protocols';
 
 import { drawButton } from '../../../ui';
 import { BUTTON_HEIGHT } from '../constants';
+import { drawButtonFunctionPacketButton } from './buttonFunction';
 import { drawCameraPositionPacketButtons } from './cameraPositionPacketButtons';
 import { drawMessageExtendedPacketButton } from './messageExtendedPacketButton';
 import { drawMessageLocalPacketButton } from './messageLocalPacketutton';
@@ -33,4 +34,5 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawReorderPacketButton(inSim, 8);
   drawMessageExtendedPacketButton(inSim, 9);
   drawMessageLocalPacketButton(inSim, 10);
+  drawButtonFunctionPacketButton(inSim, 11);
 }

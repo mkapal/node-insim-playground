@@ -1,6 +1,11 @@
 import type { IS_BTC, IS_BTN_Data, IS_BTT } from 'node-insim/packets';
-import { IS_BTN, MAX_CLICK_ID, PacketType } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
+import {
+  ButtonFunction,
+  IS_BTN,
+  MAX_CLICK_ID,
+  PacketType,
+} from 'node-insim/packets';
+import type { InSim, InSimPacketEvents } from 'node-insim/protocols';
 
 let clickId = 0;
 
@@ -28,18 +33,22 @@ export type CustomButtonProps = {
   onType?: (props: OnTypeProps) => void;
 };
 
+let buttonClickListeners: InSimPacketEvents[PacketType.ISP_BTC][] = [];
+let buttonTypeListeners: InSimPacketEvents[PacketType.ISP_BTT][] = [];
+
 export function drawButton(
   inSim: InSim,
   { onClick, onType, ...buttonData }: ButtonData,
 ): DrawButtonConfig {
+  const nextClickId = getNextClickId();
   const button = new IS_BTN({
     ...buttonData,
-    ClickID: getNextClickId(),
+    ClickID: nextClickId,
   });
 
   const update = ({ onClick, onType, ...newData }: ButtonData) => {
     if (onClick) {
-      inSim.on(PacketType.ISP_BTC, (packet, inSim) => {
+      const onClickListener = (packet: IS_BTC, inSim: InSim) => {
         if (button.ClickID === packet.ClickID) {
           onClick({
             packet,
@@ -50,11 +59,13 @@ export function drawButton(
             },
           });
         }
-      });
+      };
+      inSim.on(PacketType.ISP_BTC, onClickListener);
+      buttonClickListeners.push(onClickListener);
     }
 
     if (onType) {
-      inSim.on(PacketType.ISP_BTT, (packet, inSim) => {
+      const onTypeListener = (packet: IS_BTT, inSim: InSim) => {
         if (button.ClickID === packet.ClickID) {
           onType({
             packet,
@@ -65,7 +76,9 @@ export function drawButton(
             },
           });
         }
-      });
+      };
+      inSim.on(PacketType.ISP_BTT, onTypeListener);
+      buttonTypeListeners.push(onTypeListener);
     }
     const newButton = new IS_BTN({
       ...newData,
@@ -76,7 +89,7 @@ export function drawButton(
   };
 
   if (onClick) {
-    inSim.on(PacketType.ISP_BTC, (packet, inSim) => {
+    const onClickListener = (packet: IS_BTC, inSim: InSim) => {
       if (button.ClickID === packet.ClickID) {
         onClick({
           packet,
@@ -87,11 +100,13 @@ export function drawButton(
           },
         });
       }
-    });
+    };
+    inSim.on(PacketType.ISP_BTC, onClickListener);
+    buttonClickListeners.push(onClickListener);
   }
 
   if (onType) {
-    inSim.on(PacketType.ISP_BTT, (packet, inSim) => {
+    const onTypeListener = (packet: IS_BTT, inSim: InSim) => {
       if (button.ClickID === packet.ClickID) {
         onType({
           packet,
@@ -102,10 +117,26 @@ export function drawButton(
           },
         });
       }
-    });
+    };
+    inSim.on(PacketType.ISP_BTT, onTypeListener);
+    buttonTypeListeners.push(onTypeListener);
   }
 
   inSim.send(button);
+
+  // Remove all click and type listeners when the all buttons are cleared by user
+  inSim.on(PacketType.ISP_BFN, (packet) => {
+    if (packet.SubT === ButtonFunction.BFN_USER_CLEAR) {
+      buttonClickListeners.forEach((listener) => {
+        inSim.removeListener(PacketType.ISP_BTC, listener);
+      });
+      buttonTypeListeners.forEach((listener) => {
+        inSim.removeListener(PacketType.ISP_BTT, listener);
+      });
+      buttonClickListeners = [];
+      buttonTypeListeners = [];
+    }
+  });
 
   return {
     clickId: button.ClickID,

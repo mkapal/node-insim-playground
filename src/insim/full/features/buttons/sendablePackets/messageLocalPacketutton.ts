@@ -19,7 +19,6 @@ export function drawMessageLocalPacketButton(inSim: InSim, row: number) {
     TypeIn: 95,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
     onType: ({ inSim, packet }) => {
-      console.log(packet.Text.length);
       inSim.send(
         new IS_MSL({
           Msg: packet.Text,
