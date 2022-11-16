@@ -9,7 +9,7 @@ import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';
-import { getPacketLabel } from '../../../utils';
+import { getPacketLabel, toggleFlag } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
 export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
@@ -45,20 +45,14 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...getShiftButtonData(isShiftEnabled(buttonFlags)),
     onClick: ({ button }) => {
-      buttonFlags =
-        buttonFlags & CharacterModifiers.SHIFT
-          ? buttonFlags & ~CharacterModifiers.SHIFT
-          : buttonFlags | CharacterModifiers.SHIFT;
+      buttonFlags = toggleFlag(buttonFlags, CharacterModifiers.SHIFT);
       button.update(getShiftButtonData(isShiftEnabled(buttonFlags)));
     },
   });
   drawButton(inSim, {
     ...getCtrlButtonData(isCtrlEnabled(buttonFlags)),
     onClick: ({ button }) => {
-      buttonFlags =
-        buttonFlags & CharacterModifiers.CTRL
-          ? buttonFlags & ~CharacterModifiers.CTRL
-          : buttonFlags | CharacterModifiers.CTRL;
+      buttonFlags = toggleFlag(buttonFlags, CharacterModifiers.CTRL);
       button.update(getCtrlButtonData(isCtrlEnabled(buttonFlags)));
     },
   });

@@ -17,6 +17,10 @@ export function getPacketLabel<
   }`;
 }
 
+export function toggleFlag(flags: number, flag: number) {
+  return flags & flag ? flags & ~flag : flags | flag;
+}
+
 export function lfsRaceLapsToLapsOrHours(raceLaps: number): string {
   if (raceLaps === 0) {
     return 'practice';
