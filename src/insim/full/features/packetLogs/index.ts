@@ -1,6 +1,7 @@
 import { PacketType } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
+import { onAutocrossInfo } from './onAutocrossInfo';
 import { onButtonClick } from './onButtonClick';
 import { onButtonType } from './onButtonType';
 import { onCameraChange } from './onCameraChange';
@@ -67,6 +68,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_NLP, onNodeLap);
   inSim.on(PacketType.ISP_MCI, onMultiCarInfo);
   inSim.on(PacketType.ISP_CRS, onCarReset);
+  inSim.on(PacketType.ISP_AXI, onAutocrossInfo);
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
 }
