@@ -30,6 +30,7 @@ import { onPlayerPit } from './onPlayerPit';
 import { onReorder } from './onReorder';
 import { onReplayInfo } from './onReplayInfo';
 import { onResult } from './onResult';
+import { onSendScreenshot } from './onSendScreenshot';
 import { onSmall } from './onSmall';
 import { onSplitTime } from './onSplitTime';
 import { onState } from './onState';
@@ -75,4 +76,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_BTC, onButtonClick);
   inSim.on(PacketType.ISP_BTT, onButtonType);
   inSim.on(PacketType.ISP_RIP, onReplayInfo);
+  inSim.on(PacketType.ISP_SSH, onSendScreenshot);
 }

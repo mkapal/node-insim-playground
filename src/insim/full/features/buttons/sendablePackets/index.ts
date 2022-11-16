@@ -12,6 +12,7 @@ import { drawMessageTypePacketButton } from './messageType';
 import { drawReorderPacketButton } from './reorder';
 import { drawReplayInfoPacketButton } from './replayInfo';
 import { drawScreenModePacketButtons } from './screenMode';
+import { drawSendScreenshotPacketButton } from './sendScreenshot';
 import { drawSimplifiedCameraPacketButtons } from './simplifiedCamera';
 import { drawSingleCharacterPacketButtons } from './singleCharacter';
 
@@ -37,4 +38,5 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawMessageLocalPacketButton(inSim, 10);
   drawButtonFunctionPacketButton(inSim, 11);
   drawReplayInfoPacketButton(inSim, 12);
+  drawSendScreenshotPacketButton(inSim, 13);
 }
