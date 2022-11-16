@@ -1,4 +1,6 @@
+import type { IS_STA } from 'node-insim/packets';
 import {
+  ButtonFunction,
   ButtonStyle,
   IS_X_MIN,
   IS_Y_MIN,
@@ -12,6 +14,7 @@ import type { InSim } from 'node-insim/protocols';
 import { VIEW_IDENTIFIERS } from '../../constants';
 import { drawButtonList } from '../../ui';
 import { lfsRaceLapsToLapsOrHours } from '../../utils';
+import { onState } from '../packetLogs/onState';
 import { BUTTON_HEIGHT } from './constants';
 
 export function drawStateButtons(inSim: InSim) {
@@ -54,7 +57,7 @@ export function drawStateButtons(inSim: InSim) {
     })),
   });
 
-  inSim.on(PacketType.ISP_STA, (packet) => {
+  inSim.on(PacketType.ISP_STA, (packet: IS_STA) => {
     const buttonPairs: Record<string, string> = {
       'Replay speed': packet.ReplaySpeed.toFixed(3),
       'Selected camera': VIEW_IDENTIFIERS[packet.InGameCam],
@@ -77,6 +80,13 @@ export function drawStateButtons(inSim: InSim) {
         BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_C2,
       })),
     );
+  });
+
+  inSim.on(PacketType.ISP_BFN, (packet) => {
+    if (packet.SubT === ButtonFunction.BFN_USER_CLEAR) {
+      inSim.removeAllListeners(PacketType.ISP_STA);
+      inSim.addListener(PacketType.ISP_STA, onState);
+    }
   });
 }
 
