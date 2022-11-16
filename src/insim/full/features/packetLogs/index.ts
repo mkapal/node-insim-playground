@@ -7,6 +7,7 @@ import { onButtonClick } from './onButtonClick';
 import { onButtonType } from './onButtonType';
 import { onCameraChange } from './onCameraChange';
 import { onCamPosPack } from './onCamPosPack';
+import { onCarContact } from './onCarContact';
 import { onCarReset } from './onCarReset';
 import { onConnectionLeave } from './onConnectionLeave';
 import { onConnectionPlayerRename } from './onConnectionPlayerRename';
@@ -77,4 +78,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_BTT, onButtonType);
   inSim.on(PacketType.ISP_RIP, onReplayInfo);
   inSim.on(PacketType.ISP_SSH, onSendScreenshot);
+  inSim.on(PacketType.ISP_CON, onCarContact);
 }
