@@ -13,6 +13,7 @@ import { onConnectionLeave } from './onConnectionLeave';
 import { onConnectionPlayerRename } from './onConnectionPlayerRename';
 import { onFinish } from './onFinish';
 import { onFlag } from './onFlag';
+import { onHlvc } from './onHlvc';
 import { onInSimInfo } from './onInSimInfo';
 import { onLapTime } from './onLapTime';
 import { onMessageOut } from './onMessageOut';
@@ -81,4 +82,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_SSH, onSendScreenshot);
   inSim.on(PacketType.ISP_CON, onCarContact);
   inSim.on(PacketType.ISP_OBH, onObjectHit);
+  inSim.on(PacketType.ISP_HLV, onHlvc);
 }
