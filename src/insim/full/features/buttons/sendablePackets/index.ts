@@ -4,15 +4,15 @@ import type { InSim } from 'node-insim/protocols';
 import { drawButton } from '../../../ui';
 import { BUTTON_HEIGHT } from '../constants';
 import { drawButtonFunctionPacketButton } from './buttonFunction';
-import { drawCameraPositionPacketButtons } from './cameraPositionPacketButtons';
-import { drawMessageExtendedPacketButton } from './messageExtendedPacketButton';
-import { drawMessageLocalPacketButton } from './messageLocalPacketutton';
-import { drawMessageToConnectionPacketButtons } from './messageToConnectionPacketButtons';
-import { drawMessageTypePacketButton } from './messageTypePacketutton';
-import { drawReorderPacketButton } from './reorderPacketutton';
-import { drawScreenModePacketButtons } from './screenModePacketButtons';
-import { drawSimplifiedCameraPacketButtons } from './simplifiedCameraPacketButtons';
-import { drawSingleCharacterPacketButtons } from './singleCharacterPacketButtons';
+import { drawCameraPositionPacketButtons } from './cameraPosition';
+import { drawMessageExtendedPacketButton } from './messageExtended';
+import { drawMessageLocalPacketButton } from './messageLocal';
+import { drawMessageToConnectionPacketButtons } from './messageToConnection';
+import { drawMessageTypePacketButton } from './messageType';
+import { drawReorderPacketButton } from './reorder';
+import { drawScreenModePacketButtons } from './screenMode';
+import { drawSimplifiedCameraPacketButtons } from './simplifiedCamera';
+import { drawSingleCharacterPacketButtons } from './singleCharacter';
 
 export function drawSendablePacketButtons(inSim: InSim) {
   drawButton(inSim, {
