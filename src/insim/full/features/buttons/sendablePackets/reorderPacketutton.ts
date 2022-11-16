@@ -11,7 +11,7 @@ import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
-export function drawReorderPacketButton(inSim: InSim) {
+export function drawReorderPacketButton(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: buttonTextWithCaption(
       'PLIDs separated by commas (,)',
@@ -19,7 +19,7 @@ export function drawReorderPacketButton(inSim: InSim) {
     ),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 9,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 95,

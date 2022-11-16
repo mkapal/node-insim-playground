@@ -12,7 +12,7 @@ import type { ButtonData } from '../../../ui/button';
 import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
-export function drawSingleCharacterPacketButtons(inSim: InSim) {
+export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
   let buttonFlags: CharacterModifiers = 0;
 
   const isShiftEnabled = (flags: CharacterModifiers) =>
@@ -27,7 +27,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim) {
     ),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 1,
@@ -68,7 +68,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim) {
       Text: 'Shift',
       ReqI: 1,
       L: 112,
-      T: IS_Y_MIN + BUTTON_HEIGHT,
+      T: IS_Y_MIN + BUTTON_HEIGHT * row,
       W: 5,
       H: BUTTON_HEIGHT,
       BStyle:
@@ -83,7 +83,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim) {
       Text: 'Ctrl',
       ReqI: 1,
       L: 117,
-      T: IS_Y_MIN + BUTTON_HEIGHT,
+      T: IS_Y_MIN + BUTTON_HEIGHT * row,
       W: 5,
       H: BUTTON_HEIGHT,
       BStyle:

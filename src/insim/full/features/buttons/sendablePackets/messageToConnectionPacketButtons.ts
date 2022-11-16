@@ -12,7 +12,10 @@ import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
-export function drawMessageToConnectionPacketButtons(inSim: InSim) {
+export function drawMessageToConnectionPacketButtons(
+  inSim: InSim,
+  row: number,
+) {
   let UCID = 0,
     PLID = 0;
   let sound: MessageSound = MessageSound.SND_SILENT;
@@ -21,7 +24,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     Text: buttonTextWithCaption('Message', getPacketLabel(IS_MTC, true)),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 7,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
@@ -42,7 +45,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     Text: 'UCID:',
     ReqI: 1,
     L: 112,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 7,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -52,7 +55,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     Text: buttonTextWithCaption('UCID', UCID.toString(10)),
     ReqI: 1,
     L: 117,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 7,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -79,7 +82,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     Text: 'PLID:',
     ReqI: 1,
     L: 122,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 7,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -89,7 +92,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     Text: buttonTextWithCaption('PLID', PLID.toString(10)),
     ReqI: 1,
     L: 127,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 7,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -116,7 +119,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     Text: 'Sound:',
     ReqI: 1,
     L: 132,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 7,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -126,7 +129,7 @@ export function drawMessageToConnectionPacketButtons(inSim: InSim) {
     Text: `[${MessageSound[sound]}]`,
     ReqI: 1,
     L: 139,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 7,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 17,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_CLICK | ButtonStyle.ISB_C2,

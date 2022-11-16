@@ -5,12 +5,12 @@ import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT } from '../constants';
 
-export function drawMessageTypePacketButton(inSim: InSim) {
+export function drawMessageTypePacketButton(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: buttonTextWithCaption('Message', getPacketLabel(IS_MST, true)),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * 5,
+    T: IS_Y_MIN + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 63,

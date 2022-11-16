@@ -23,12 +23,12 @@ export function drawSendablePacketButtons(inSim: InSim) {
     BStyle: ButtonTextColour.TitleColour,
   });
 
-  drawSingleCharacterPacketButtons(inSim);
-  drawSimplifiedCameraPacketButtons(inSim);
-  drawCameraPositionPacketButtons(inSim);
-  drawMessageTypePacketButton(inSim);
-  drawMessageExtendedPacketButton(inSim);
-  drawMessageToConnectionPacketButtons(inSim);
-  drawScreenModePacketButtons(inSim);
-  drawReorderPacketButton(inSim);
+  drawSingleCharacterPacketButtons(inSim, 1);
+  drawSimplifiedCameraPacketButtons(inSim, 2);
+  drawCameraPositionPacketButtons(inSim, 3);
+  drawMessageTypePacketButton(inSim, 5);
+  drawMessageToConnectionPacketButtons(inSim, 6);
+  drawScreenModePacketButtons(inSim, 7);
+  drawReorderPacketButton(inSim, 8);
+  drawMessageExtendedPacketButton(inSim, 9);
 }
