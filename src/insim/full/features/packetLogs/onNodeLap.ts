@@ -7,7 +7,7 @@ export function onNodeLap(packet: IS_NLP, inSim: InSim) {
   log(
     packet,
     inSim,
-    `(${packet.NumP}) ${packet.Info.slice(0, 20)
+    `(${packet.NumP}) ${packet.Info.slice(0, 19)
       .map((info) => `${info.PLID}:${info.Position}`)
       .join(' ')}...`,
   );
