@@ -11,7 +11,7 @@ const inSim = new NodeInSim.InSim();
 inSim.connect({
   Host: process.env.HOST ?? '127.0.0.1',
   Port: process.env.PORT ? parseInt(process.env.PORT) : 29999,
-  Interval: 1000,
+  Interval: 0,
   ReqI: IS_ISI_ReqI.SEND_VERSION,
   IName: APP_NAME,
   Flags:
