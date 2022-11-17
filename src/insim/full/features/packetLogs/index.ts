@@ -2,6 +2,7 @@ import { PacketType } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { onAutocrossInfo } from './onAutocrossInfo';
+import { onAutocrossMultipleObjects } from './onAutocrossMultipleObjects';
 import { onAutocrossObject } from './onAutocrossObject';
 import { onButtonClick } from './onButtonClick';
 import { onButtonType } from './onButtonType';
@@ -83,4 +84,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_CON, onCarContact);
   inSim.on(PacketType.ISP_OBH, onObjectHit);
   inSim.on(PacketType.ISP_HLV, onHlvc);
+  inSim.on(PacketType.ISP_AXM, onAutocrossMultipleObjects);
 }
