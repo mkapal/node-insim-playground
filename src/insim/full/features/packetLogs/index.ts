@@ -1,6 +1,7 @@
 import { PacketType } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
+import { onAdminCommandReport } from './onAdminCommandReport';
 import { onAutocrossInfo } from './onAutocrossInfo';
 import { onAutocrossMultipleObjects } from './onAutocrossMultipleObjects';
 import { onAutocrossObject } from './onAutocrossObject';
@@ -85,4 +86,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_OBH, onObjectHit);
   inSim.on(PacketType.ISP_HLV, onHlvc);
   inSim.on(PacketType.ISP_AXM, onAutocrossMultipleObjects);
+  inSim.on(PacketType.ISP_ACR, onAdminCommandReport);
 }

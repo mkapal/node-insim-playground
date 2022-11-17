@@ -23,6 +23,7 @@ inSim.connect({
     InSimFlags.ISF_HLV |
     InSimFlags.ISF_AXM_LOAD |
     InSimFlags.ISF_AXM_EDIT,
+  Prefix: '!',
 });
 
 inSim.on('connect', () => log('Connected'));
