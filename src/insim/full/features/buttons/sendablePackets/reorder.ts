@@ -1,15 +1,9 @@
-import {
-  ButtonStyle,
-  IS_MSL,
-  IS_REO,
-  IS_Y_MIN,
-  MessageSound,
-} from 'node-insim/packets';
+import { ButtonStyle, IS_MSL, IS_REO, MessageSound } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 
 export function drawReorderPacketButton(inSim: InSim, row: number) {
   drawButton(inSim, {
@@ -19,7 +13,7 @@ export function drawReorderPacketButton(inSim: InSim, row: number) {
     ),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 95,

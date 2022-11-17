@@ -3,14 +3,13 @@ import {
   ButtonStyle,
   ButtonTextColour,
   IS_BFN,
-  IS_Y_MIN,
   TypeIn,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 
 export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
   let UCID = 0,
@@ -22,7 +21,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: getPacketLabel(IS_BFN),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
@@ -42,7 +41,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: 'SubT:',
     ReqI: 1,
     L: 112,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -52,7 +51,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: `[${ButtonFunction[subT]}]`,
     ReqI: 1,
     L: 119,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 17,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_CLICK | ButtonStyle.ISB_C2,
@@ -78,7 +77,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: 'UCID:',
     ReqI: 1,
     L: 136,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -88,7 +87,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: buttonTextWithCaption('UCID', UCID.toString(10)),
     ReqI: 1,
     L: 141,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -115,7 +114,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: 'ClickID:',
     ReqI: 1,
     L: 145,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -125,7 +124,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: buttonTextWithCaption('ClickID', clickId.toString(10)),
     ReqI: 1,
     L: 152,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -152,7 +151,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: 'ClickMax:',
     ReqI: 1,
     L: 156,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -162,7 +161,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
     Text: buttonTextWithCaption('ClickMax', clickMax.toString(10)),
     ReqI: 1,
     L: 165,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,

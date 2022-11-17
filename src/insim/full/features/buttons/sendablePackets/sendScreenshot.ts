@@ -2,14 +2,13 @@ import {
   ButtonStyle,
   ButtonTextColour,
   IS_SSH,
-  IS_Y_MIN,
   TypeIn,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 
 export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
   let reqI = 1;
@@ -21,7 +20,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
     ),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 95,
@@ -40,7 +39,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
     Text: 'ReqI:',
     ReqI: 1,
     L: 112,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -50,7 +49,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
     Text: buttonTextWithCaption('ReqI', reqI.toString(10)),
     ReqI: 1,
     L: 117,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 3,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,

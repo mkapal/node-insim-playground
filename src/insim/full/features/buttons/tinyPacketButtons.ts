@@ -1,7 +1,6 @@
 import {
   ButtonStyle,
   IS_TINY,
-  IS_Y_MIN,
   SENDABLE_TINY_TYPES,
   TinyType,
 } from 'node-insim/packets';
@@ -10,13 +9,13 @@ import type { InSim } from 'node-insim/protocols';
 import { log } from '../../log';
 import { drawButtonList } from '../../ui';
 import type { OnClickProps } from '../../ui/button';
-import { BUTTON_HEIGHT, TINY_BUTTON_ID_OFFSET } from './constants';
+import { BUTTON_HEIGHT, TINY_BUTTON_ID_OFFSET, TOP_OFFSET } from './constants';
 
 export function drawTinyPacketButtons(inSim: InSim) {
   drawButtonList(inSim, {
     title: 'IS_TINY',
     leftOffset: 67,
-    topOffset: IS_Y_MIN,
+    topOffset: TOP_OFFSET,
     width: 15,
     height: BUTTON_HEIGHT,
     buttons: SENDABLE_TINY_TYPES.map((tinyTypeNumber) => ({

@@ -3,17 +3,15 @@ import {
   ButtonStyle,
   ButtonTextColour,
   IS_CPP,
-  IS_Y_MIN,
   TypeIn,
   ViewIdentifier,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
-import { VIEW_IDENTIFIERS } from '../../../constants';
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';
 import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET, VIEW_IDENTIFIERS } from '../constants';
 
 export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   let x = 0,
@@ -32,7 +30,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: getPacketLabel(IS_CPP),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
@@ -59,7 +57,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'X:',
     ReqI: 1,
     L: 112,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -85,7 +83,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'Y:',
     ReqI: 1,
     L: 123,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -111,7 +109,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'Z:',
     ReqI: 1,
     L: 134,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -137,7 +135,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'Heading:',
     ReqI: 1,
     L: 145,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -163,7 +161,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'Pitch:',
     ReqI: 1,
     L: 161,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -172,7 +170,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...inputButtonProps(5, row),
     L: 167,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 8,
     Text: buttonNumberTextWithCaption('Pitch', pitch),
     onType: ({ packet, button }) => {
@@ -190,7 +188,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'Roll:',
     ReqI: 1,
     L: 175,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -199,7 +197,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...inputButtonProps(5, row),
     L: 180,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 8,
     Text: buttonNumberTextWithCaption('Roll', roll),
     onType: ({ packet, button }) => {
@@ -216,7 +214,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...inputButtonProps(4, row),
     L: 117,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 8,
     Text: buttonNumberTextWithCaption('FOV (degrees)', fov),
     onType: ({ packet, button }) => {
@@ -234,7 +232,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'FOV:',
     ReqI: 1,
     L: 112,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -244,7 +242,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'Time:',
     ReqI: 1,
     L: 125,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -253,7 +251,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...inputButtonProps(5, row),
     L: 131,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 8,
     Text: buttonNumberTextWithCaption('Time (ms)', time),
     onType: ({ packet, button }) => {
@@ -271,7 +269,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'ViewPLID:',
     ReqI: 1,
     L: 139,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -280,7 +278,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...inputButtonProps(3, row),
     L: 148,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 4,
     Text: buttonNumberTextWithCaption('ViewPLID', viewPLID),
     onType: ({ packet, button }) => {
@@ -298,7 +296,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: 'InGameCam:',
     ReqI: 1,
     L: 152,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 11,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -307,7 +305,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...buttonProps(row),
     L: 163,
-    T: IS_Y_MIN + BUTTON_HEIGHT * (row + 1),
+    T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     Text: `[${VIEW_IDENTIFIERS[inGameCam]}]`,
     onClick: ({ button }) => {
@@ -336,7 +334,7 @@ function buttonNumberTextWithCaption(caption: string, number: number): string {
 
 const buttonProps = (row: number): ButtonData => ({
   ReqI: 1,
-  T: IS_Y_MIN + BUTTON_HEIGHT * row,
+  T: TOP_OFFSET + BUTTON_HEIGHT * row,
   H: BUTTON_HEIGHT,
   BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_C2 | ButtonStyle.ISB_CLICK,
 });

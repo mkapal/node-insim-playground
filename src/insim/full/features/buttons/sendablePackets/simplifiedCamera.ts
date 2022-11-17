@@ -2,16 +2,14 @@ import {
   ButtonStyle,
   ButtonTextColour,
   IS_SCC,
-  IS_Y_MIN,
   TypeIn,
   ViewIdentifier,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
-import { VIEW_IDENTIFIERS } from '../../../constants';
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET, VIEW_IDENTIFIERS } from '../constants';
 
 export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
   let viewPLID = 1;
@@ -21,7 +19,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     Text: getPacketLabel(IS_SCC),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
@@ -39,7 +37,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     Text: 'ViewPLID:',
     ReqI: 1,
     L: 112,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -49,7 +47,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     Text: buttonTextWithCaption('Enter a PLID to view', viewPLID.toString(10)),
     ReqI: 1,
     L: 121,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -79,7 +77,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     Text: 'InGameCam:',
     ReqI: 1,
     L: 126,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -89,7 +87,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     Text: `[${VIEW_IDENTIFIERS[inGameCam]}]`,
     ReqI: 1,
     L: 137,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_CLICK | ButtonStyle.ISB_C2,

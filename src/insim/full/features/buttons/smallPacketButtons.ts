@@ -2,7 +2,6 @@ import type { IS_BTT } from 'node-insim/packets';
 import {
   ButtonStyle,
   IS_SMALL,
-  IS_Y_MIN,
   PacketType,
   SENDABLE_SMALL_TYPES,
   SmallType,
@@ -11,13 +10,13 @@ import type { InSim } from 'node-insim/protocols';
 
 import { log } from '../../log';
 import { buttonTextWithCaption, drawButtonList } from '../../ui';
-import { BUTTON_HEIGHT, SMALL_BUTTON_ID_OFFSET } from './constants';
+import { BUTTON_HEIGHT, SMALL_BUTTON_ID_OFFSET, TOP_OFFSET } from './constants';
 
 export function drawSmallPacketButtons(inSim: InSim) {
   drawButtonList(inSim, {
     title: 'IS_SMALL',
     leftOffset: 82,
-    topOffset: IS_Y_MIN,
+    topOffset: TOP_OFFSET,
     width: 15,
     height: BUTTON_HEIGHT,
     buttons: SENDABLE_SMALL_TYPES.map((smallTypeNumber) => {

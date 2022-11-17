@@ -2,14 +2,13 @@ import {
   ButtonStyle,
   ButtonTextColour,
   IS_MOD,
-  IS_Y_MIN,
   TypeIn,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 
 export function drawScreenModePacketButtons(inSim: InSim, row: number) {
   let bits16 = 0,
@@ -21,7 +20,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     Text: buttonTextWithCaption('Message', getPacketLabel(IS_MOD)),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
@@ -41,7 +40,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     Text: 'Bits16:',
     ReqI: 1,
     L: 112,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -51,7 +50,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     Text: buttonTextWithCaption('Set to choose 16-bit', bits16.toString(10)),
     ReqI: 1,
     L: 119,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -81,7 +80,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     Text: 'RR:',
     ReqI: 1,
     L: 124,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -94,7 +93,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     ),
     ReqI: 1,
     L: 128,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -124,7 +123,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     Text: 'Width:',
     ReqI: 1,
     L: 132,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -137,7 +136,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     ),
     ReqI: 1,
     L: 138,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
@@ -167,7 +166,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     Text: 'Height:',
     ReqI: 1,
     L: 143,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
@@ -180,7 +179,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     ),
     ReqI: 1,
     L: 150,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,

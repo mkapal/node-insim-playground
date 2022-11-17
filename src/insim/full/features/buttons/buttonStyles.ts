@@ -1,10 +1,10 @@
-import { ButtonStyle, ButtonTextColour, IS_Y_MIN } from 'node-insim/packets';
+import { ButtonStyle, ButtonTextColour } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import type { ButtonListProps } from '../../ui';
 import { drawButtonList } from '../../ui';
 import { getStringEnumValues } from '../../utils';
-import { BUTTON_HEIGHT } from './constants';
+import { BUTTON_HEIGHT, TOP_OFFSET } from './constants';
 
 export function drawButtonStyles(inSim: InSim) {
   const buttons: ButtonListProps['buttons'] = [];
@@ -29,7 +29,7 @@ export function drawButtonStyles(inSim: InSim) {
   drawButtonList(inSim, {
     title: 'Button styles',
     leftOffset: 47,
-    topOffset: IS_Y_MIN,
+    topOffset: TOP_OFFSET,
     width: 20,
     height: BUTTON_HEIGHT,
     buttons,

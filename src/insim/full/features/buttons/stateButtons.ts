@@ -2,8 +2,6 @@ import type { IS_STA } from 'node-insim/packets';
 import {
   ButtonFunction,
   ButtonStyle,
-  IS_X_MIN,
-  IS_Y_MIN,
   PacketType,
   RaceState,
   ServerStatus,
@@ -11,11 +9,15 @@ import {
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
-import { VIEW_IDENTIFIERS } from '../../constants';
 import { drawButtonList } from '../../ui';
 import { lfsRaceLapsToLapsOrHours } from '../../utils';
 import { onState } from '../packetLogs/onState';
-import { BUTTON_HEIGHT } from './constants';
+import {
+  BUTTON_HEIGHT,
+  LEFT_OFFSET,
+  TOP_OFFSET,
+  VIEW_IDENTIFIERS,
+} from './constants';
 
 export function drawStateButtons(inSim: InSim) {
   const buttonPairs: Record<string, string> = {
@@ -36,8 +38,8 @@ export function drawStateButtons(inSim: InSim) {
 
   drawButtonList(inSim, {
     title: 'Game state',
-    leftOffset: IS_X_MIN,
-    topOffset: IS_Y_MIN,
+    leftOffset: LEFT_OFFSET,
+    topOffset: TOP_OFFSET,
     width: 15,
     height: BUTTON_HEIGHT,
     buttons: Object.keys(buttonPairs).map((text) => ({
@@ -47,8 +49,8 @@ export function drawStateButtons(inSim: InSim) {
   });
 
   const { update: updateStateButtons } = drawButtonList(inSim, {
-    leftOffset: IS_X_MIN + 15,
-    topOffset: IS_Y_MIN + BUTTON_HEIGHT,
+    leftOffset: LEFT_OFFSET + 15,
+    topOffset: TOP_OFFSET + BUTTON_HEIGHT,
     width: 10,
     height: BUTTON_HEIGHT,
     buttons: Object.values(buttonPairs).map((text) => ({

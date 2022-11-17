@@ -1,10 +1,5 @@
 import type { IS_BTC, IS_BTN_Data, IS_BTT } from 'node-insim/packets';
-import {
-  ButtonFunction,
-  IS_BTN,
-  MAX_CLICK_ID,
-  PacketType,
-} from 'node-insim/packets';
+import { ButtonFunction, IS_BTN, PacketType } from 'node-insim/packets';
 import type { InSim, InSimPacketEvents } from 'node-insim/protocols';
 
 let clickId = 0;
@@ -44,6 +39,7 @@ export function drawButton(
   const button = new IS_BTN({
     ...buttonData,
     ClickID: nextClickId,
+    UCID: 255,
   });
 
   const update = ({ onClick, onType, ...newData }: ButtonData) => {
@@ -83,6 +79,7 @@ export function drawButton(
     const newButton = new IS_BTN({
       ...newData,
       ClickID: button.ClickID,
+      UCID: 255,
     });
 
     inSim.send(newButton);
@@ -145,5 +142,5 @@ export function drawButton(
 }
 
 function getNextClickId() {
-  return clickId === MAX_CLICK_ID ? (clickId = 0) : ++clickId;
+  return clickId === IS_BTN.MAX_CLICK_ID ? (clickId = 0) : ++clickId;
 }

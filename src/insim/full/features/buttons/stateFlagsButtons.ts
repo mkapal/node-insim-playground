@@ -4,8 +4,6 @@ import {
   ButtonTextColour,
   IS_SFP,
   IS_TINY,
-  IS_X_MIN,
-  IS_Y_MIN,
   PacketType,
   StateFlags,
   TinyType,
@@ -15,7 +13,7 @@ import type { InSim } from 'node-insim/protocols';
 import { drawButtonList } from '../../ui';
 import type { Button } from '../../ui/buttonList';
 import { getStringEnumValues } from '../../utils';
-import { BUTTON_HEIGHT } from './constants';
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from './constants';
 
 const stateFlagEnumValues = getStringEnumValues(StateFlags);
 
@@ -38,8 +36,8 @@ export function drawStateFlagsButtons(inSim: InSim) {
 
   const { update: updateStateFlagButtons } = drawButtonList(inSim, {
     title: 'State flags',
-    leftOffset: IS_X_MIN + 25,
-    topOffset: IS_Y_MIN,
+    leftOffset: LEFT_OFFSET + 25,
+    topOffset: TOP_OFFSET,
     width: 22,
     height: BUTTON_HEIGHT,
     buttons,

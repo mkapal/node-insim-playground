@@ -1,8 +1,8 @@
-import { ButtonTextColour, IS_Y_MIN } from 'node-insim/packets';
+import { ButtonTextColour } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { drawButton } from '../../../ui';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 import { drawButtonFunctionPacketButton } from './buttonFunction';
 import { drawCameraPositionPacketButtons } from './cameraPosition';
 import { drawMessageExtendedPacketButton } from './messageExtended';
@@ -21,7 +21,7 @@ export function drawSendablePacketButtons(inSim: InSim) {
     Text: 'Sendable packets',
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN,
+    T: TOP_OFFSET,
     W: 15,
     H: BUTTON_HEIGHT,
     BStyle: ButtonTextColour.TitleColour,

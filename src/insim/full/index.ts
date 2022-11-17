@@ -1,7 +1,6 @@
 import NodeInSim from 'node-insim';
 import { InSimFlags, IS_ISI_ReqI } from 'node-insim/packets';
 
-import { APP_NAME } from './constants';
 import { drawTestButtons } from './features/buttons';
 import { logPackets } from './features/packetLogs';
 import { log } from './log';
@@ -13,7 +12,7 @@ inSim.connect({
   Port: process.env.PORT ? parseInt(process.env.PORT) : 29999,
   Interval: 0,
   ReqI: IS_ISI_ReqI.SEND_VERSION,
-  IName: APP_NAME,
+  IName: 'Node InSim Full',
   Flags:
     InSimFlags.ISF_LOCAL |
     InSimFlags.ISF_MSO_COLS |

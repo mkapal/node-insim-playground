@@ -3,14 +3,13 @@ import {
   ButtonTextColour,
   CharacterModifiers,
   IS_SCH,
-  IS_Y_MIN,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';
 import { getPacketLabel, toggleFlag } from '../../../utils';
-import { BUTTON_HEIGHT } from '../constants';
+import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 
 export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
   let buttonFlags: CharacterModifiers = 0;
@@ -27,7 +26,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
     ),
     ReqI: 1,
     L: 97,
-    T: IS_Y_MIN + BUTTON_HEIGHT * row,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 1,
@@ -62,7 +61,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
       Text: 'Shift',
       ReqI: 1,
       L: 112,
-      T: IS_Y_MIN + BUTTON_HEIGHT * row,
+      T: TOP_OFFSET + BUTTON_HEIGHT * row,
       W: 5,
       H: BUTTON_HEIGHT,
       BStyle:
@@ -77,7 +76,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
       Text: 'Ctrl',
       ReqI: 1,
       L: 117,
-      T: IS_Y_MIN + BUTTON_HEIGHT * row,
+      T: TOP_OFFSET + BUTTON_HEIGHT * row,
       W: 5,
       H: BUTTON_HEIGHT,
       BStyle:
