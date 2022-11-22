@@ -22,6 +22,7 @@ import { onMessageOut } from './onMessageOut';
 import { onMultiCarInfo } from './onMultiCarInfo';
 import { onMultiplayer } from './onMultiplayer';
 import { onNewConnection } from './onNewConnection';
+import { onNewConnectionInfo } from './onNewConnectionInfo';
 import { onNewPlayer } from './onNewPlayer';
 import { onNodeLap } from './onNodeLap';
 import { onObjectHit } from './onObjectHit';
@@ -87,4 +88,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_HLV, onHlvc);
   inSim.on(PacketType.ISP_AXM, onAutocrossMultipleObjects);
   inSim.on(PacketType.ISP_ACR, onAdminCommandReport);
+  inSim.on(PacketType.ISP_NCI, onNewConnectionInfo);
 }
