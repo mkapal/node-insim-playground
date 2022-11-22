@@ -1,4 +1,4 @@
-import type { IPacket } from 'node-insim/packets';
+import type { Packet } from 'node-insim/packets';
 
 export function getStringEnumValues<T extends Record<number, string>>(
   enumVar: T,
@@ -9,9 +9,9 @@ export function getStringEnumValues<T extends Record<number, string>>(
 }
 
 export function getPacketLabel<
-  Packet extends IPacket,
+  P extends Packet,
   Data extends Record<string, unknown>,
->(packetConstructor: new (data?: Data) => Packet, hasModal = false): string {
+>(packetConstructor: new (data?: Data) => P, hasModal = false): string {
   return `${packetConstructor.name} (${new packetConstructor().Type})${
     hasModal ? ' ...' : '   '
   }`;

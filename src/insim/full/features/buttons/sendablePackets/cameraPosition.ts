@@ -8,7 +8,7 @@ import {
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
+import { buttonNumberTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';
 import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT, TOP_OFFSET, VIEW_IDENTIFIERS } from '../constants';
@@ -326,10 +326,6 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
       });
     },
   });
-}
-
-function buttonNumberTextWithCaption(caption: string, number: number): string {
-  return buttonTextWithCaption(caption, number.toString(10));
 }
 
 const buttonProps = (row: number): ButtonData => ({

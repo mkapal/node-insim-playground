@@ -5,6 +5,7 @@ import { drawButton } from '../../../ui';
 import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 import { drawButtonFunctionPacketButton } from './buttonFunction';
 import { drawCameraPositionPacketButtons } from './cameraPosition';
+import { drawJoinRequestResponsePacketButton } from './joinRequestResponse';
 import { drawMessageExtendedPacketButton } from './messageExtended';
 import { drawMessageLocalPacketButton } from './messageLocal';
 import { drawMessageToConnectionPacketButtons } from './messageToConnection';
@@ -39,4 +40,6 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawButtonFunctionPacketButton(inSim, 11);
   drawReplayInfoPacketButton(inSim, 12);
   drawSendScreenshotPacketButton(inSim, 13);
+  // drawPlayerCarsPacketButton(inSim, 14);
+  drawJoinRequestResponsePacketButton(inSim, 15);
 }
