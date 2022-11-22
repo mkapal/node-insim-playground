@@ -10,6 +10,7 @@ import { drawMessageExtendedPacketButton } from './messageExtended';
 import { drawMessageLocalPacketButton } from './messageLocal';
 import { drawMessageToConnectionPacketButtons } from './messageToConnection';
 import { drawMessageTypePacketButton } from './messageType';
+import { drawObjectControlPacketButton } from './objectControl';
 import { drawReorderPacketButton } from './reorder';
 import { drawReplayInfoPacketButton } from './replayInfo';
 import { drawScreenModePacketButtons } from './screenMode';
@@ -42,4 +43,5 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawSendScreenshotPacketButton(inSim, 13);
   // drawPlayerCarsPacketButton(inSim, 14);
   drawJoinRequestResponsePacketButton(inSim, 15);
+  drawObjectControlPacketButton(inSim, 17);
 }
