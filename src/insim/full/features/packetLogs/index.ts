@@ -42,6 +42,7 @@ import { onSplitTime } from './onSplitTime';
 import { onState } from './onState';
 import { onTakeOverCar } from './onTakeOverCar';
 import { onTiny } from './onTiny';
+import { onUserControlObject } from './onUserControlObject';
 import { onVersion } from './onVersion';
 import { onVoteNotify } from './onVoteNotify';
 
@@ -89,4 +90,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_AXM, onAutocrossMultipleObjects);
   inSim.on(PacketType.ISP_ACR, onAdminCommandReport);
   inSim.on(PacketType.ISP_NCI, onNewConnectionInfo);
+  inSim.on(PacketType.ISP_UCO, onUserControlObject);
 }
