@@ -18,6 +18,7 @@ import { drawSendScreenshotPacketButton } from './sendScreenshot';
 import { drawSimplifiedCameraPacketButtons } from './simplifiedCamera';
 import { drawSingleCharacterPacketButtons } from './singleCharacter';
 import { drawStateFlagsPackPacketButton } from './stateFlagsPack';
+import { drawTargetToConnectionPacketButton } from './targetToConnection';
 
 export function drawSendablePacketButtons(inSim: InSim) {
   drawButton(inSim, {
@@ -46,4 +47,5 @@ export function drawSendablePacketButtons(inSim: InSim) {
   // drawPlayerCarsPacketButton(inSim, 15);
   drawJoinRequestResponsePacketButton(inSim, 16);
   drawObjectControlPacketButton(inSim, 18);
+  drawTargetToConnectionPacketButton(inSim, 19);
 }
