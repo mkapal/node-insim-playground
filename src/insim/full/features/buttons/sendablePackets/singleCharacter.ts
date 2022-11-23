@@ -42,6 +42,16 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
+    Text: 'Flags:',
+    ReqI: 1,
+    L: 112,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
+    W: 7,
+    H: BUTTON_HEIGHT,
+    BStyle: ButtonStyle.ISB_LEFT | ButtonTextColour.UnselectedText,
+  });
+
+  drawButton(inSim, {
     ...getShiftButtonData(isShiftEnabled(buttonFlags)),
     onClick: ({ button }) => {
       buttonFlags = toggleFlag(buttonFlags, CharacterModifiers.SHIFT);
@@ -58,31 +68,35 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
 
   function getShiftButtonData(isEnabled: boolean): ButtonData {
     return {
-      Text: 'Shift',
+      Text: 'SHIFT',
       ReqI: 1,
-      L: 112,
+      L: 118,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
       W: 5,
       H: BUTTON_HEIGHT,
       BStyle:
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
-        (isEnabled ? ButtonTextColour.SelectedText : ButtonStyle.ISB_C2),
+        (isEnabled
+          ? ButtonTextColour.SelectedText
+          : ButtonTextColour.UnselectedText),
     };
   }
 
   function getCtrlButtonData(isEnabled: boolean): ButtonData {
     return {
-      Text: 'Ctrl',
+      Text: 'CTRL',
       ReqI: 1,
-      L: 117,
+      L: 123,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
       W: 5,
       H: BUTTON_HEIGHT,
       BStyle:
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
-        (isEnabled ? ButtonTextColour.SelectedText : ButtonStyle.ISB_C2),
+        (isEnabled
+          ? ButtonTextColour.SelectedText
+          : ButtonTextColour.UnselectedText),
     };
   }
 }

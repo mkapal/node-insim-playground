@@ -17,6 +17,7 @@ import { drawScreenModePacketButtons } from './screenMode';
 import { drawSendScreenshotPacketButton } from './sendScreenshot';
 import { drawSimplifiedCameraPacketButtons } from './simplifiedCamera';
 import { drawSingleCharacterPacketButtons } from './singleCharacter';
+import { drawStateFlagsPackPacketButton } from './stateFlagsPack';
 
 export function drawSendablePacketButtons(inSim: InSim) {
   drawButton(inSim, {
@@ -30,18 +31,19 @@ export function drawSendablePacketButtons(inSim: InSim) {
   });
 
   drawSingleCharacterPacketButtons(inSim, 1);
-  drawSimplifiedCameraPacketButtons(inSim, 2);
-  drawCameraPositionPacketButtons(inSim, 3);
-  drawMessageTypePacketButton(inSim, 5);
-  drawMessageToConnectionPacketButtons(inSim, 6);
-  drawScreenModePacketButtons(inSim, 7);
-  drawReorderPacketButton(inSim, 8);
-  drawMessageExtendedPacketButton(inSim, 9);
-  drawMessageLocalPacketButton(inSim, 10);
-  drawButtonFunctionPacketButton(inSim, 11);
-  drawReplayInfoPacketButton(inSim, 12);
-  drawSendScreenshotPacketButton(inSim, 13);
-  // drawPlayerCarsPacketButton(inSim, 14);
-  drawJoinRequestResponsePacketButton(inSim, 15);
-  drawObjectControlPacketButton(inSim, 17);
+  drawStateFlagsPackPacketButton(inSim, 2);
+  drawSimplifiedCameraPacketButtons(inSim, 3);
+  drawCameraPositionPacketButtons(inSim, 4);
+  drawMessageTypePacketButton(inSim, 6);
+  drawMessageToConnectionPacketButtons(inSim, 7);
+  drawScreenModePacketButtons(inSim, 8);
+  drawReorderPacketButton(inSim, 9);
+  drawMessageExtendedPacketButton(inSim, 10);
+  drawMessageLocalPacketButton(inSim, 11);
+  drawButtonFunctionPacketButton(inSim, 12);
+  drawReplayInfoPacketButton(inSim, 13);
+  drawSendScreenshotPacketButton(inSim, 14);
+  // drawPlayerCarsPacketButton(inSim, 15);
+  drawJoinRequestResponsePacketButton(inSim, 16);
+  drawObjectControlPacketButton(inSim, 18);
 }

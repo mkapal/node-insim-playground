@@ -60,7 +60,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -86,7 +86,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -112,7 +112,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -138,7 +138,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -164,7 +164,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -191,7 +191,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -235,7 +235,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -245,7 +245,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -272,7 +272,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -299,7 +299,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 11,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -332,7 +332,10 @@ const buttonProps = (row: number): ButtonData => ({
   ReqI: 1,
   T: TOP_OFFSET + BUTTON_HEIGHT * row,
   H: BUTTON_HEIGHT,
-  BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_C2 | ButtonStyle.ISB_CLICK,
+  BStyle:
+    ButtonStyle.ISB_LIGHT |
+    ButtonTextColour.UnselectedText |
+    ButtonStyle.ISB_CLICK,
 });
 
 const inputButtonProps = (typeIn: number, row: number): ButtonData => ({

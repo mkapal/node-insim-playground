@@ -6,8 +6,8 @@ import {
   ButtonStyle,
   ButtonTextColour,
   IS_OCO,
+  ObjectIndex,
   OCOAction,
-  OCOIndex,
   TypeIn,
 } from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
@@ -19,7 +19,7 @@ import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 
 export function drawObjectControlPacketButton(inSim: InSim, row: number) {
   let action = OCOAction.OCO_ZERO,
-    index = OCOIndex.AXO_START_LIGHTS,
+    index = ObjectIndex.AXO_START_LIGHTS,
     identifier = 0,
     data: OCOMainLights | OCOAutocrossStartLights = 0;
 
@@ -48,7 +48,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     Text: 'OCOAction:',
     L: 112,
     W: 12,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -58,7 +58,10 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 19,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_CLICK | ButtonStyle.ISB_C2,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonStyle.ISB_CLICK |
+      ButtonTextColour.UnselectedText,
     onClick: ({ button }) => {
       const ids = Object.keys(OCOAction).filter(
         (key) => !isNaN(Number(OCOAction[key as unknown as number])),
@@ -81,7 +84,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     Text: 'Index:',
     L: 142,
     W: 12,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -109,13 +112,13 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     Text: 'Identifier:',
     L: 153,
     W: 11,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
     ...inputButtonProps(3, row),
     Text: buttonTextWithCaption('Identifier', identifier.toString(10)),
-    L: 163,
+    L: 162,
     W: 4,
     onType: ({ packet, button }) => {
       const parsedNumber = parseInt(packet.Text, 10);
@@ -135,15 +138,15 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
   drawButton(inSim, {
     ...buttonProps(row),
     Text: 'Data:',
-    L: 168,
+    L: 167,
     W: 11,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
     ...inputButtonProps(3, row),
     Text: buttonTextWithCaption('Data', data.toString(10)),
-    L: 174,
+    L: 172,
     W: 4,
     onType: ({ packet, button }) => {
       const parsedNumber = parseInt(packet.Text, 10);

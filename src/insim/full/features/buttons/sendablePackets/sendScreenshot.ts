@@ -42,7 +42,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {

@@ -43,7 +43,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -83,7 +83,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -126,7 +126,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -169,7 +169,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {

@@ -2,6 +2,7 @@ import type { IS_STA } from 'node-insim/packets';
 import {
   ButtonFunction,
   ButtonStyle,
+  ButtonTextColour,
   PacketType,
   RaceState,
   ServerStatus,
@@ -44,7 +45,10 @@ export function drawStateButtons(inSim: InSim) {
     height: BUTTON_HEIGHT,
     buttons: Object.keys(buttonPairs).map((text) => ({
       Text: text,
-      BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+      BStyle:
+        ButtonStyle.ISB_LIGHT |
+        ButtonTextColour.UnselectedText |
+        ButtonStyle.ISB_LEFT,
     })),
   });
 
@@ -55,31 +59,37 @@ export function drawStateButtons(inSim: InSim) {
     height: BUTTON_HEIGHT,
     buttons: Object.values(buttonPairs).map((text) => ({
       Text: text,
-      BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_C2,
+      BStyle: ButtonStyle.ISB_LIGHT | ButtonTextColour.UnselectedText,
     })),
   });
 
   inSim.on(PacketType.ISP_STA, (packet: IS_STA) => {
     const buttonPairs: Record<string, string> = {
       'Replay speed': packet.ReplaySpeed.toFixed(3),
-      'Selected camera': VIEW_IDENTIFIERS[packet.InGameCam],
+      'Selected camera': `${VIEW_IDENTIFIERS[packet.InGameCam]} (${
+        packet.InGameCam
+      })`,
       'View PLID': packet.ViewPLID.toString(10),
       'Players on track': packet.NumP.toString(10),
       Connections: packet.NumConns.toString(10),
       'Finished / qualified': packet.NumFinished.toString(10),
-      'Race state': raceStates[packet.RaceInProg],
+      'Race state': `${raceStates[packet.RaceInProg]} (${packet.RaceInProg})`,
       'Qualifying minutes': packet.QualMins.toString(10),
-      'Race laps / hours': lfsRaceLapsToLapsOrHours(packet.RaceLaps),
-      'Server status': getServerStatus(packet.ServerStatus),
+      'Race laps / hours': `${lfsRaceLapsToLapsOrHours(packet.RaceLaps)} (${
+        packet.RaceLaps
+      })`,
+      'Server status': `${getServerStatus(packet.ServerStatus)} (${
+        packet.ServerStatus
+      })`,
       Track: packet.Track,
       Weather: packet.Weather.toString(10),
-      Wind: windStrengths[packet.Wind],
+      Wind: `${windStrengths[packet.Wind]} (${packet.Wind})`,
     };
 
     updateStateButtons(
       Object.values(buttonPairs).map((text) => ({
         Text: text,
-        BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_C2,
+        BStyle: ButtonStyle.ISB_LIGHT | ButtonTextColour.UnselectedText,
       })),
     );
   });

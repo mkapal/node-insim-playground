@@ -9,17 +9,17 @@ import { BUTTON_HEIGHT, TOP_OFFSET } from './constants';
 export function drawButtonStyles(inSim: InSim) {
   const buttons: ButtonListProps['buttons'] = [];
 
-  getStringEnumValues(ButtonStyle).forEach((styleString) => {
-    const styleNumber = ButtonStyle[styleString];
+  getStringEnumValues(ButtonTextColour).forEach((styleString) => {
+    const styleNumber = ButtonTextColour[styleString];
+
     buttons.push({
       Text: `${styleString} (${styleNumber})`,
       BStyle: styleNumber,
     });
   });
 
-  getStringEnumValues(ButtonTextColour).forEach((styleString) => {
-    const styleNumber = ButtonTextColour[styleString];
-
+  getStringEnumValues(ButtonStyle).forEach((styleString) => {
+    const styleNumber = ButtonStyle[styleString];
     buttons.push({
       Text: `${styleString} (${styleNumber})`,
       BStyle: styleNumber,

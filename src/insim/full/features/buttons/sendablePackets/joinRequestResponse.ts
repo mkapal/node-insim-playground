@@ -63,7 +63,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -100,7 +100,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -130,7 +130,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -140,7 +140,10 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 19,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_CLICK | ButtonStyle.ISB_C2,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonStyle.ISB_CLICK |
+      ButtonTextColour.UnselectedText,
     onClick: ({ button }) => {
       const viewIdentifierIds = Object.keys(JRRAction).filter(
         (key) => !isNaN(Number(JRRAction[key as unknown as number])),
@@ -168,7 +171,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -194,7 +197,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -220,7 +223,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 6,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -246,7 +249,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -272,7 +275,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -298,7 +301,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -322,7 +325,10 @@ const buttonProps = (row: number): ButtonData => ({
   ReqI: 1,
   T: TOP_OFFSET + BUTTON_HEIGHT * row,
   H: BUTTON_HEIGHT,
-  BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_C2 | ButtonStyle.ISB_CLICK,
+  BStyle:
+    ButtonStyle.ISB_LIGHT |
+    ButtonTextColour.UnselectedText |
+    ButtonStyle.ISB_CLICK,
 });
 
 const inputButtonProps = (typeIn: number, row: number): ButtonData => ({

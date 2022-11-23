@@ -57,7 +57,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -94,7 +94,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -104,7 +104,10 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 6,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_LIGHT | ButtonStyle.ISB_CLICK | ButtonStyle.ISB_C2,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonStyle.ISB_CLICK |
+      ButtonTextColour.UnselectedText,
     onClick: ({ button }) => {
       const ids = Object.keys(ReplayMode).filter(
         (key) => !isNaN(Number(ReplayMode[key as unknown as number])),
@@ -127,7 +130,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -158,6 +161,16 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
+    Text: 'Options:',
+    ReqI: 1,
+    L: 142,
+    T: TOP_OFFSET + BUTTON_HEIGHT * row,
+    W: 12,
+    H: BUTTON_HEIGHT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+  });
+
+  drawButton(inSim, {
     ...getLoopButtonData(isLoopEnabled(options)),
     onClick: ({ button }) => {
       options = toggleFlag(options, ReplayOptions.RIPOPT_LOOP);
@@ -183,14 +196,16 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     return {
       Text: 'RIPOPT_LOOP',
       ReqI: 1,
-      L: 143,
+      L: 149,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
       W: 11,
       H: BUTTON_HEIGHT,
       BStyle:
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
-        (isEnabled ? ButtonTextColour.SelectedText : ButtonStyle.ISB_C2),
+        (isEnabled
+          ? ButtonTextColour.SelectedText
+          : ButtonTextColour.UnselectedText),
     };
   }
 
@@ -198,14 +213,16 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     return {
       Text: 'RIPOPT_SKINS',
       ReqI: 1,
-      L: 154,
+      L: 160,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
       W: 12,
       H: BUTTON_HEIGHT,
       BStyle:
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
-        (isEnabled ? ButtonTextColour.SelectedText : ButtonStyle.ISB_C2),
+        (isEnabled
+          ? ButtonTextColour.SelectedText
+          : ButtonTextColour.UnselectedText),
     };
   }
 
@@ -213,31 +230,33 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     return {
       Text: 'RIPOPT_FULL_PHYS',
       ReqI: 1,
-      L: 166,
+      L: 172,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
       W: 15,
       H: BUTTON_HEIGHT,
       BStyle:
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
-        (isEnabled ? ButtonTextColour.SelectedText : ButtonStyle.ISB_C2),
+        (isEnabled
+          ? ButtonTextColour.SelectedText
+          : ButtonTextColour.UnselectedText),
     };
   }
 
   drawButton(inSim, {
     Text: 'CTime:',
     ReqI: 1,
-    L: 182,
+    L: 187,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_C2 | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
     Text: buttonTextWithCaption('CTime', cTime.toString(10)),
     ReqI: 1,
-    L: 188,
+    L: 193,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 6,
     H: BUTTON_HEIGHT,
