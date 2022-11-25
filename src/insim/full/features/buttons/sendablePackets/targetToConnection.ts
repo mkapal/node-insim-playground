@@ -5,7 +5,6 @@ import {
   IS_TTC,
   TypeIn,
 } from 'node-insim/packets';
-import type { InfoRequestTargetToConnectionType } from 'node-insim/packets/IS_TTC';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonNumberTextWithCaption, drawButton } from '../../../ui';
@@ -33,7 +32,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
         new IS_TTC({
           ReqI: reqI,
           UCID: ucId,
-          SubT: subT as InfoRequestTargetToConnectionType,
+          SubT: subT,
           B1: b1,
           B2: b2,
           B3: b3,
