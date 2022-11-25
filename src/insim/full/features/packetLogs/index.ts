@@ -36,6 +36,7 @@ import { onPlayerPit } from './onPlayerPit';
 import { onReorder } from './onReorder';
 import { onReplayInfo } from './onReplayInfo';
 import { onResult } from './onResult';
+import { onSelectedCar } from './onSelectedCar';
 import { onSendScreenshot } from './onSendScreenshot';
 import { onSmall } from './onSmall';
 import { onSplitTime } from './onSplitTime';
@@ -91,4 +92,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_ACR, onAdminCommandReport);
   inSim.on(PacketType.ISP_NCI, onNewConnectionInfo);
   inSim.on(PacketType.ISP_UCO, onUserControlObject);
+  inSim.on(PacketType.ISP_SLC, onSelectedCar);
 }
