@@ -21,6 +21,7 @@ import { onHlvc } from './onHlvc';
 import { onInSimInfo } from './onInSimInfo';
 import { onLapTime } from './onLapTime';
 import { onMessageOut } from './onMessageOut';
+import { onModsAllowed } from './onModsAllowed';
 import { onMultiCarInfo } from './onMultiCarInfo';
 import { onMultiplayer } from './onMultiplayer';
 import { onNewConnection } from './onNewConnection';
@@ -97,4 +98,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_SLC, onSelectedCar);
   inSim.on(PacketType.ISP_CSC, onCarStateChange);
   inSim.on(PacketType.ISP_CIM, onConnectionInterfaceMode);
+  inSim.on(PacketType.ISP_MAL, onModsAllowed);
 }
