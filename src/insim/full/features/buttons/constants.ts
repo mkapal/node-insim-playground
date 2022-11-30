@@ -1,6 +1,8 @@
+import type { SendableStateFlags } from 'node-insim/packets';
 import {
   IS_BTN,
   SENDABLE_TINY_TYPES,
+  StateFlags,
   ViewIdentifier,
 } from 'node-insim/packets';
 
@@ -13,6 +15,7 @@ export const SMALL_BUTTON_ID_OFFSET =
 
 export const LEFT_OFFSET = IS_BTN.IS_X_MIN;
 export const TOP_OFFSET = IS_BTN.IS_Y_MIN;
+
 export const VIEW_IDENTIFIERS: Record<ViewIdentifier, string> = {
   [ViewIdentifier.VIEW_FOLLOW]: 'follow',
   [ViewIdentifier.VIEW_HELI]: 'heli',
@@ -21,3 +24,10 @@ export const VIEW_IDENTIFIERS: Record<ViewIdentifier, string> = {
   [ViewIdentifier.VIEW_CUSTOM]: 'custom',
   [ViewIdentifier.VIEW_ANOTHER]: 'another car',
 };
+
+export const SENDABLE_STATES: SendableStateFlags[] = [
+  StateFlags.ISS_SHIFTU_NO_OPT,
+  StateFlags.ISS_MPSPEEDUP,
+  StateFlags.ISS_SOUND_MUTE,
+  StateFlags.ISS_SHOW_2D,
+];
