@@ -36,6 +36,7 @@ import { onPitStopFinished } from './onPitStopFinished';
 import { onPlayerFlagsChanged } from './onPlayerFlagsChanged';
 import { onPlayerLeave } from './onPlayerLeave';
 import { onPlayerPit } from './onPlayerPit';
+import { onRaceStart } from './onRaceStart';
 import { onReorder } from './onReorder';
 import { onReplayInfo } from './onReplayInfo';
 import { onResult } from './onResult';
@@ -60,6 +61,7 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_III, onInSimInfo);
   inSim.on(PacketType.ISP_VTN, onVoteNotify);
   inSim.on(PacketType.ISP_STA, onState);
+  inSim.on(PacketType.ISP_RST, onRaceStart);
   inSim.on(PacketType.ISP_NCN, onNewConnection);
   inSim.on(PacketType.ISP_CNL, onConnectionLeave);
   inSim.on(PacketType.ISP_CPR, onConnectionPlayerRename);
