@@ -48,7 +48,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     Text: 'OCOAction:',
     L: 112,
     W: 12,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -61,7 +61,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.UnselectedText,
+      ButtonTextColour.UNSELECTED_TEXT,
     onClick: ({ button }) => {
       const ids = Object.keys(OCOAction).filter(
         (key) => !isNaN(Number(OCOAction[key as unknown as number])),
@@ -84,7 +84,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     Text: 'Index:',
     L: 142,
     W: 12,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -112,7 +112,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     Text: 'Identifier:',
     L: 153,
     W: 11,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -140,7 +140,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     Text: 'Data:',
     L: 167,
     W: 11,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -174,5 +174,7 @@ const inputButtonProps = (typeIn: number, row: number): ButtonData => ({
   ...buttonProps(row),
   TypeIn: typeIn + TypeIn.INIT_VALUE_BUTTON_TEXT,
   BStyle:
-    ButtonStyle.ISB_LIGHT | ButtonTextColour.TextString | ButtonStyle.ISB_CLICK,
+    ButtonStyle.ISB_LIGHT |
+    ButtonTextColour.TEXT_STRING |
+    ButtonStyle.ISB_CLICK,
 });

@@ -48,7 +48,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 7,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_LEFT | ButtonTextColour.UnselectedText,
+    BStyle: ButtonStyle.ISB_LEFT | ButtonTextColour.UNSELECTED_TEXT,
   });
 
   drawButton(inSim, {
@@ -78,8 +78,8 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
         (isEnabled
-          ? ButtonTextColour.SelectedText
-          : ButtonTextColour.UnselectedText),
+          ? ButtonTextColour.SELECTED_TEXT
+          : ButtonTextColour.UNSELECTED_TEXT),
     };
   }
 
@@ -95,8 +95,8 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
         (isEnabled
-          ? ButtonTextColour.SelectedText
-          : ButtonTextColour.UnselectedText),
+          ? ButtonTextColour.SELECTED_TEXT
+          : ButtonTextColour.UNSELECTED_TEXT),
     };
   }
 }

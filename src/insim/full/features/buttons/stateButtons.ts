@@ -47,7 +47,7 @@ export function drawStateButtons(inSim: InSim) {
       Text: text,
       BStyle:
         ButtonStyle.ISB_LIGHT |
-        ButtonTextColour.UnselectedText |
+        ButtonTextColour.UNSELECTED_TEXT |
         ButtonStyle.ISB_LEFT,
     })),
   });
@@ -59,7 +59,7 @@ export function drawStateButtons(inSim: InSim) {
     height: BUTTON_HEIGHT,
     buttons: Object.values(buttonPairs).map((text) => ({
       Text: text,
-      BStyle: ButtonStyle.ISB_LIGHT | ButtonTextColour.UnselectedText,
+      BStyle: ButtonStyle.ISB_LIGHT | ButtonTextColour.UNSELECTED_TEXT,
     })),
   });
 
@@ -89,7 +89,7 @@ export function drawStateButtons(inSim: InSim) {
     updateStateButtons(
       Object.values(buttonPairs).map((text) => ({
         Text: text,
-        BStyle: ButtonStyle.ISB_LIGHT | ButtonTextColour.UnselectedText,
+        BStyle: ButtonStyle.ISB_LIGHT | ButtonTextColour.UNSELECTED_TEXT,
       })),
     );
   });
@@ -103,11 +103,11 @@ export function drawStateButtons(inSim: InSim) {
 }
 
 function getServerStatus(status: ServerStatus) {
-  if (status === ServerStatus.Success) {
+  if (status === ServerStatus.SUCCESS) {
     return 'success';
   }
 
-  if (status === ServerStatus.Unknown) {
+  if (status === ServerStatus.UNKNOWN) {
     return 'unknown';
   }
 
@@ -115,13 +115,13 @@ function getServerStatus(status: ServerStatus) {
 }
 
 const raceStates: Record<RaceState, string> = {
-  [RaceState.Race]: 'race',
-  [RaceState.Qualifying]: 'qualifying',
-  [RaceState.NoRace]: 'no race',
+  [RaceState.RACE]: 'race',
+  [RaceState.QUALIFYING]: 'qualifying',
+  [RaceState.NO_RACE]: 'no race',
 };
 
 const windStrengths: Record<Wind, string> = {
-  [Wind.Off]: 'no wind',
-  [Wind.Weak]: 'low wind',
-  [Wind.Strong]: 'high wind',
+  [Wind.OFF]: 'no wind',
+  [Wind.WEAK]: 'low wind',
+  [Wind.STRONG]: 'high wind',
 };

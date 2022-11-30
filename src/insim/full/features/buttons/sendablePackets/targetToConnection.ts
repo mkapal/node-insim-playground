@@ -48,7 +48,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 6,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -60,7 +60,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
     BStyle:
       ButtonStyle.ISB_LIGHT |
-      ButtonTextColour.TextString |
+      ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
     Text: buttonNumberTextWithCaption('ReqI', reqI),
     onType: ({ packet, button }) => {
@@ -81,7 +81,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -93,7 +93,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
     BStyle:
       ButtonStyle.ISB_LIGHT |
-      ButtonTextColour.TextString |
+      ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
     Text: buttonNumberTextWithCaption('UCID', ucId),
     onType: ({ packet, button }) => {
@@ -114,7 +114,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 6,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -127,7 +127,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.UnselectedText,
+      ButtonTextColour.UNSELECTED_TEXT,
     onClick: ({ button }) => {
       const ids = Object.keys(TargetToConnectionType).filter(
         (key) =>
@@ -153,7 +153,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -165,7 +165,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
     BStyle:
       ButtonStyle.ISB_LIGHT |
-      ButtonTextColour.TextString |
+      ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
     Text: buttonNumberTextWithCaption('B1', b1),
     onType: ({ packet, button }) => {
@@ -186,7 +186,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -198,7 +198,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
     BStyle:
       ButtonStyle.ISB_LIGHT |
-      ButtonTextColour.TextString |
+      ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
     Text: buttonNumberTextWithCaption('B2', b2),
     onType: ({ packet, button }) => {
@@ -219,7 +219,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 5,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -231,7 +231,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     TypeIn: 3 + TypeIn.INIT_VALUE_BUTTON_TEXT,
     BStyle:
       ButtonStyle.ISB_LIGHT |
-      ButtonTextColour.TextString |
+      ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
     Text: buttonNumberTextWithCaption('B3', b3),
     onType: ({ packet, button }) => {

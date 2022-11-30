@@ -35,7 +35,7 @@ export function drawMessageLocalPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -48,7 +48,7 @@ export function drawMessageLocalPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.UnselectedText,
+      ButtonTextColour.UNSELECTED_TEXT,
     onClick: ({ button }) => {
       const viewIdentifierIds = Object.keys(MessageSound).filter(
         (key) => !isNaN(Number(MessageSound[key as unknown as number])),

@@ -41,7 +41,7 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_LEFT | ButtonTextColour.UnselectedText,
+    BStyle: ButtonStyle.ISB_LEFT | ButtonTextColour.UNSELECTED_TEXT,
   });
 
   const muteFlagButtonData = (isEnabled: boolean): ButtonData => ({
@@ -127,7 +127,7 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_LEFT | ButtonTextColour.UnselectedText,
+    BStyle: ButtonStyle.ISB_LEFT | ButtonTextColour.UNSELECTED_TEXT,
   });
 
   drawButton(inSim, {
@@ -140,7 +140,9 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      (offOn ? ButtonTextColour.SelectedText : ButtonTextColour.UnselectedText),
+      (offOn
+        ? ButtonTextColour.SELECTED_TEXT
+        : ButtonTextColour.UNSELECTED_TEXT),
     onClick: ({ button }) => {
       offOn = offOn ? 0 : 1;
       button.update({
@@ -154,8 +156,8 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
           ButtonStyle.ISB_LIGHT |
           ButtonStyle.ISB_CLICK |
           (offOn
-            ? ButtonTextColour.SelectedText
-            : ButtonTextColour.UnselectedText),
+            ? ButtonTextColour.SELECTED_TEXT
+            : ButtonTextColour.UNSELECTED_TEXT),
       });
     },
   });
@@ -170,8 +172,8 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
         (isEnabled
-          ? ButtonTextColour.SelectedText
-          : ButtonTextColour.UnselectedText),
+          ? ButtonTextColour.SELECTED_TEXT
+          : ButtonTextColour.UNSELECTED_TEXT),
     };
   }
 }

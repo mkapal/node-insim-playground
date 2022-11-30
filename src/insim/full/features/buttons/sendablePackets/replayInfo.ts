@@ -57,7 +57,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -71,7 +71,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.TextString,
+      ButtonTextColour.TEXT_STRING,
     onType: ({ packet, button }) => {
       const parsedNumber = parseInt(packet.Text, 10);
 
@@ -94,7 +94,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -107,7 +107,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.UnselectedText,
+      ButtonTextColour.UNSELECTED_TEXT,
     onClick: ({ button }) => {
       const ids = Object.keys(ReplayMode).filter(
         (key) => !isNaN(Number(ReplayMode[key as unknown as number])),
@@ -130,7 +130,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -144,7 +144,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.TextString,
+      ButtonTextColour.TEXT_STRING,
     onType: ({ packet, button }) => {
       const parsedNumber = parseInt(packet.Text, 10);
 
@@ -167,7 +167,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -204,8 +204,8 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
         (isEnabled
-          ? ButtonTextColour.SelectedText
-          : ButtonTextColour.UnselectedText),
+          ? ButtonTextColour.SELECTED_TEXT
+          : ButtonTextColour.UNSELECTED_TEXT),
     };
   }
 
@@ -221,8 +221,8 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
         (isEnabled
-          ? ButtonTextColour.SelectedText
-          : ButtonTextColour.UnselectedText),
+          ? ButtonTextColour.SELECTED_TEXT
+          : ButtonTextColour.UNSELECTED_TEXT),
     };
   }
 
@@ -238,8 +238,8 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
         ButtonStyle.ISB_LIGHT |
         ButtonStyle.ISB_CLICK |
         (isEnabled
-          ? ButtonTextColour.SelectedText
-          : ButtonTextColour.UnselectedText),
+          ? ButtonTextColour.SELECTED_TEXT
+          : ButtonTextColour.UNSELECTED_TEXT),
     };
   }
 
@@ -250,7 +250,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -264,7 +264,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.TextString,
+      ButtonTextColour.TEXT_STRING,
     onType: ({ packet, button }) => {
       const parsedNumber = parseInt(packet.Text, 10);
 

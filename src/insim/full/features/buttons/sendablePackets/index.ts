@@ -29,7 +29,7 @@ export function drawSendablePacketButtons(inSim: InSim) {
     T: TOP_OFFSET,
     W: 15,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.TitleColour,
+    BStyle: ButtonTextColour.TITLE_COLOUR,
   });
 
   drawSingleCharacterPacketButtons(inSim, 1);

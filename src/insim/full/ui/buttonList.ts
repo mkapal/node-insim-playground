@@ -39,7 +39,7 @@ export function drawButtonList(
   if (title) {
     drawNextButton(inSim, {
       Text: title,
-      BStyle: ButtonTextColour.TitleColour,
+      BStyle: ButtonTextColour.TITLE_COLOUR,
     });
   }
 

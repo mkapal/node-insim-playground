@@ -40,7 +40,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -54,7 +54,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.TextString,
+      ButtonTextColour.TEXT_STRING,
     onType: ({ packet, button }) => {
       const parsedNumber = parseInt(packet.Text, 10);
 
@@ -80,7 +80,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -93,7 +93,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.UnselectedText,
+      ButtonTextColour.UNSELECTED_TEXT,
     onClick: ({ button }) => {
       const viewIdentifierIds = Object.keys(VIEW_IDENTIFIERS);
       const identifierId = viewIdentifierIds.findIndex(

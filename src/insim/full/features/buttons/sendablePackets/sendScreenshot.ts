@@ -42,7 +42,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonTextColour.UnselectedText | ButtonStyle.ISB_LEFT,
+    BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
   drawButton(inSim, {
@@ -56,7 +56,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
     BStyle:
       ButtonStyle.ISB_LIGHT |
       ButtonStyle.ISB_CLICK |
-      ButtonTextColour.TextString,
+      ButtonTextColour.TEXT_STRING,
     onType: ({ packet, button }) => {
       const parsedNumber = parseInt(packet.Text, 10);
 
