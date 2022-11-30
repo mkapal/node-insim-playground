@@ -12,6 +12,7 @@ import { onCamPosPack } from './onCamPosPack';
 import { onCarContact } from './onCarContact';
 import { onCarReset } from './onCarReset';
 import { onCarStateChange } from './onCarStateChange';
+import { onConnectionInterfaceMode } from './onConnectionInterfaceMode';
 import { onConnectionLeave } from './onConnectionLeave';
 import { onConnectionPlayerRename } from './onConnectionPlayerRename';
 import { onFinish } from './onFinish';
@@ -95,4 +96,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_UCO, onUserControlObject);
   inSim.on(PacketType.ISP_SLC, onSelectedCar);
   inSim.on(PacketType.ISP_CSC, onCarStateChange);
+  inSim.on(PacketType.ISP_CIM, onConnectionInterfaceMode);
 }
