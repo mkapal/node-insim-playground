@@ -7,8 +7,8 @@
   "author": "Martin Kapal <flamecze@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:insim:full": "cross-env DEBUG=* ts-node-dev --respawn ./src/insim/full/index.ts",
-    "start:insim:minimal": "cross-env DEBUG=* ts-node-dev --respawn ./src/insim/minimal/index.ts",
+    "start:insim:minimal": "ts-node-dev --respawn ./src/insim/minimal/index.ts",
+    "start:insim:full": "ts-node-dev --respawn ./src/insim/full/index.ts",
     "format": "prettier --write \"./**/*.{js,ts,md,json,yml,yaml}\"",
     "lint": "eslint \"./src/**/*\" --ext .js,.ts",
     "lint:fix": "eslint \"./src/**/*\" --ext .js,.ts --fix"
@@ -16,7 +16,7 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
-    "node-insim": "file:../node-insim/dist/",
+    "node-insim": "file:.yalc/node-insim",
     "supports-color": "^9.2.3"
   },
   "devDependencies": {
