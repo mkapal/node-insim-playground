@@ -1,5 +1,9 @@
-import { ButtonStyle, ButtonTextColour, IS_MSL } from 'node-insim/packets';
-import { MessageSound } from 'node-insim/packets/enums/MessageSound';
+import {
+  ButtonStyle,
+  ButtonTextColour,
+  IS_MSL,
+  MessageSound,
+} from 'node-insim/packets';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';

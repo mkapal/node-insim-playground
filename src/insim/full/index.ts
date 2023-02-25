@@ -30,7 +30,6 @@ inSim.connect({
 
 inSim.on('connect', () => log('Connected'));
 inSim.on('disconnect', () => log('Disconnected'));
-inSim.on('error', (error) => log('Error:', error.name, error.message));
 
 logPackets(inSim);
 drawTestButtons(inSim);

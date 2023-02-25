@@ -2,9 +2,9 @@ import {
   ButtonStyle,
   ButtonTextColour,
   IS_MTC,
+  MessageSound,
   TypeIn,
 } from 'node-insim/packets';
-import { MessageSound } from 'node-insim/packets/enums/MessageSound';
 import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
