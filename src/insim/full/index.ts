@@ -1,3 +1,5 @@
+import '../../setupEnvironment.ts';
+
 import NodeInSim from 'node-insim';
 import { InSimFlags, IS_ISI_ReqI } from 'node-insim/packets';
 
@@ -10,7 +12,7 @@ const inSim = new NodeInSim.InSim();
 inSim.connect({
   Host: process.env.HOST ?? '127.0.0.1',
   Port: process.env.PORT ? parseInt(process.env.PORT) : 29999,
-  Admin: 's4v4g3b4d4ss',
+  Admin: process.env.ADMIN ?? '',
   Interval: 0,
   ReqI: IS_ISI_ReqI.SEND_VERSION,
   IName: 'Node InSim Full',
@@ -33,3 +35,7 @@ inSim.on('disconnect', () => log('Disconnected'));
 
 logPackets(inSim);
 drawTestButtons(inSim);
+
+process.on('uncaughtException', (error) => {
+  log(error);
+});

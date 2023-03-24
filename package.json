@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "description": "Node InSim Playground",
   "main": "index.js",
+  "type": "module",
   "repository": "git@github.com:mkapal/node-insim-playground.git",
   "author": "Martin Kapal <flamecze@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:insim:minimal": "ts-node-dev --respawn ./src/insim/minimal/index.ts",
-    "start:insim:full": "ts-node-dev --respawn ./src/insim/full/index.ts",
+    "start:insim:minimal": "tsx watch ./src/insim/minimal/index.ts",
+    "start:insim:js": "tsx watch ./src/insim/js/index.js",
+    "start:insim:relay": "tsx watch ./src/insim/relay/index.ts",
+    "start:insim:full": "tsx watch ./src/insim/full/index.ts",
     "format": "prettier --write \"./**/*.{js,ts,md,json,yml,yaml}\"",
     "lint": "eslint \"./src/**/*\" --ext .js,.ts",
     "lint:fix": "eslint \"./src/**/*\" --ext .js,.ts --fix"
@@ -16,7 +19,8 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
-    "node-insim": "file:.yalc/node-insim",
+    "dotenv": "^16.0.3",
+    "node-insim": "^0.0.2",
     "supports-color": "^9.2.3"
   },
   "devDependencies": {
@@ -33,7 +37,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "prettier": "^2.6.2",
-    "ts-node-dev": "^2.0.0",
+    "tsx": "^3.12.6",
     "typescript": "^4.6.4"
   },
   "files": [
