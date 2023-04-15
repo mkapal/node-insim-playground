@@ -1,6 +1,6 @@
+import type { InSim } from 'node-insim';
 import type { IS_AXM } from 'node-insim/packets';
 import { PMOAction } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from './log';
 

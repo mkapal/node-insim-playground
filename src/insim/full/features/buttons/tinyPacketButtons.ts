@@ -1,10 +1,10 @@
+import type { InSim } from 'node-insim';
 import {
   ButtonStyle,
   IS_TINY,
   SENDABLE_TINY_TYPES,
   TinyType,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from '../../log';
 import { drawButtonList } from '../../ui';

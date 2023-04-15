@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import type { IS_CIM } from 'node-insim/packets';
 import {
   GarageInterfaceSubmode,
@@ -6,7 +7,6 @@ import {
   ObjectIndex,
   ShiftUInterfaceSubmode,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from './log';
 

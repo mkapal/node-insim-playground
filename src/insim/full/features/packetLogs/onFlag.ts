@@ -1,6 +1,6 @@
+import type { InSim } from 'node-insim';
 import type { IS_FLG } from 'node-insim/packets';
 import { FlagType } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from './log';
 

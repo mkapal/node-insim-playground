@@ -1,5 +1,5 @@
+import type { InSim } from 'node-insim';
 import { ButtonTextColour } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { drawButton } from '../../../ui';
 import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';

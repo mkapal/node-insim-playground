@@ -1,6 +1,6 @@
+import type { InSim } from 'node-insim';
 import type { IS_ACR } from 'node-insim/packets';
 import { AdminCommandResult } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from './log';
 

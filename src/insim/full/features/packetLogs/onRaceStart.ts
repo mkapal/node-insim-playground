@@ -1,5 +1,5 @@
+import type { InSim } from 'node-insim';
 import type { IS_RST } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { lfsRaceLapsToLapsOrHours } from '../../utils';
 import { log } from './log';

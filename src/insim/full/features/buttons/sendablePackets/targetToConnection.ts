@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import { TargetToConnectionType } from 'node-insim/packets';
 import {
   ButtonStyle,
@@ -5,7 +6,6 @@ import {
   IS_TTC,
   TypeIn,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { buttonNumberTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';

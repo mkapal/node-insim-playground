@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import {
   ButtonStyle,
   ButtonTextColour,
@@ -6,7 +7,6 @@ import {
   ReplayOptions,
   TypeIn,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';

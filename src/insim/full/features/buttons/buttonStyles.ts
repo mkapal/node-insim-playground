@@ -1,5 +1,5 @@
+import type { InSim } from 'node-insim';
 import { ButtonStyle, ButtonTextColour } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import type { ButtonListProps } from '../../ui';
 import { drawButtonList } from '../../ui';

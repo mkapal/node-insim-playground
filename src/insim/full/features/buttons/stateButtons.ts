@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import type { IS_STA } from 'node-insim/packets';
 import {
   ButtonFunction,
@@ -8,7 +9,6 @@ import {
   ServerStatus,
   Wind,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { drawButtonList } from '../../ui';
 import { lfsRaceLapsToLapsOrHours } from '../../utils';

@@ -1,6 +1,6 @@
+import type { InSim } from 'node-insim';
 import type { IS_CNL } from 'node-insim/packets';
 import { LeaveReason } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from './log';
 

@@ -1,5 +1,5 @@
+import type { InSim } from 'node-insim';
 import { PacketType } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { onAdminCommandReport } from './onAdminCommandReport';
 import { onAutocrossInfo } from './onAutocrossInfo';

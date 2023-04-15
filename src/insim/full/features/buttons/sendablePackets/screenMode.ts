@@ -1,10 +1,10 @@
+import type { InSim } from 'node-insim';
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_MOD,
   TypeIn,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';

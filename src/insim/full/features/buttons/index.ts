@@ -1,5 +1,5 @@
+import type { InSim } from 'node-insim';
 import { ButtonFunction, IS_ISI_ReqI, PacketType } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { drawButtonStyles } from './buttonStyles';
 import { drawSendablePacketButtons } from './sendablePackets';

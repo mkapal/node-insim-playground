@@ -1,6 +1,6 @@
+import type { InSim } from 'node-insim';
 import type { IS_BTN_Data } from 'node-insim/packets';
 import { ButtonTextColour } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import type { CustomButtonProps, DrawButtonConfig } from './button';
 import { drawButton } from './button';

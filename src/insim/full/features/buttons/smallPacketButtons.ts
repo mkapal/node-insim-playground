@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import type { IS_BTT } from 'node-insim/packets';
 import {
   ButtonStyle,
@@ -6,7 +7,6 @@ import {
   SENDABLE_SMALL_TYPES,
   SmallType,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from '../../log';
 import { buttonTextWithCaption, drawButtonList } from '../../ui';

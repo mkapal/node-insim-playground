@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import type { ObjectIndex } from 'node-insim/packets';
 import {
   ButtonStyle,
@@ -7,7 +8,6 @@ import {
   ObjectInfo,
   TypeIn,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import {
   buttonNumberTextWithCaption,

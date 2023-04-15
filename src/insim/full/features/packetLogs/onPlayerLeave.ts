@@ -1,5 +1,5 @@
+import type { InSim } from 'node-insim';
 import type { IS_PLL } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { log } from './log';
 

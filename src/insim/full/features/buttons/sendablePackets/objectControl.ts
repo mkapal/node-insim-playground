@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import type {
   OCOAutocrossStartLights,
   OCOMainLights,
@@ -10,7 +11,6 @@ import {
   OCOAction,
   TypeIn,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';

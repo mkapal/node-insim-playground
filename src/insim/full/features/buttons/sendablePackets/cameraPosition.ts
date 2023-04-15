@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import type { AllowedStateFlags } from 'node-insim/packets';
 import {
   ButtonStyle,
@@ -6,7 +7,6 @@ import {
   TypeIn,
   ViewIdentifier,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { buttonNumberTextWithCaption, drawButton } from '../../../ui';
 import type { ButtonData } from '../../../ui/button';

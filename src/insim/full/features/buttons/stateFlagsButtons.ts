@@ -1,3 +1,4 @@
+import type { InSim } from 'node-insim';
 import type { SendableStateFlags } from 'node-insim/packets';
 import {
   ButtonStyle,
@@ -8,7 +9,6 @@ import {
   StateFlags,
   TinyType,
 } from 'node-insim/packets';
-import type { InSim } from 'node-insim/protocols';
 
 import { drawButtonList } from '../../ui';
 import type { Button } from '../../ui/buttonList';
