@@ -17,7 +17,7 @@
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
-    "node-insim": "^1.0.2",
+    "node-insim": "3.1.0",
     "supports-color": "^9.2.3"
   },
   "devDependencies": {
