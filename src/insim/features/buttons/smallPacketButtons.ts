@@ -52,7 +52,6 @@ function onButtonType(packet: IS_BTT, inSim: InSim) {
       log(`Send IS_SMALL - ${SmallType[smallType]} (${smallType})`);
       inSim.send(
         new IS_SMALL({
-          ReqI: 2,
           SubT: smallType,
           UVal: uVal,
         }),
