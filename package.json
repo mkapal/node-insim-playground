@@ -8,7 +8,8 @@
   "author": "Martin Kapal <flamecze@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "tsx watch ./src/insim/full/index.ts",
+    "start:insim": "tsx watch ./src/insim/index.ts",
+    "start:outgauge": "tsx watch ./src/outgauge/index.ts",
     "format": "prettier --write \"./**/*.{js,ts,md,json,yml,yaml}\"",
     "lint": "eslint \"./src/**/*\" --ext .js,.ts",
     "lint:fix": "eslint \"./src/**/*\" --ext .js,.ts --fix"
