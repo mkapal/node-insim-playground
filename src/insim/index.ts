@@ -1,4 +1,4 @@
-import '../../setupEnvironment.ts';
+import '../setupEnvironment.ts';
 
 import NodeInSim from 'node-insim';
 import { InSimFlags, IS_ISI_ReqI } from 'node-insim/packets';
@@ -6,6 +6,7 @@ import { InSimFlags, IS_ISI_ReqI } from 'node-insim/packets';
 import { drawTestButtons } from './features/buttons';
 import { logPackets } from './features/packetLogs';
 import { log } from './log';
+import { isLocalhost } from './utils';
 
 const inSim = new NodeInSim.InSim();
 
@@ -17,7 +18,7 @@ inSim.connect({
   ReqI: IS_ISI_ReqI.SEND_VERSION,
   IName: 'Node InSim Full',
   Flags:
-    InSimFlags.ISF_LOCAL |
+    (isLocalhost() ? InSimFlags.ISF_LOCAL : 0) |
     InSimFlags.ISF_REQ_JOIN |
     InSimFlags.ISF_MSO_COLS |
     InSimFlags.ISF_NLP |
