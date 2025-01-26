@@ -51,3 +51,7 @@ function getLapsUnit(laps: number) {
 function getHoursUnit(hours: number) {
   return hours === 1 ? 'hour' : 'hours';
 }
+
+export function isLocalhost() {
+  return (process.env.HOST ?? '127.0.0.1') === '127.0.0.1' || '192.168.1.100';
+}

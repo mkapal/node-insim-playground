@@ -11,7 +11,7 @@ import { buttonTextWithCaption, drawButton } from '../../../ui';
 import { getPacketLabel } from '../../../utils';
 import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
 
-export function drawMessageToConnectionPacketButtons(
+export function drawIsMtcPacketButtons(
   inSim: InSim,
   row: number,
 ) {
