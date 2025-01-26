@@ -7,18 +7,22 @@ import {
 } from 'node-insim/packets';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
 
-export function drawMessageToConnectionButtons(inSim: InSim, row: number) {
+export function drawMessageToConnectionButtons(
+  inSim: InSim,
+  row: number,
+  leftOffset = LEFT_OFFSET,
+) {
   let UCID = 0;
   let sound: MessageSound = MessageSound.SND_SILENT;
 
   drawButton(inSim, {
     Text: buttonTextWithCaption('Message', 'sendMessageToConnection'),
     ReqI: 1,
-    L: 97,
+    L: leftOffset,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
-    W: 15,
+    W: 20,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
     TypeIn: 127,
@@ -30,7 +34,7 @@ export function drawMessageToConnectionButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: 'UCID:',
     ReqI: 1,
-    L: 112,
+    L: leftOffset + 20,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
@@ -40,7 +44,7 @@ export function drawMessageToConnectionButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: buttonTextWithCaption('UCID', UCID.toString(10)),
     ReqI: 1,
-    L: 117,
+    L: leftOffset + 25,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 4,
     H: BUTTON_HEIGHT,
@@ -67,7 +71,7 @@ export function drawMessageToConnectionButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: 'Sound:',
     ReqI: 1,
-    L: 121,
+    L: leftOffset + 29,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
@@ -77,7 +81,7 @@ export function drawMessageToConnectionButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: `[${MessageSound[sound]}]`,
     ReqI: 1,
-    L: 127,
+    L: leftOffset + 35,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 17,
     H: BUTTON_HEIGHT,

@@ -2,7 +2,7 @@ import type { InSim } from 'node-insim';
 import { ButtonTextColour } from 'node-insim/packets';
 
 import { drawButton } from '../../../ui';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
 import { drawButtonFunctionPacketButton } from './buttonFunction';
 import { drawCameraPositionPacketButtons } from './cameraPosition';
 import { drawIsMtcPacketButtons } from './IS_MTC';
@@ -57,15 +57,15 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawButton(inSim, {
     Text: 'Helper functions',
     ReqI: 1,
-    L: 97,
-    T: TOP_OFFSET + BUTTON_HEIGHT * 22,
+    L: LEFT_OFFSET,
+    T: TOP_OFFSET + BUTTON_HEIGHT * 17,
     W: 15,
     H: BUTTON_HEIGHT,
     BStyle: ButtonTextColour.TITLE_COLOUR,
   });
 
-  drawMessageButtons(inSim, 23);
-  drawLocalMessageButtons(inSim, 24);
-  drawMessageToConnectionButtons(inSim, 25);
-  drawMessageToPlayerButtons(inSim, 26);
+  drawMessageButtons(inSim, 18);
+  drawLocalMessageButtons(inSim, 19);
+  drawMessageToConnectionButtons(inSim, 20);
+  drawMessageToPlayerButtons(inSim, 21);
 }

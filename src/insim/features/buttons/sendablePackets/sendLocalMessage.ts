@@ -6,7 +6,7 @@ import {
 } from 'node-insim/packets';
 
 import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
 
 export function drawLocalMessageButtons(inSim: InSim, row: number) {
   let sound: MessageSound = MessageSound.SND_SILENT;
@@ -14,9 +14,9 @@ export function drawLocalMessageButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: buttonTextWithCaption('Message', 'sendLocalMessage'),
     ReqI: 1,
-    L: 97,
+    L: LEFT_OFFSET,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
-    W: 15,
+    W: 20,
     H: BUTTON_HEIGHT,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
     TypeIn: 127,
@@ -28,7 +28,7 @@ export function drawLocalMessageButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: 'Sound:',
     ReqI: 1,
-    L: 112,
+    L: LEFT_OFFSET + 20,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 12,
     H: BUTTON_HEIGHT,
@@ -38,7 +38,7 @@ export function drawLocalMessageButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: `[${MessageSound[sound]}]`,
     ReqI: 1,
-    L: 118,
+    L: LEFT_OFFSET + 26,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 17,
     H: BUTTON_HEIGHT,
