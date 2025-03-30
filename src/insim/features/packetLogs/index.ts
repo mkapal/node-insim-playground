@@ -2,6 +2,7 @@ import type { InSim } from 'node-insim';
 import { PacketType } from 'node-insim/packets';
 
 import { onAdminCommandReport } from './onAdminCommandReport';
+import { onAiInfo } from './onAiInfo';
 import { onAutocrossInfo } from './onAutocrossInfo';
 import { onAutocrossMultipleObjects } from './onAutocrossMultipleObjects';
 import { onAutocrossObject } from './onAutocrossObject';
@@ -101,4 +102,5 @@ export function logPackets(inSim: InSim) {
   inSim.on(PacketType.ISP_CSC, onCarStateChange);
   inSim.on(PacketType.ISP_CIM, onConnectionInterfaceMode);
   inSim.on(PacketType.ISP_MAL, onModsAllowed);
+  inSim.on(PacketType.ISP_AII, onAiInfo);
 }

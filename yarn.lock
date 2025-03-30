@@ -2160,10 +2160,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-node-insim@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/node-insim/-/node-insim-3.1.0.tgz#830a18a32fe6b583a17af9155e5c677b3c5f027e"
-  integrity sha512-SL2YubjLu/4nHC0hU7eFFm1oaVLdRdclbUZjyIhoSOXyl0zmgmK1pS3f8r7lxKwrAriFAXl2PVFvANHcBDa3IA==
+node-insim@4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/node-insim/-/node-insim-4.6.2.tgz#9f976426402e84d9b6cfa7bf0eb671b78c147d95"
+  integrity sha512-2KHiV8KETnNdX6kdF2b0//KonXycUhptZVjXcahJwdtoEgyMAhY/x8/+1q7h6HuZXFygh+3HClP0sgbDt6VTDg==
   dependencies:
     "@types/debug" "^4.1.7"
     "@types/lodash" "^4.14.182"

@@ -1,6 +1,6 @@
 import '../setupEnvironment.ts';
 
-import NodeInSim from 'node-insim';
+import { InSim } from 'node-insim';
 import { InSimFlags, IS_ISI_ReqI } from 'node-insim/packets';
 
 import { drawTestButtons } from './features/buttons';
@@ -8,7 +8,7 @@ import { logPackets } from './features/packetLogs';
 import { log } from './log';
 import { isLocalhost } from './utils';
 
-const inSim = new NodeInSim.InSim();
+const inSim = new InSim();
 
 inSim.connect({
   Host: process.env.HOST ?? '127.0.0.1',

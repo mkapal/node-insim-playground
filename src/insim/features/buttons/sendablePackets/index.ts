@@ -3,6 +3,7 @@ import { ButtonTextColour } from 'node-insim/packets';
 
 import { drawButton } from '../../../ui';
 import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
+import { drawAiControlPacketButton } from './aiControl';
 import { drawButtonFunctionPacketButton } from './buttonFunction';
 import { drawCameraPositionPacketButtons } from './cameraPosition';
 import { drawIsMtcPacketButtons } from './IS_MTC';
@@ -53,6 +54,7 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawObjectControlPacketButton(inSim, 18);
   drawTargetToConnectionPacketButton(inSim, 19);
   drawModsAllowedPacketButton(inSim, 20);
+  drawAiControlPacketButton(inSim, 21);
 
   drawButton(inSim, {
     Text: 'Helper functions',
