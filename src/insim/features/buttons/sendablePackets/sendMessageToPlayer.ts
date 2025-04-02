@@ -1,20 +1,20 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   MessageSound,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from "../constants";
 
 export function drawMessageToPlayerButtons(inSim: InSim, row: number) {
   let PLID = 0;
   let sound: MessageSound = MessageSound.SND_SILENT;
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', 'sendMessageToPlayer'),
+    Text: buttonTextWithCaption("Message", "sendMessageToPlayer"),
     ReqI: 1,
     L: LEFT_OFFSET,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -28,7 +28,7 @@ export function drawMessageToPlayerButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'PLID:',
+    Text: "PLID:",
     ReqI: 1,
     L: LEFT_OFFSET + 20,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -38,7 +38,7 @@ export function drawMessageToPlayerButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('PLID', PLID.toString(10)),
+    Text: buttonTextWithCaption("PLID", PLID.toString(10)),
     ReqI: 1,
     L: LEFT_OFFSET + 25,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -59,13 +59,13 @@ export function drawMessageToPlayerButtons(inSim: InSim, row: number) {
       PLID = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('PLID', PLID.toString(10)),
+        Text: buttonTextWithCaption("PLID", PLID.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Sound:',
+    Text: "Sound:",
     ReqI: 1,
     L: LEFT_OFFSET + 29,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,

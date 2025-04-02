@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_CPP } from 'node-insim/packets';
-import { ViewIdentifier } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_CPP } from "node-insim/packets";
+import { ViewIdentifier } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onCamPosPack(packet: IS_CPP, inSim: InSim) {
   log(

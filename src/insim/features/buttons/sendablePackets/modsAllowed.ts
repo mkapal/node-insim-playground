@@ -1,14 +1,14 @@
-import type { InSim } from 'node-insim';
-import { ButtonStyle, IS_MAL, IS_MSL, MessageSound } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import { ButtonStyle, IS_MAL, IS_MSL, MessageSound } from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawModsAllowedPacketButton(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: buttonTextWithCaption(
-      'SkinIDs separated by commas (,)',
+      "SkinIDs separated by commas (,)",
       getPacketLabel(IS_MAL, true),
     ),
     ReqI: 1,
@@ -19,7 +19,7 @@ export function drawModsAllowedPacketButton(inSim: InSim, row: number) {
     TypeIn: 95,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
     onType: ({ inSim, packet }) => {
-      const skinIds = packet.Text.split(',');
+      const skinIds = packet.Text.split(",");
 
       if (skinIds.length > IS_MAL.MAX_MODS) {
         inSim.send(

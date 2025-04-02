@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import type {
   OCOAutocrossStartLights,
   OCOMainLights,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 import {
   ButtonStyle,
   ButtonTextColour,
@@ -10,12 +10,12 @@ import {
   ObjectIndex,
   OCOAction,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import type { ButtonData } from '../../../ui/button';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import type { ButtonData } from "../../../ui/button";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawObjectControlPacketButton(inSim: InSim, row: number) {
   let action = OCOAction.OCO_ZERO,
@@ -45,7 +45,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ...buttonProps(row),
-    Text: 'OCOAction:',
+    Text: "OCOAction:",
     L: 112,
     W: 12,
     BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
@@ -81,7 +81,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ...buttonProps(row),
-    Text: 'Index:',
+    Text: "Index:",
     L: 142,
     W: 12,
     BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
@@ -89,7 +89,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ...inputButtonProps(3, row),
-    Text: buttonTextWithCaption('Index', index.toString(10)),
+    Text: buttonTextWithCaption("Index", index.toString(10)),
     L: 148,
     W: 4,
     onType: ({ packet, button }) => {
@@ -102,14 +102,14 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
       index = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('Index', index.toString(10)),
+        Text: buttonTextWithCaption("Index", index.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
     ...buttonProps(row),
-    Text: 'Identifier:',
+    Text: "Identifier:",
     L: 153,
     W: 11,
     BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
@@ -117,7 +117,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ...inputButtonProps(3, row),
-    Text: buttonTextWithCaption('Identifier', identifier.toString(10)),
+    Text: buttonTextWithCaption("Identifier", identifier.toString(10)),
     L: 162,
     W: 4,
     onType: ({ packet, button }) => {
@@ -130,14 +130,14 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
       identifier = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('Identifier', identifier.toString(10)),
+        Text: buttonTextWithCaption("Identifier", identifier.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
     ...buttonProps(row),
-    Text: 'Data:',
+    Text: "Data:",
     L: 167,
     W: 11,
     BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
@@ -145,7 +145,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ...inputButtonProps(3, row),
-    Text: buttonTextWithCaption('Data', data.toString(10)),
+    Text: buttonTextWithCaption("Data", data.toString(10)),
     L: 172,
     W: 4,
     onType: ({ packet, button }) => {
@@ -158,7 +158,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
       data = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('Data', data.toString(10)),
+        Text: buttonTextWithCaption("Data", data.toString(10)),
       });
     },
   });

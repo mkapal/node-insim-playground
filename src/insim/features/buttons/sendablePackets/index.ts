@@ -1,33 +1,33 @@
-import type { InSim } from 'node-insim';
-import { ButtonTextColour } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import { ButtonTextColour } from "node-insim/packets";
 
-import { drawButton } from '../../../ui';
-import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
-import { drawButtonFunctionPacketButton } from './buttonFunction';
-import { drawCameraPositionPacketButtons } from './cameraPosition';
-import { drawIsMtcPacketButtons } from './IS_MTC';
-import { drawJoinRequestResponsePacketButton } from './joinRequestResponse';
-import { drawMessageExtendedPacketButton } from './messageExtended';
-import { drawMessageLocalPacketButton } from './messageLocal';
-import { drawMessageTypePacketButton } from './messageType';
-import { drawModsAllowedPacketButton } from './modsAllowed';
-import { drawObjectControlPacketButton } from './objectControl';
-import { drawReorderPacketButton } from './reorder';
-import { drawReplayInfoPacketButton } from './replayInfo';
-import { drawScreenModePacketButtons } from './screenMode';
-import { drawLocalMessageButtons } from './sendLocalMessage';
-import { drawMessageButtons } from './sendMessage';
-import { drawMessageToConnectionButtons } from './sendMessageToConnection';
-import { drawMessageToPlayerButtons } from './sendMessageToPlayer';
-import { drawSendScreenshotPacketButton } from './sendScreenshot';
-import { drawSimplifiedCameraPacketButtons } from './simplifiedCamera';
-import { drawSingleCharacterPacketButtons } from './singleCharacter';
-import { drawStateFlagsPackPacketButton } from './stateFlagsPack';
-import { drawTargetToConnectionPacketButton } from './targetToConnection';
+import { drawButton } from "../../../ui";
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from "../constants";
+import { drawButtonFunctionPacketButton } from "./buttonFunction";
+import { drawCameraPositionPacketButtons } from "./cameraPosition";
+import { drawIsMtcPacketButtons } from "./IS_MTC";
+import { drawJoinRequestResponsePacketButton } from "./joinRequestResponse";
+import { drawMessageExtendedPacketButton } from "./messageExtended";
+import { drawMessageLocalPacketButton } from "./messageLocal";
+import { drawMessageTypePacketButton } from "./messageType";
+import { drawModsAllowedPacketButton } from "./modsAllowed";
+import { drawObjectControlPacketButton } from "./objectControl";
+import { drawReorderPacketButton } from "./reorder";
+import { drawReplayInfoPacketButton } from "./replayInfo";
+import { drawScreenModePacketButtons } from "./screenMode";
+import { drawLocalMessageButtons } from "./sendLocalMessage";
+import { drawMessageButtons } from "./sendMessage";
+import { drawMessageToConnectionButtons } from "./sendMessageToConnection";
+import { drawMessageToPlayerButtons } from "./sendMessageToPlayer";
+import { drawSendScreenshotPacketButton } from "./sendScreenshot";
+import { drawSimplifiedCameraPacketButtons } from "./simplifiedCamera";
+import { drawSingleCharacterPacketButtons } from "./singleCharacter";
+import { drawStateFlagsPackPacketButton } from "./stateFlagsPack";
+import { drawTargetToConnectionPacketButton } from "./targetToConnection";
 
 export function drawSendablePacketButtons(inSim: InSim) {
   drawButton(inSim, {
-    Text: 'Sendable packets',
+    Text: "Sendable packets",
     ReqI: 1,
     L: 97,
     T: TOP_OFFSET,
@@ -55,7 +55,7 @@ export function drawSendablePacketButtons(inSim: InSim) {
   drawModsAllowedPacketButton(inSim, 20);
 
   drawButton(inSim, {
-    Text: 'Helper functions',
+    Text: "Helper functions",
     ReqI: 1,
     L: LEFT_OFFSET,
     T: TOP_OFFSET + BUTTON_HEIGHT * 17,

@@ -1,15 +1,15 @@
-import type { InSim } from 'node-insim';
-import { TargetToConnectionType } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import { TargetToConnectionType } from "node-insim/packets";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_TTC,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonNumberTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonNumberTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
   let reqI = 0,
@@ -42,7 +42,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'ReqI:',
+    Text: "ReqI:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -62,20 +62,20 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
       ButtonStyle.ISB_LIGHT |
       ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
-    Text: buttonNumberTextWithCaption('ReqI', reqI),
+    Text: buttonNumberTextWithCaption("ReqI", reqI),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (reqI = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('ReqI', reqI),
+        Text: buttonNumberTextWithCaption("ReqI", reqI),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'UCID:',
+    Text: "UCID:",
     ReqI: 1,
     L: 121,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -95,20 +95,20 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
       ButtonStyle.ISB_LIGHT |
       ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
-    Text: buttonNumberTextWithCaption('UCID', ucId),
+    Text: buttonNumberTextWithCaption("UCID", ucId),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (ucId = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('UCID', ucId),
+        Text: buttonNumberTextWithCaption("UCID", ucId),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'SubT:',
+    Text: "SubT:",
     ReqI: 1,
     L: 130,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -147,7 +147,7 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'B1:',
+    Text: "B1:",
     ReqI: 1,
     L: 150,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -167,20 +167,20 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
       ButtonStyle.ISB_LIGHT |
       ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
-    Text: buttonNumberTextWithCaption('B1', b1),
+    Text: buttonNumberTextWithCaption("B1", b1),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (b1 = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('B1', b1),
+        Text: buttonNumberTextWithCaption("B1", b1),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'B2:',
+    Text: "B2:",
     ReqI: 1,
     L: 158,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -200,20 +200,20 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
       ButtonStyle.ISB_LIGHT |
       ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
-    Text: buttonNumberTextWithCaption('B2', b2),
+    Text: buttonNumberTextWithCaption("B2", b2),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (b2 = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('B2', b2),
+        Text: buttonNumberTextWithCaption("B2", b2),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'B3:',
+    Text: "B3:",
     ReqI: 1,
     L: 166,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -233,14 +233,14 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
       ButtonStyle.ISB_LIGHT |
       ButtonTextColour.TEXT_STRING |
       ButtonStyle.ISB_CLICK,
-    Text: buttonNumberTextWithCaption('B3', b3),
+    Text: buttonNumberTextWithCaption("B3", b3),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (b3 = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('B3', b3),
+        Text: buttonNumberTextWithCaption("B3", b3),
       });
     },
   });

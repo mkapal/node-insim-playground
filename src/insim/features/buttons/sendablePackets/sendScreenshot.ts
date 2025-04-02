@@ -1,21 +1,21 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_SSH,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
   let reqI = 1;
 
   drawButton(inSim, {
     Text: buttonTextWithCaption(
-      'Screenshot file name',
+      "Screenshot file name",
       getPacketLabel(IS_SSH, true),
     ),
     ReqI: 1,
@@ -36,7 +36,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'ReqI:',
+    Text: "ReqI:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -46,7 +46,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('ReqI', reqI.toString(10)),
+    Text: buttonTextWithCaption("ReqI", reqI.toString(10)),
     ReqI: 1,
     L: 117,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -67,7 +67,7 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
       reqI = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('ReqI', reqI.toString(10)),
+        Text: buttonTextWithCaption("ReqI", reqI.toString(10)),
       });
     },
   });

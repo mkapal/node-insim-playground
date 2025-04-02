@@ -1,15 +1,15 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonFunction,
   ButtonStyle,
   ButtonTextColour,
   IS_BFN,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
   let UCID = 0,
@@ -38,7 +38,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'SubT:',
+    Text: "SubT:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -77,7 +77,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'UCID:',
+    Text: "UCID:",
     ReqI: 1,
     L: 136,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -87,7 +87,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+    Text: buttonTextWithCaption("UCID", UCID.toString(10)),
     ReqI: 1,
     L: 141,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -108,13 +108,13 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
       UCID = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+        Text: buttonTextWithCaption("UCID", UCID.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'ClickID:',
+    Text: "ClickID:",
     ReqI: 1,
     L: 145,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -124,7 +124,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('ClickID', clickId.toString(10)),
+    Text: buttonTextWithCaption("ClickID", clickId.toString(10)),
     ReqI: 1,
     L: 152,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -145,13 +145,13 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
       clickId = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('ClickID', clickId.toString(10)),
+        Text: buttonTextWithCaption("ClickID", clickId.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'ClickMax:',
+    Text: "ClickMax:",
     ReqI: 1,
     L: 156,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -161,7 +161,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('ClickMax', clickMax.toString(10)),
+    Text: buttonTextWithCaption("ClickMax", clickMax.toString(10)),
     ReqI: 1,
     L: 165,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -182,7 +182,7 @@ export function drawButtonFunctionPacketButton(inSim: InSim, row: number) {
       clickMax = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('ClickMax', clickMax.toString(10)),
+        Text: buttonTextWithCaption("ClickMax", clickMax.toString(10)),
       });
     },
   });

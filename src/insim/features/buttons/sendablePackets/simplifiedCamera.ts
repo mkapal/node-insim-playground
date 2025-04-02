@@ -1,15 +1,15 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_SCC,
   TypeIn,
   ViewIdentifier,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET, VIEW_IDENTIFIERS } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET, VIEW_IDENTIFIERS } from "../constants";
 
 export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
   let viewPLID = 1;
@@ -34,7 +34,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'ViewPLID:',
+    Text: "ViewPLID:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -44,7 +44,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Enter a PLID to view', viewPLID.toString(10)),
+    Text: buttonTextWithCaption("Enter a PLID to view", viewPLID.toString(10)),
     ReqI: 1,
     L: 121,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -66,7 +66,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
       button.update({
         ReqI: 1,
         Text: buttonTextWithCaption(
-          'Enter a PLID to view',
+          "Enter a PLID to view",
           viewPLID.toString(10),
         ),
       });
@@ -74,7 +74,7 @@ export function drawSimplifiedCameraPacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'InGameCam:',
+    Text: "InGameCam:",
     ReqI: 1,
     L: 126,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,

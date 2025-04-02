@@ -1,17 +1,17 @@
-import type { InSim } from 'node-insim';
-import type { AllowedStateFlags } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { AllowedStateFlags } from "node-insim/packets";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_CPP,
   TypeIn,
   ViewIdentifier,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonNumberTextWithCaption, drawButton } from '../../../ui';
-import type { ButtonData } from '../../../ui/button';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET, VIEW_IDENTIFIERS } from '../constants';
+import { buttonNumberTextWithCaption, drawButton } from "../../../ui";
+import type { ButtonData } from "../../../ui/button";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET, VIEW_IDENTIFIERS } from "../constants";
 
 export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   let x = 0,
@@ -54,7 +54,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'X:',
+    Text: "X:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -67,20 +67,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     ...inputButtonProps(11, row),
     L: 115,
     W: 8,
-    Text: buttonNumberTextWithCaption('X coordinate (1 m = 65536)', x),
+    Text: buttonNumberTextWithCaption("X coordinate (1 m = 65536)", x),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (x = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('X coordinate (1 m = 65536)', x),
+        Text: buttonNumberTextWithCaption("X coordinate (1 m = 65536)", x),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Y:',
+    Text: "Y:",
     ReqI: 1,
     L: 123,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -93,20 +93,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     ...inputButtonProps(11, row),
     L: 126,
     W: 8,
-    Text: buttonNumberTextWithCaption('Y coordinate (1 m = 65536)', y),
+    Text: buttonNumberTextWithCaption("Y coordinate (1 m = 65536)", y),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (y = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Y coordinate (1 m = 65536)', y),
+        Text: buttonNumberTextWithCaption("Y coordinate (1 m = 65536)", y),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Z:',
+    Text: "Z:",
     ReqI: 1,
     L: 134,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -119,20 +119,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     ...inputButtonProps(11, row),
     L: 137,
     W: 8,
-    Text: buttonNumberTextWithCaption('Z coordinate (1 m = 65536)', z),
+    Text: buttonNumberTextWithCaption("Z coordinate (1 m = 65536)", z),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (z = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Z coordinate (1 m = 65536)', z),
+        Text: buttonNumberTextWithCaption("Z coordinate (1 m = 65536)", z),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Heading:',
+    Text: "Heading:",
     ReqI: 1,
     L: 145,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -145,20 +145,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     ...inputButtonProps(5, row),
     L: 153,
     W: 8,
-    Text: buttonNumberTextWithCaption('Heading', heading),
+    Text: buttonNumberTextWithCaption("Heading", heading),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (heading = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Heading', heading),
+        Text: buttonNumberTextWithCaption("Heading", heading),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Pitch:',
+    Text: "Pitch:",
     ReqI: 1,
     L: 161,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -172,20 +172,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     L: 167,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 8,
-    Text: buttonNumberTextWithCaption('Pitch', pitch),
+    Text: buttonNumberTextWithCaption("Pitch", pitch),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (pitch = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Pitch', pitch),
+        Text: buttonNumberTextWithCaption("Pitch", pitch),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Roll:',
+    Text: "Roll:",
     ReqI: 1,
     L: 175,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -199,14 +199,14 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     L: 180,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 8,
-    Text: buttonNumberTextWithCaption('Roll', roll),
+    Text: buttonNumberTextWithCaption("Roll", roll),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (roll = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Roll', roll),
+        Text: buttonNumberTextWithCaption("Roll", roll),
       });
     },
   });
@@ -216,20 +216,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     L: 117,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 8,
-    Text: buttonNumberTextWithCaption('FOV (degrees)', fov),
+    Text: buttonNumberTextWithCaption("FOV (degrees)", fov),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (fov = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('FOV (degrees)', fov),
+        Text: buttonNumberTextWithCaption("FOV (degrees)", fov),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'FOV:',
+    Text: "FOV:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
@@ -239,7 +239,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'Time:',
+    Text: "Time:",
     ReqI: 1,
     L: 125,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
@@ -253,20 +253,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     L: 131,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 8,
-    Text: buttonNumberTextWithCaption('Time (ms)', time),
+    Text: buttonNumberTextWithCaption("Time (ms)", time),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (time = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Time (ms)', time),
+        Text: buttonNumberTextWithCaption("Time (ms)", time),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'ViewPLID:',
+    Text: "ViewPLID:",
     ReqI: 1,
     L: 139,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
@@ -280,20 +280,20 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     L: 148,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
     W: 4,
-    Text: buttonNumberTextWithCaption('ViewPLID', viewPLID),
+    Text: buttonNumberTextWithCaption("ViewPLID", viewPLID),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (viewPLID = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('ViewPLID', viewPLID),
+        Text: buttonNumberTextWithCaption("ViewPLID", viewPLID),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'InGameCam:',
+    Text: "InGameCam:",
     ReqI: 1,
     L: 152,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),

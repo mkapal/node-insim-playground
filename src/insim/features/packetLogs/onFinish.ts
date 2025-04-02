@@ -1,7 +1,7 @@
-import type { InSim } from 'node-insim';
-import type { IS_FIN } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_FIN } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onFinish(packet: IS_FIN, inSim: InSim) {
   log(

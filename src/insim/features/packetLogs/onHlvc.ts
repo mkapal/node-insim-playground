@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_HLV } from 'node-insim/packets';
-import { HLVCViolation } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_HLV } from "node-insim/packets";
+import { HLVCViolation } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onHlvc(packet: IS_HLV, inSim: InSim) {
   log(

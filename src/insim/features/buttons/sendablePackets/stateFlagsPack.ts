@@ -1,15 +1,15 @@
-import type { InSim } from 'node-insim';
-import type { SendableStateFlags } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { SendableStateFlags } from "node-insim/packets";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_SFP,
   StateFlags,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, SENDABLE_STATES, TOP_OFFSET } from '../constants';
+import { drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, SENDABLE_STATES, TOP_OFFSET } from "../constants";
 
 export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
   let stateFlags: SendableStateFlags = SENDABLE_STATES[0];
@@ -35,7 +35,7 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ReqI: 1,
-    Text: 'Flag:',
+    Text: "Flag:",
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
@@ -73,7 +73,7 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ReqI: 1,
-    Text: 'OffOn:',
+    Text: "OffOn:",
     L: 138,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 10,
@@ -82,7 +82,7 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: offOn ? '1' : '0',
+    Text: offOn ? "1" : "0",
     ReqI: 1,
     L: 144,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -98,7 +98,7 @@ export function drawStateFlagsPackPacketButton(inSim: InSim, row: number) {
       offOn = offOn ? 0 : 1;
       button.update({
         ReqI: 1,
-        Text: offOn ? '1' : '0',
+        Text: offOn ? "1" : "0",
         L: 144,
         T: TOP_OFFSET + BUTTON_HEIGHT * row,
         W: 3,

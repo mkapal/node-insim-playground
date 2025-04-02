@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_RST } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_RST } from "node-insim/packets";
 
-import { lfsRaceLapsToLapsOrHours } from '../../utils';
-import { log } from './log';
+import { lfsRaceLapsToLapsOrHours } from "../../utils";
+import { log } from "./log";
 
 export function onRaceStart(packet: IS_RST, inSim: InSim) {
   log(

@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_UCO } from 'node-insim/packets';
-import { UCOAction } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_UCO } from "node-insim/packets";
+import { UCOAction } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onUserControlObject(packet: IS_UCO, inSim: InSim) {
   log(

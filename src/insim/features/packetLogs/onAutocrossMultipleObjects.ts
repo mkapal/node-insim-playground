@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_AXM } from 'node-insim/packets';
-import { PMOAction } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_AXM } from "node-insim/packets";
+import { PMOAction } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onAutocrossMultipleObjects(packet: IS_AXM, inSim: InSim) {
   log(

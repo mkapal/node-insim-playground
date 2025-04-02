@@ -1,14 +1,14 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_MOD,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawScreenModePacketButtons(inSim: InSim, row: number) {
   let bits16 = 0,
@@ -17,7 +17,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
     height = 0;
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', getPacketLabel(IS_MOD)),
+    Text: buttonTextWithCaption("Message", getPacketLabel(IS_MOD)),
     ReqI: 1,
     L: 97,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -37,7 +37,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'Bits16:',
+    Text: "Bits16:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -47,7 +47,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Set to choose 16-bit', bits16.toString(10)),
+    Text: buttonTextWithCaption("Set to choose 16-bit", bits16.toString(10)),
     ReqI: 1,
     L: 119,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -69,7 +69,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
       button.update({
         ReqI: 1,
         Text: buttonTextWithCaption(
-          'Set to choose 16-bit',
+          "Set to choose 16-bit",
           bits16.toString(10),
         ),
       });
@@ -77,7 +77,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'RR:',
+    Text: "RR:",
     ReqI: 1,
     L: 124,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -88,7 +88,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     Text: buttonTextWithCaption(
-      'Refresh rate - zero for default',
+      "Refresh rate - zero for default",
       refreshRate.toString(10),
     ),
     ReqI: 1,
@@ -112,7 +112,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
       button.update({
         ReqI: 1,
         Text: buttonTextWithCaption(
-          'Refresh rate - zero for default',
+          "Refresh rate - zero for default",
           refreshRate.toString(10),
         ),
       });
@@ -120,7 +120,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'Width:',
+    Text: "Width:",
     ReqI: 1,
     L: 132,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -131,7 +131,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     Text: buttonTextWithCaption(
-      'Width - 0 means go to window',
+      "Width - 0 means go to window",
       width.toString(10),
     ),
     ReqI: 1,
@@ -155,7 +155,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
       button.update({
         ReqI: 1,
         Text: buttonTextWithCaption(
-          'Width - 0 means go to window',
+          "Width - 0 means go to window",
           width.toString(10),
         ),
       });
@@ -163,7 +163,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'Height:',
+    Text: "Height:",
     ReqI: 1,
     L: 143,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -174,7 +174,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     Text: buttonTextWithCaption(
-      'Height - 0 means go to window',
+      "Height - 0 means go to window",
       height.toString(10),
     ),
     ReqI: 1,
@@ -198,7 +198,7 @@ export function drawScreenModePacketButtons(inSim: InSim, row: number) {
       button.update({
         ReqI: 1,
         Text: buttonTextWithCaption(
-          'Height - 0 means go to window',
+          "Height - 0 means go to window",
           height.toString(10),
         ),
       });

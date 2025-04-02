@@ -1,4 +1,4 @@
-import type { Packet } from 'node-insim/packets';
+import type { Packet } from "node-insim/packets";
 
 export function getStringEnumValues<T extends Record<number, string>>(
   enumVar: T,
@@ -13,7 +13,7 @@ export function getPacketLabel<
   Data extends Record<string, unknown>,
 >(packetConstructor: new (data?: Data) => P, hasModal = false): string {
   return `${packetConstructor.name} (${new packetConstructor().Type})${
-    hasModal ? ' ...' : '   '
+    hasModal ? " ..." : "   "
   }`;
 }
 
@@ -23,7 +23,7 @@ export function toggleFlag(flags: number, flag: number) {
 
 export function lfsRaceLapsToLapsOrHours(raceLaps: number): string {
   if (raceLaps === 0) {
-    return 'practice';
+    return "practice";
   }
 
   if (raceLaps >= 1 && raceLaps <= 99) {
@@ -45,13 +45,13 @@ export function lfsRaceLapsToLapsOrHours(raceLaps: number): string {
 }
 
 function getLapsUnit(laps: number) {
-  return laps === 1 ? 'lap' : 'laps';
+  return laps === 1 ? "lap" : "laps";
 }
 
 function getHoursUnit(hours: number) {
-  return hours === 1 ? 'hour' : 'hours';
+  return hours === 1 ? "hour" : "hours";
 }
 
 export function isLocalhost() {
-  return (process.env.HOST ?? '127.0.0.1') === '127.0.0.1' || '192.168.1.100';
+  return (process.env.HOST ?? "127.0.0.1") === "127.0.0.1" || "192.168.1.100";
 }

@@ -1,5 +1,5 @@
-import type { InSim } from 'node-insim';
-import type { ObjectIndex } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { ObjectIndex } from "node-insim/packets";
 import {
   ButtonStyle,
   ButtonTextColour,
@@ -7,16 +7,16 @@ import {
   JRRAction,
   ObjectInfo,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
 import {
   buttonNumberTextWithCaption,
   buttonTextWithCaption,
   drawButton,
-} from '../../../ui';
-import type { ButtonData } from '../../../ui/button';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+} from "../../../ui";
+import type { ButtonData } from "../../../ui/button";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
   let UCID = 0,
@@ -57,7 +57,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'UCID:',
+    Text: "UCID:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -67,7 +67,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+    Text: buttonTextWithCaption("UCID", UCID.toString(10)),
     ReqI: 1,
     L: 117,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -88,13 +88,13 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
       UCID = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+        Text: buttonTextWithCaption("UCID", UCID.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'PLID:',
+    Text: "PLID:",
     ReqI: 1,
     L: 121,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -105,7 +105,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ...inputButtonProps(11, row),
-    Text: buttonTextWithCaption('PLID', PLID.toString(10)),
+    Text: buttonTextWithCaption("PLID", PLID.toString(10)),
     L: 126,
     W: 4,
     onType: ({ packet, button }) => {
@@ -118,13 +118,13 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
       PLID = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('PLID', PLID.toString(10)),
+        Text: buttonTextWithCaption("PLID", PLID.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'JRRAction:',
+    Text: "JRRAction:",
     ReqI: 1,
     L: 131,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -165,7 +165,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
   // StartPos
 
   drawButton(inSim, {
-    Text: 'X:',
+    Text: "X:",
     ReqI: 1,
     L: 159,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -176,7 +176,7 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     ...inputButtonProps(6, row),
-    Text: buttonNumberTextWithCaption('X coordinate (1 m = 16)', x),
+    Text: buttonNumberTextWithCaption("X coordinate (1 m = 16)", x),
     L: 162,
     W: 6,
     onType: ({ packet, button }) => {
@@ -185,13 +185,13 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('X coordinate (1 m = 16)', x),
+        Text: buttonNumberTextWithCaption("X coordinate (1 m = 16)", x),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Y:',
+    Text: "Y:",
     ReqI: 1,
     L: 168,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -204,20 +204,20 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     ...inputButtonProps(6, row),
     L: 171,
     W: 6,
-    Text: buttonNumberTextWithCaption('Y coordinate (1 m = 16)', y),
+    Text: buttonNumberTextWithCaption("Y coordinate (1 m = 16)", y),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (y = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Y coordinate (1 m = 16)', y),
+        Text: buttonNumberTextWithCaption("Y coordinate (1 m = 16)", y),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Zbyte:',
+    Text: "Zbyte:",
     ReqI: 1,
     L: 177,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -230,20 +230,20 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     ...inputButtonProps(6, row),
     L: 183,
     W: 6,
-    Text: buttonNumberTextWithCaption('Z coordinate (1 m = 16)', z),
+    Text: buttonNumberTextWithCaption("Z coordinate (1 m = 16)", z),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (z = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Z coordinate (1 m = 16)', z),
+        Text: buttonNumberTextWithCaption("Z coordinate (1 m = 16)", z),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Flags:',
+    Text: "Flags:",
     ReqI: 1,
     L: 159,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
@@ -256,20 +256,20 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     ...inputButtonProps(3, row + 1),
     L: 165,
     W: 4,
-    Text: buttonNumberTextWithCaption('Flags', flags),
+    Text: buttonNumberTextWithCaption("Flags", flags),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (flags = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Flags', flags),
+        Text: buttonNumberTextWithCaption("Flags", flags),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Index:',
+    Text: "Index:",
     ReqI: 1,
     L: 169,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
@@ -282,20 +282,20 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     ...inputButtonProps(3, row + 1),
     L: 175,
     W: 4,
-    Text: buttonNumberTextWithCaption('Index', index),
+    Text: buttonNumberTextWithCaption("Index", index),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (index = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Index', index),
+        Text: buttonNumberTextWithCaption("Index", index),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Heading:',
+    Text: "Heading:",
     ReqI: 1,
     L: 180,
     T: TOP_OFFSET + BUTTON_HEIGHT * (row + 1),
@@ -308,14 +308,14 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     ...inputButtonProps(6, row + 1),
     L: 188,
     W: 5,
-    Text: buttonNumberTextWithCaption('Heading', heading),
+    Text: buttonNumberTextWithCaption("Heading", heading),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
       !isNaN(parsedValue) && (heading = parsedValue);
 
       button.update({
         ReqI: 1,
-        Text: buttonNumberTextWithCaption('Heading', heading),
+        Text: buttonNumberTextWithCaption("Heading", heading),
       });
     },
   });

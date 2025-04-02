@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_CSC } from 'node-insim/packets';
-import { CSCAction } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_CSC } from "node-insim/packets";
+import { CSCAction } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onCarStateChange(packet: IS_CSC, inSim: InSim) {
   log(

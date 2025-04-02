@@ -1,14 +1,14 @@
-import type { InSim } from 'node-insim';
-import type { IS_BTN_Data } from 'node-insim/packets';
-import { ButtonTextColour } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_BTN_Data } from "node-insim/packets";
+import { ButtonTextColour } from "node-insim/packets";
 
-import type { CustomButtonProps, DrawButtonConfig } from './button';
-import { drawButton } from './button';
+import type { CustomButtonProps, DrawButtonConfig } from "./button";
+import { drawButton } from "./button";
 
 export type Button = Partial<Omit<IS_BTN_Data, ComputedButtonProps>> &
   CustomButtonProps;
 
-type ComputedButtonProps = 'ClickID' | 'L' | 'T' | 'W' | 'H';
+type ComputedButtonProps = "ClickID" | "L" | "T" | "W" | "H";
 
 export type ButtonListProps = {
   title?: string;

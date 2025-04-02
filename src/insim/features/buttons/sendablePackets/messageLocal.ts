@@ -1,20 +1,20 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_MSL,
   MessageSound,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawMessageLocalPacketButton(inSim: InSim, row: number) {
   let sound: MessageSound = MessageSound.SND_SILENT;
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', getPacketLabel(IS_MSL, true)),
+    Text: buttonTextWithCaption("Message", getPacketLabel(IS_MSL, true)),
     ReqI: 1,
     L: 97,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -33,7 +33,7 @@ export function drawMessageLocalPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'Sound:',
+    Text: "Sound:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,

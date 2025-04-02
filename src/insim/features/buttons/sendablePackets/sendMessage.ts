@@ -1,12 +1,12 @@
-import type { InSim } from 'node-insim';
-import { ButtonStyle } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import { ButtonStyle } from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from "../constants";
 
 export function drawMessageButtons(inSim: InSim, row: number) {
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', 'sendMessage'),
+    Text: buttonTextWithCaption("Message", "sendMessage"),
     ReqI: 1,
     L: LEFT_OFFSET,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,

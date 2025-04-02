@@ -1,12 +1,12 @@
-import type { InSim } from 'node-insim';
-import { ButtonFunction, IS_ISI_ReqI, PacketType } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import { ButtonFunction, IS_ISI_ReqI, PacketType } from "node-insim/packets";
 
-import { drawButtonStyles } from './buttonStyles';
-import { drawSendablePacketButtons } from './sendablePackets';
-import { drawSmallPacketButtons } from './smallPacketButtons';
-import { drawStateButtons } from './stateButtons';
-import { drawStateFlagsButtons } from './stateFlagsButtons';
-import { drawTinyPacketButtons } from './tinyPacketButtons';
+import { drawButtonStyles } from "./buttonStyles";
+import { drawSendablePacketButtons } from "./sendablePackets";
+import { drawSmallPacketButtons } from "./smallPacketButtons";
+import { drawStateButtons } from "./stateButtons";
+import { drawStateFlagsButtons } from "./stateFlagsButtons";
+import { drawTinyPacketButtons } from "./tinyPacketButtons";
 
 export function drawTestButtons(inSim: InSim) {
   inSim.on(PacketType.ISP_VER, (packet) => {

@@ -1,7 +1,7 @@
-import type { InSim } from 'node-insim';
-import type { IS_NPL } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_NPL } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onNewPlayer(packet: IS_NPL, inSim: InSim) {
   log(

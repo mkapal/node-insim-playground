@@ -1,14 +1,14 @@
-import type { InSim } from 'node-insim';
-import { ButtonStyle, IS_MSL, IS_REO, MessageSound } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import { ButtonStyle, IS_MSL, IS_REO, MessageSound } from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawReorderPacketButton(inSim: InSim, row: number) {
   drawButton(inSim, {
     Text: buttonTextWithCaption(
-      'PLIDs separated by commas (,)',
+      "PLIDs separated by commas (,)",
       getPacketLabel(IS_REO, true),
     ),
     ReqI: 1,
@@ -19,7 +19,7 @@ export function drawReorderPacketButton(inSim: InSim, row: number) {
     TypeIn: 95,
     BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
     onType: ({ inSim, packet }) => {
-      const plIds = packet.Text.split(',')
+      const plIds = packet.Text.split(",")
         .map((plId) => parseInt(plId, 10))
         .filter((plId) => !isNaN(plId));
 
@@ -27,7 +27,7 @@ export function drawReorderPacketButton(inSim: InSim, row: number) {
         inSim.send(
           new IS_MSL({
             Sound: MessageSound.SND_ERROR,
-            Msg: '^1PLID array must not be empty',
+            Msg: "^1PLID array must not be empty",
           }),
         );
         return;
@@ -37,7 +37,7 @@ export function drawReorderPacketButton(inSim: InSim, row: number) {
         inSim.send(
           new IS_MSL({
             Sound: MessageSound.SND_ERROR,
-            Msg: '^1PLID array must not be longer than 40',
+            Msg: "^1PLID array must not be longer than 40",
           }),
         );
         return;

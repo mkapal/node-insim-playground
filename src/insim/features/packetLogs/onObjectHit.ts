@@ -1,7 +1,7 @@
-import type { InSim } from 'node-insim';
-import type { IS_OBH } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_OBH } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onObjectHit(packet: IS_OBH, inSim: InSim) {
   log(

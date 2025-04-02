@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_ISM } from 'node-insim/packets';
-import { MultiplayerHostMode } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_ISM } from "node-insim/packets";
+import { MultiplayerHostMode } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onMultiplayer(packet: IS_ISM, inSim: InSim) {
   if (packet.Host === MultiplayerHostMode.GUEST) {

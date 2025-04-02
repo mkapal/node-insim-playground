@@ -1,7 +1,7 @@
-import type { InSim } from 'node-insim';
-import type { IS_TOC } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_TOC } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onTakeOverCar(packet: IS_TOC, inSim: InSim) {
   log(

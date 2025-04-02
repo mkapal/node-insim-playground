@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_NCI } from 'node-insim/packets';
-import { Language, License } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_NCI } from "node-insim/packets";
+import { Language, License } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onNewConnectionInfo(packet: IS_NCI, inSim: InSim) {
   log(

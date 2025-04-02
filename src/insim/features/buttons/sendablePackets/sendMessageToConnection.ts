@@ -1,13 +1,13 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   MessageSound,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from "../constants";
 
 export function drawMessageToConnectionButtons(
   inSim: InSim,
@@ -18,7 +18,7 @@ export function drawMessageToConnectionButtons(
   let sound: MessageSound = MessageSound.SND_SILENT;
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', 'sendMessageToConnection'),
+    Text: buttonTextWithCaption("Message", "sendMessageToConnection"),
     ReqI: 1,
     L: leftOffset,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -32,7 +32,7 @@ export function drawMessageToConnectionButtons(
   });
 
   drawButton(inSim, {
-    Text: 'UCID:',
+    Text: "UCID:",
     ReqI: 1,
     L: leftOffset + 20,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -42,7 +42,7 @@ export function drawMessageToConnectionButtons(
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+    Text: buttonTextWithCaption("UCID", UCID.toString(10)),
     ReqI: 1,
     L: leftOffset + 25,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -63,13 +63,13 @@ export function drawMessageToConnectionButtons(
       UCID = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+        Text: buttonTextWithCaption("UCID", UCID.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Sound:',
+    Text: "Sound:",
     ReqI: 1,
     L: leftOffset + 29,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,

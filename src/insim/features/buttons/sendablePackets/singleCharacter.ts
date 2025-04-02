@@ -1,15 +1,15 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   CharacterModifiers,
   IS_SCH,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import type { ButtonData } from '../../../ui/button';
-import { getPacketLabel, toggleFlag } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import type { ButtonData } from "../../../ui/button";
+import { getPacketLabel, toggleFlag } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
   let buttonFlags: CharacterModifiers = 0;
@@ -21,7 +21,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
 
   drawButton(inSim, {
     Text: buttonTextWithCaption(
-      'Enter a character to send',
+      "Enter a character to send",
       getPacketLabel(IS_SCH, true),
     ),
     ReqI: 1,
@@ -42,7 +42,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'Flags:',
+    Text: "Flags:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -68,7 +68,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
 
   function getShiftButtonData(isEnabled: boolean): ButtonData {
     return {
-      Text: 'SHIFT',
+      Text: "SHIFT",
       ReqI: 1,
       L: 118,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -85,7 +85,7 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
 
   function getCtrlButtonData(isEnabled: boolean): ButtonData {
     return {
-      Text: 'CTRL',
+      Text: "CTRL",
       ReqI: 1,
       L: 123,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,

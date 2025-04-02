@@ -1,20 +1,20 @@
-import type { InSim } from 'node-insim';
-import type { IS_BTT } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_BTT } from "node-insim/packets";
 import {
   ButtonStyle,
   IS_SMALL,
   PacketType,
   SENDABLE_SMALL_TYPES,
   SmallType,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { log } from '../../log';
-import { buttonTextWithCaption, drawButtonList } from '../../ui';
-import { BUTTON_HEIGHT, SMALL_BUTTON_ID_OFFSET, TOP_OFFSET } from './constants';
+import { log } from "../../log";
+import { buttonTextWithCaption, drawButtonList } from "../../ui";
+import { BUTTON_HEIGHT, SMALL_BUTTON_ID_OFFSET, TOP_OFFSET } from "./constants";
 
 export function drawSmallPacketButtons(inSim: InSim) {
   drawButtonList(inSim, {
-    title: 'IS_SMALL',
+    title: "IS_SMALL",
     leftOffset: 82,
     topOffset: TOP_OFFSET,
     width: 15,
@@ -45,7 +45,7 @@ function onButtonType(packet: IS_BTT, inSim: InSim) {
       const uVal = parseInt(packet.Text, 10);
 
       if (isNaN(uVal)) {
-        log('UVal must be a number');
+        log("UVal must be a number");
         return;
       }
 

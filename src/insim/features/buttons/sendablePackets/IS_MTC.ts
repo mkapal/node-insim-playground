@@ -1,26 +1,23 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
   IS_MTC,
   MessageSound,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import { getPacketLabel } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import { getPacketLabel } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
-export function drawIsMtcPacketButtons(
-  inSim: InSim,
-  row: number,
-) {
+export function drawIsMtcPacketButtons(inSim: InSim, row: number) {
   let UCID = 0,
     PLID = 0;
   let sound: MessageSound = MessageSound.SND_SILENT;
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Message', getPacketLabel(IS_MTC, true)),
+    Text: buttonTextWithCaption("Message", getPacketLabel(IS_MTC, true)),
     ReqI: 1,
     L: 97,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -41,7 +38,7 @@ export function drawIsMtcPacketButtons(
   });
 
   drawButton(inSim, {
-    Text: 'UCID:',
+    Text: "UCID:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -51,7 +48,7 @@ export function drawIsMtcPacketButtons(
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+    Text: buttonTextWithCaption("UCID", UCID.toString(10)),
     ReqI: 1,
     L: 117,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -72,13 +69,13 @@ export function drawIsMtcPacketButtons(
       UCID = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('UCID', UCID.toString(10)),
+        Text: buttonTextWithCaption("UCID", UCID.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'PLID:',
+    Text: "PLID:",
     ReqI: 1,
     L: 122,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -88,7 +85,7 @@ export function drawIsMtcPacketButtons(
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('PLID', PLID.toString(10)),
+    Text: buttonTextWithCaption("PLID", PLID.toString(10)),
     ReqI: 1,
     L: 127,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -109,13 +106,13 @@ export function drawIsMtcPacketButtons(
       PLID = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('PLID', PLID.toString(10)),
+        Text: buttonTextWithCaption("PLID", PLID.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Sound:',
+    Text: "Sound:",
     ReqI: 1,
     L: 132,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,

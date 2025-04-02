@@ -1,7 +1,7 @@
-import type { InSim } from 'node-insim';
-import type { IS_PSF } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_PSF } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onPitStopFinished(packet: IS_PSF, inSim: InSim) {
   log(

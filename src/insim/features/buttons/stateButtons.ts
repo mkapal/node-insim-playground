@@ -1,5 +1,5 @@
-import type { InSim } from 'node-insim';
-import type { IS_STA } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_STA } from "node-insim/packets";
 import {
   ButtonFunction,
   ButtonStyle,
@@ -8,37 +8,37 @@ import {
   RaceState,
   ServerStatus,
   Wind,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { drawButtonList } from '../../ui';
-import { lfsRaceLapsToLapsOrHours } from '../../utils';
-import { onState } from '../packetLogs/onState';
+import { drawButtonList } from "../../ui";
+import { lfsRaceLapsToLapsOrHours } from "../../utils";
+import { onState } from "../packetLogs/onState";
 import {
   BUTTON_HEIGHT,
   LEFT_OFFSET,
   TOP_OFFSET,
   VIEW_IDENTIFIERS,
-} from './constants';
+} from "./constants";
 
 export function drawStateButtons(inSim: InSim) {
   const buttonPairs: Record<string, string> = {
-    'Replay speed': '-',
-    'Selected camera': '-',
-    'View PLID': '-',
-    'Players on track': '-',
-    Connections: '-',
-    'Finished / qualified': '-',
-    'Race state': '-',
-    'Qualifying minutes': '-',
-    'Race laps / hours': '-',
-    'Server status': '-',
-    Track: '-',
-    Weather: '-',
-    Wind: '-',
+    "Replay speed": "-",
+    "Selected camera": "-",
+    "View PLID": "-",
+    "Players on track": "-",
+    Connections: "-",
+    "Finished / qualified": "-",
+    "Race state": "-",
+    "Qualifying minutes": "-",
+    "Race laps / hours": "-",
+    "Server status": "-",
+    Track: "-",
+    Weather: "-",
+    Wind: "-",
   };
 
   drawButtonList(inSim, {
-    title: 'Game state',
+    title: "Game state",
     leftOffset: LEFT_OFFSET,
     topOffset: TOP_OFFSET,
     width: 15,
@@ -65,20 +65,20 @@ export function drawStateButtons(inSim: InSim) {
 
   inSim.on(PacketType.ISP_STA, (packet: IS_STA) => {
     const buttonPairs: Record<string, string> = {
-      'Replay speed': packet.ReplaySpeed.toFixed(3),
-      'Selected camera': `${VIEW_IDENTIFIERS[packet.InGameCam]} (${
+      "Replay speed": packet.ReplaySpeed.toFixed(3),
+      "Selected camera": `${VIEW_IDENTIFIERS[packet.InGameCam]} (${
         packet.InGameCam
       })`,
-      'View PLID': packet.ViewPLID.toString(10),
-      'Players on track': packet.NumP.toString(10),
+      "View PLID": packet.ViewPLID.toString(10),
+      "Players on track": packet.NumP.toString(10),
       Connections: packet.NumConns.toString(10),
-      'Finished / qualified': packet.NumFinished.toString(10),
-      'Race state': `${raceStates[packet.RaceInProg]} (${packet.RaceInProg})`,
-      'Qualifying minutes': packet.QualMins.toString(10),
-      'Race laps / hours': `${lfsRaceLapsToLapsOrHours(packet.RaceLaps)} (${
+      "Finished / qualified": packet.NumFinished.toString(10),
+      "Race state": `${raceStates[packet.RaceInProg]} (${packet.RaceInProg})`,
+      "Qualifying minutes": packet.QualMins.toString(10),
+      "Race laps / hours": `${lfsRaceLapsToLapsOrHours(packet.RaceLaps)} (${
         packet.RaceLaps
       })`,
-      'Server status': `${getServerStatus(packet.ServerStatus)} (${
+      "Server status": `${getServerStatus(packet.ServerStatus)} (${
         packet.ServerStatus
       })`,
       Track: packet.Track,
@@ -104,24 +104,24 @@ export function drawStateButtons(inSim: InSim) {
 
 function getServerStatus(status: ServerStatus) {
   if (status === ServerStatus.SUCCESS) {
-    return 'success';
+    return "success";
   }
 
   if (status === ServerStatus.UNKNOWN) {
-    return 'unknown';
+    return "unknown";
   }
 
-  return 'fail';
+  return "fail";
 }
 
 const raceStates: Record<RaceState, string> = {
-  [RaceState.RACE]: 'race',
-  [RaceState.QUALIFYING]: 'qualifying',
-  [RaceState.NO_RACE]: 'no race',
+  [RaceState.RACE]: "race",
+  [RaceState.QUALIFYING]: "qualifying",
+  [RaceState.NO_RACE]: "no race",
 };
 
 const windStrengths: Record<Wind, string> = {
-  [Wind.OFF]: 'no wind',
-  [Wind.WEAK]: 'low wind',
-  [Wind.STRONG]: 'high wind',
+  [Wind.OFF]: "no wind",
+  [Wind.WEAK]: "low wind",
+  [Wind.STRONG]: "high wind",
 };

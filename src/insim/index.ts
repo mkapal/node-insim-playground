@@ -1,22 +1,22 @@
-import '../setupEnvironment.ts';
+import "../setupEnvironment.ts";
 
-import NodeInSim from 'node-insim';
-import { InSimFlags, IS_ISI_ReqI } from 'node-insim/packets';
+import NodeInSim from "node-insim";
+import { InSimFlags, IS_ISI_ReqI } from "node-insim/packets";
 
-import { drawTestButtons } from './features/buttons';
-import { logPackets } from './features/packetLogs';
-import { log } from './log';
-import { isLocalhost } from './utils';
+import { drawTestButtons } from "./features/buttons";
+import { logPackets } from "./features/packetLogs";
+import { log } from "./log";
+import { isLocalhost } from "./utils";
 
 const inSim = new NodeInSim.InSim();
 
 inSim.connect({
-  Host: process.env.HOST ?? '127.0.0.1',
+  Host: process.env.HOST ?? "127.0.0.1",
   Port: process.env.PORT ? parseInt(process.env.PORT) : 29999,
-  Admin: process.env.ADMIN ?? '',
+  Admin: process.env.ADMIN ?? "",
   Interval: 0,
   ReqI: IS_ISI_ReqI.SEND_VERSION,
-  IName: 'Node InSim Full',
+  IName: "Node InSim Full",
   Flags:
     (isLocalhost() ? InSimFlags.ISF_LOCAL : 0) |
     InSimFlags.ISF_REQ_JOIN |
@@ -28,15 +28,15 @@ inSim.connect({
     InSimFlags.ISF_HLV |
     InSimFlags.ISF_AXM_LOAD |
     InSimFlags.ISF_AXM_EDIT,
-  Prefix: '!',
+  Prefix: "!",
 });
 
-inSim.on('connect', () => log('Connected'));
-inSim.on('disconnect', () => log('Disconnected'));
+inSim.on("connect", () => log("Connected"));
+inSim.on("disconnect", () => log("Disconnected"));
 
 logPackets(inSim);
 drawTestButtons(inSim);
 
-process.on('uncaughtException', (error) => {
+process.on("uncaughtException", (error) => {
   log(error);
 });

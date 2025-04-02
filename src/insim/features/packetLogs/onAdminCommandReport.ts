@@ -1,8 +1,8 @@
-import type { InSim } from 'node-insim';
-import type { IS_ACR } from 'node-insim/packets';
-import { AdminCommandResult } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_ACR } from "node-insim/packets";
+import { AdminCommandResult } from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onAdminCommandReport(packet: IS_ACR, inSim: InSim) {
   log(

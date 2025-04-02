@@ -1,4 +1,4 @@
-import type { InSim } from 'node-insim';
+import type { InSim } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
@@ -6,12 +6,12 @@ import {
   ReplayMode,
   ReplayOptions,
   TypeIn,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { buttonTextWithCaption, drawButton } from '../../../ui';
-import type { ButtonData } from '../../../ui/button';
-import { getPacketLabel, toggleFlag } from '../../../utils';
-import { BUTTON_HEIGHT, TOP_OFFSET } from '../constants';
+import { buttonTextWithCaption, drawButton } from "../../../ui";
+import type { ButtonData } from "../../../ui/button";
+import { getPacketLabel, toggleFlag } from "../../../utils";
+import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   let reqI = 1,
@@ -28,7 +28,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
     Boolean(flags & ReplayOptions.RIPOPT_FULL_PHYS);
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Replay name', getPacketLabel(IS_RIP, true)),
+    Text: buttonTextWithCaption("Replay name", getPacketLabel(IS_RIP, true)),
     ReqI: 1,
     L: 97,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -51,7 +51,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'ReqI:',
+    Text: "ReqI:",
     ReqI: 1,
     L: 112,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -61,7 +61,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('ReqI', reqI.toString(10)),
+    Text: buttonTextWithCaption("ReqI", reqI.toString(10)),
     ReqI: 1,
     L: 117,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -82,13 +82,13 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
       reqI = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('ReqI', reqI.toString(10)),
+        Text: buttonTextWithCaption("ReqI", reqI.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'MPR:',
+    Text: "MPR:",
     ReqI: 1,
     L: 120,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -124,7 +124,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: 'Paused:',
+    Text: "Paused:",
     ReqI: 1,
     L: 132,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -134,7 +134,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('Paused', paused.toString(10)),
+    Text: buttonTextWithCaption("Paused", paused.toString(10)),
     ReqI: 1,
     L: 139,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -155,13 +155,13 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
       paused = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('Paused', paused.toString(10)),
+        Text: buttonTextWithCaption("Paused", paused.toString(10)),
       });
     },
   });
 
   drawButton(inSim, {
-    Text: 'Options:',
+    Text: "Options:",
     ReqI: 1,
     L: 142,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -194,7 +194,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
 
   function getLoopButtonData(isEnabled: boolean): ButtonData {
     return {
-      Text: 'RIPOPT_LOOP',
+      Text: "RIPOPT_LOOP",
       ReqI: 1,
       L: 149,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -211,7 +211,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
 
   function getSkinsButtonData(isEnabled: boolean): ButtonData {
     return {
-      Text: 'RIPOPT_SKINS',
+      Text: "RIPOPT_SKINS",
       ReqI: 1,
       L: 160,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -228,7 +228,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
 
   function getPhysicsButtonData(isEnabled: boolean): ButtonData {
     return {
-      Text: 'RIPOPT_FULL_PHYS',
+      Text: "RIPOPT_FULL_PHYS",
       ReqI: 1,
       L: 172,
       T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -244,7 +244,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   }
 
   drawButton(inSim, {
-    Text: 'CTime:',
+    Text: "CTime:",
     ReqI: 1,
     L: 187,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -254,7 +254,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   });
 
   drawButton(inSim, {
-    Text: buttonTextWithCaption('CTime', cTime.toString(10)),
+    Text: buttonTextWithCaption("CTime", cTime.toString(10)),
     ReqI: 1,
     L: 193,
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
@@ -275,7 +275,7 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
       cTime = parsedNumber;
       button.update({
         ReqI: 1,
-        Text: buttonTextWithCaption('CTime', cTime.toString(10)),
+        Text: buttonTextWithCaption("CTime", cTime.toString(10)),
       });
     },
   });

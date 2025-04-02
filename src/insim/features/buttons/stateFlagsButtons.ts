@@ -1,5 +1,5 @@
-import type { InSim } from 'node-insim';
-import type { SendableStateFlags } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { SendableStateFlags } from "node-insim/packets";
 import {
   ButtonStyle,
   ButtonTextColour,
@@ -8,12 +8,12 @@ import {
   PacketType,
   StateFlags,
   TinyType,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { drawButtonList } from '../../ui';
-import type { Button } from '../../ui/buttonList';
-import { getStringEnumValues } from '../../utils';
-import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from './constants';
+import { drawButtonList } from "../../ui";
+import type { Button } from "../../ui/buttonList";
+import { getStringEnumValues } from "../../utils";
+import { BUTTON_HEIGHT, LEFT_OFFSET, TOP_OFFSET } from "./constants";
 
 const stateFlagEnumValues = getStringEnumValues(StateFlags);
 
@@ -35,7 +35,7 @@ export function drawStateFlagsButtons(inSim: InSim) {
   });
 
   const { update: updateStateFlagButtons } = drawButtonList(inSim, {
-    title: 'State flags',
+    title: "State flags",
     leftOffset: LEFT_OFFSET + 25,
     topOffset: TOP_OFFSET,
     width: 22,

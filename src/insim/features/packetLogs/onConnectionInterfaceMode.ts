@@ -1,14 +1,14 @@
-import type { InSim } from 'node-insim';
-import type { IS_CIM } from 'node-insim/packets';
+import type { InSim } from "node-insim";
+import type { IS_CIM } from "node-insim/packets";
 import {
   GarageInterfaceSubmode,
   InterfaceMode,
   NormalInterfaceSubmode,
   ObjectIndex,
   ShiftUInterfaceSubmode,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 export function onConnectionInterfaceMode(packet: IS_CIM, inSim: InSim) {
   log(

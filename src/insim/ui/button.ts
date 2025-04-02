@@ -1,10 +1,10 @@
-import type { IS_BTC, IS_BTN_Data, IS_BTT } from 'node-insim/packets';
-import { ButtonFunction, IS_BTN, PacketType } from 'node-insim/packets';
-import type { InSim, InSimPacketEvents } from 'node-insim/protocols';
+import type { IS_BTC, IS_BTN_Data, IS_BTT } from "node-insim/packets";
+import { ButtonFunction, IS_BTN, PacketType } from "node-insim/packets";
+import type { InSim, InSimPacketEvents } from "node-insim/protocols";
 
 let clickId = 0;
 
-export type ButtonData = Omit<IS_BTN_Data, 'ClickID'> & CustomButtonProps;
+export type ButtonData = Omit<IS_BTN_Data, "ClickID"> & CustomButtonProps;
 
 export type DrawButtonConfig = {
   clickId: number;

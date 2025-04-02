@@ -1,7 +1,7 @@
-import '../setupEnvironment.ts';
+import "../setupEnvironment.ts";
 
-import type { OutGaugePack } from 'node-insim';
-import NodeInSim, { DashLights, OutGauge, OutGaugeFlags } from 'node-insim';
+import type { OutGaugePack } from "node-insim";
+import NodeInSim, { DashLights, OutGauge, OutGaugeFlags } from "node-insim";
 import {
   ButtonStyle,
   ButtonTextColour,
@@ -9,37 +9,37 @@ import {
   IS_BTN,
   IS_ISI_ReqI,
   PacketType,
-} from 'node-insim/packets';
+} from "node-insim/packets";
 
-import { log } from './log';
+import { log } from "./log";
 
 const inSim = new NodeInSim.InSim();
 
 inSim.connect({
-  Host: process.env.HOST ?? '127.0.0.1',
+  Host: process.env.HOST ?? "127.0.0.1",
   Port: process.env.PORT ? parseInt(process.env.PORT) : 29999,
-  Admin: process.env.ADMIN ?? '',
+  Admin: process.env.ADMIN ?? "",
   Interval: 0,
   ReqI: IS_ISI_ReqI.SEND_VERSION,
-  IName: 'Node OutGauge',
+  IName: "Node OutGauge",
   Flags: InSimFlags.ISF_LOCAL,
 });
 
-inSim.on('connect', () => log('InSim connected'));
-inSim.on('disconnect', () => log('InSim disconnected'));
+inSim.on("connect", () => log("InSim connected"));
+inSim.on("disconnect", () => log("InSim disconnected"));
 
 const outGauge = new OutGauge();
 
 outGauge.connect({
-  Host: process.env.OUTGAUGE_HOST ?? '0.0.0.0',
+  Host: process.env.OUTGAUGE_HOST ?? "0.0.0.0",
   Port: process.env.OUTGAUGE_PORT ? parseInt(process.env.OUTGAUGE_PORT) : 30000,
 });
 
-outGauge.on('connect', () => log('OutGauge connected'));
+outGauge.on("connect", () => log("OutGauge connected"));
 
-outGauge.on('disconnect', () => log('OutGauge disconnected'));
+outGauge.on("disconnect", () => log("OutGauge disconnected"));
 
-outGauge.on('timeout', () => log('OutGauge timed out'));
+outGauge.on("timeout", () => log("OutGauge timed out"));
 
 inSim.on(PacketType.ISP_VER, (packet) => {
   if (packet.ReqI !== IS_ISI_ReqI.SEND_VERSION) {
@@ -57,19 +57,19 @@ inSim.on(PacketType.ISP_VER, (packet) => {
     Shift: (data) => truthy(data.Flags & OutGaugeFlags.OG_SHIFT),
     Ctrl: (data) => truthy(data.Flags & OutGaugeFlags.OG_CTRL),
     Turbo: (data) => truthy(data.Flags & OutGaugeFlags.OG_TURBO),
-    'Speed units': (data) =>
-      data.Flags & OutGaugeFlags.OG_KM ? 'km/h' : 'mph',
-    'Pressure units': (data) =>
-      data.Flags & OutGaugeFlags.OG_BAR ? 'bar' : 'psi',
+    "Speed units": (data) =>
+      data.Flags & OutGaugeFlags.OG_KM ? "km/h" : "mph",
+    "Pressure units": (data) =>
+      data.Flags & OutGaugeFlags.OG_BAR ? "bar" : "psi",
     Gear: (data) => data.Gear.toFixed(0),
     PLID: (data) => data.PLID.toFixed(0),
-    'Speed (m/s)': (data) => data.Speed.toFixed(0),
+    "Speed (m/s)": (data) => data.Speed.toFixed(0),
     RPM: (data) => data.RPM.toFixed(0),
-    'Turbo pressure (bar)': (data) => data.Turbo.toFixed(3),
-    'Engine temperature (C)': (data) => data.EngTemp.toFixed(3),
-    'Fuel (%)': (data) => (data.Fuel * 100).toFixed(3),
-    'Oil pressure (bar)': (data) => data.OilPressure.toFixed(3),
-    'Oil temperature (C)': (data) => data.OilTemp.toFixed(3),
+    "Turbo pressure (bar)": (data) => data.Turbo.toFixed(3),
+    "Engine temperature (C)": (data) => data.EngTemp.toFixed(3),
+    "Fuel (%)": (data) => (data.Fuel * 100).toFixed(3),
+    "Oil pressure (bar)": (data) => data.OilPressure.toFixed(3),
+    "Oil temperature (C)": (data) => data.OilTemp.toFixed(3),
     Throttle: (data) => data.Throttle.toFixed(3),
     Brake: (data) => data.Brake.toFixed(3),
     Clutch: (data) => data.Clutch.toFixed(3),
@@ -83,24 +83,24 @@ inSim.on(PacketType.ISP_VER, (packet) => {
   const dashLightsWidth = 23;
 
   const dashLightsMap = new Map<DashLights, string>([
-    [DashLights.DL_SIDELIGHTS, 'sidelights'],
-    [DashLights.DL_LOWBEAM, 'low beam'],
-    [DashLights.DL_FULLBEAM, 'high beam'],
-    [DashLights.DL_SIGNAL_L, 'left indicator'],
-    [DashLights.DL_SIGNAL_R, 'right indicator'],
-    [DashLights.DL_SIGNAL_ANY, 'shared indicator'],
-    [DashLights.DL_FOG_REAR, 'rear fog light'],
-    [DashLights.DL_FOG_FRONT, 'front fog light'],
-    [DashLights.DL_HANDBRAKE, 'handbrake'],
-    [DashLights.DL_SHIFT, 'shift light'],
-    [DashLights.DL_NEUTRAL, 'neutral'],
-    [DashLights.DL_PITSPEED, 'pit speed limiter'],
-    [DashLights.DL_TC, 'traction control'],
-    [DashLights.DL_ABS, 'ABS'],
-    [DashLights.DL_OILWARN, 'oil pressure warning'],
-    [DashLights.DL_BATTERY, 'battery warning'],
-    [DashLights.DL_FUELWARN, 'fuel warning'],
-    [DashLights.DL_ENGINE, 'engine damage'],
+    [DashLights.DL_SIDELIGHTS, "sidelights"],
+    [DashLights.DL_LOWBEAM, "low beam"],
+    [DashLights.DL_FULLBEAM, "high beam"],
+    [DashLights.DL_SIGNAL_L, "left indicator"],
+    [DashLights.DL_SIGNAL_R, "right indicator"],
+    [DashLights.DL_SIGNAL_ANY, "shared indicator"],
+    [DashLights.DL_FOG_REAR, "rear fog light"],
+    [DashLights.DL_FOG_FRONT, "front fog light"],
+    [DashLights.DL_HANDBRAKE, "handbrake"],
+    [DashLights.DL_SHIFT, "shift light"],
+    [DashLights.DL_NEUTRAL, "neutral"],
+    [DashLights.DL_PITSPEED, "pit speed limiter"],
+    [DashLights.DL_TC, "traction control"],
+    [DashLights.DL_ABS, "ABS"],
+    [DashLights.DL_OILWARN, "oil pressure warning"],
+    [DashLights.DL_BATTERY, "battery warning"],
+    [DashLights.DL_FUELWARN, "fuel warning"],
+    [DashLights.DL_ENGINE, "engine damage"],
   ]);
 
   let clickId = 0;
@@ -131,12 +131,12 @@ inSim.on(PacketType.ISP_VER, (packet) => {
       L: dashLightsLeft,
       W: dashLightsWidth,
       H: height,
-      Text: 'Dashboard lights',
+      Text: "Dashboard lights",
       BStyle: ButtonTextColour.TITLE_COLOUR,
     }),
   );
 
-  outGauge.on('packet', (data) => {
+  outGauge.on("packet", (data) => {
     let dynamicClickId = clickId;
 
     Object.values(rows).forEach((getValue, index) => {
@@ -183,8 +183,8 @@ inSim.on(PacketType.ISP_VER, (packet) => {
   });
 });
 
-const truthy = (value: number) => (value ? 'yes' : 'no');
+const truthy = (value: number) => (value ? "yes" : "no");
 
-process.on('uncaughtException', (error) => {
+process.on("uncaughtException", (error) => {
   log(error);
 });
