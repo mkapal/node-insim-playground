@@ -17,6 +17,13 @@ import type { ButtonData } from "../../../ui/button";
 import { getPacketLabel } from "../../../utils";
 import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
+const actions = [
+  OCOAction.OCO_ZERO,
+  OCOAction.OCO_LIGHTS_RESET,
+  OCOAction.OCO_LIGHTS_SET,
+  OCOAction.OCO_LIGHTS_UNSET,
+] as const;
+
 export function drawObjectControlPacketButton(inSim: InSim, row: number) {
   let action = OCOAction.OCO_ZERO,
     index = ObjectIndex.AXO_START_LIGHTS,
@@ -54,6 +61,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
     BStyle: ButtonTextColour.UNSELECTED_TEXT | ButtonStyle.ISB_LEFT,
   });
 
+  console.log({ action });
   drawButton(inSim, {
     Text: `[${OCOAction[action]}]`,
     ReqI: 1,
@@ -66,14 +74,9 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
       ButtonStyle.ISB_CLICK |
       ButtonTextColour.UNSELECTED_TEXT,
     onClick: ({ button }) => {
-      const ids = Object.keys(OCOAction).filter(
-        (key) => !isNaN(Number(OCOAction[key as unknown as number])),
-      );
-      const id = ids.findIndex(
-        (identifier) => identifier === OCOAction[action],
-      );
+      const id = actions.findIndex((identifier) => identifier === action);
 
-      action = id === ids.length - 1 ? 0 : id + 1;
+      action = id === actions.length - 1 ? 0 : actions[id + 1];
 
       button.update({
         ReqI: 1,
