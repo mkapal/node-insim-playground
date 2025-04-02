@@ -2,20 +2,28 @@
 
 ## Requirements
 
-- Node.js 18
-- Yarn 1
-- LFS
+- Node.js 22
+- pnpm
+- Live for Speed
 
 ## Installation
 
 ```shell
-yarn
+pnpm install
 ```
 
 ## Run playground app
 
+### InSim
+
 ```shell
-yarn start
+pnpm start:insim
+```
+
+### OutGauge
+
+```shell
+pnpm start:outgauge
 ```
 
 This app aims to cover as many InSim features as possible.
@@ -26,15 +34,16 @@ It connects to `127.0.0.1:29999` by default. You can change the host and port by
 
 - console logs of all supported InSim info packets
 - InSim buttons showing the current LFS state and allowing to send InSim packets
+- OutGauge buttons with live car state
 
 ### Lint code
 
 ```shell
-yarn lint
+pnpm lint
 ```
 
 ### Format code
 
 ```shell
-yarn format
+pnpm format
 ```
