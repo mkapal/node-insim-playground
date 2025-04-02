@@ -30,7 +30,10 @@ export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 1,
-    BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonTextColour.UNSELECTED_TEXT |
+      ButtonStyle.ISB_CLICK,
     onType: ({ packet, inSim }) => {
       inSim.send(
         new IS_SCH({

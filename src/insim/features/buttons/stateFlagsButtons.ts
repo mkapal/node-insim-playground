@@ -63,11 +63,12 @@ export function drawStateFlagsButtons(inSim: InSim) {
       return {
         Text: `${stateFlag} (${stateNumber})`,
         BStyle:
-          ButtonStyle.ISB_LIGHT |
           (isOn
             ? ButtonTextColour.SELECTED_TEXT
             : ButtonTextColour.UNSELECTED_TEXT) |
-          (isSendable ? ButtonStyle.ISB_CLICK : ButtonStyle.ISB_LIGHT),
+          (isSendable
+            ? ButtonStyle.ISB_CLICK | ButtonStyle.ISB_LIGHT
+            : ButtonStyle.ISB_DARK),
         onClick,
       };
     });

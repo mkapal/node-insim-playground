@@ -1,5 +1,11 @@
 import type { InSim } from "node-insim";
-import { ButtonStyle, IS_MAL, IS_MSL, MessageSound } from "node-insim/packets";
+import {
+  ButtonStyle,
+  ButtonTextColour,
+  IS_MAL,
+  IS_MSL,
+  MessageSound,
+} from "node-insim/packets";
 
 import { buttonTextWithCaption, drawButton } from "../../../ui";
 import { getPacketLabel } from "../../../utils";
@@ -17,7 +23,10 @@ export function drawModsAllowedPacketButton(inSim: InSim, row: number) {
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 95,
-    BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonTextColour.UNSELECTED_TEXT |
+      ButtonStyle.ISB_CLICK,
     onType: ({ inSim, packet }) => {
       const skinIds = packet.Text.split(",");
 

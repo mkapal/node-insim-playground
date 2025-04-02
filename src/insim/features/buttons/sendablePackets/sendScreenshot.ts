@@ -24,7 +24,10 @@ export function drawSendScreenshotPacketButton(inSim: InSim, row: number) {
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 95,
-    BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonTextColour.UNSELECTED_TEXT |
+      ButtonStyle.ISB_CLICK,
     onType: ({ inSim, packet }) => {
       inSim.send(
         new IS_SSH({

@@ -59,7 +59,7 @@ export function drawSendablePacketButtons(inSim: InSim) {
     ReqI: 1,
     L: LEFT_OFFSET,
     T: TOP_OFFSET + BUTTON_HEIGHT * 17,
-    W: 15,
+    W: 20,
     H: BUTTON_HEIGHT,
     BStyle: ButtonTextColour.TITLE_COLOUR,
   });

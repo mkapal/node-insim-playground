@@ -1,5 +1,5 @@
 import type { InSim } from "node-insim";
-import { ButtonStyle, IS_MSX } from "node-insim/packets";
+import { ButtonStyle, ButtonTextColour, IS_MSX } from "node-insim/packets";
 
 import { buttonTextWithCaption, drawButton } from "../../../ui";
 import { getPacketLabel } from "../../../utils";
@@ -14,7 +14,10 @@ export function drawMessageExtendedPacketButton(inSim: InSim, row: number) {
     W: 15,
     H: BUTTON_HEIGHT,
     TypeIn: 95,
-    BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonTextColour.UNSELECTED_TEXT |
+      ButtonStyle.ISB_CLICK,
     onType: ({ inSim, packet }) => {
       inSim.send(
         new IS_MSX({

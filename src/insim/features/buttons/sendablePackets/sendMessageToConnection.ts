@@ -24,7 +24,10 @@ export function drawMessageToConnectionButtons(
     T: TOP_OFFSET + BUTTON_HEIGHT * row,
     W: 20,
     H: BUTTON_HEIGHT,
-    BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
+    BStyle:
+      ButtonStyle.ISB_LIGHT |
+      ButtonTextColour.UNSELECTED_TEXT |
+      ButtonStyle.ISB_CLICK,
     TypeIn: 127,
     onType: ({ packet }) => {
       inSim.sendMessageToConnection(UCID, packet.Text, sound);

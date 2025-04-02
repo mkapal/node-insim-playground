@@ -2,6 +2,7 @@ import type { InSim } from "node-insim";
 import type { IS_BTT } from "node-insim/packets";
 import {
   ButtonStyle,
+  ButtonTextColour,
   IS_SMALL,
   PacketType,
   SENDABLE_SMALL_TYPES,
@@ -25,7 +26,10 @@ export function drawSmallPacketButtons(inSim: InSim) {
       return {
         ReqI: smallTypeNumber + SMALL_BUTTON_ID_OFFSET,
         Text: buttonTextWithCaption(`${text} - UVal`, text),
-        BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
+        BStyle:
+          ButtonStyle.ISB_LIGHT |
+          ButtonTextColour.UNSELECTED_TEXT |
+          ButtonStyle.ISB_CLICK,
         TypeIn: 95,
       };
     }),

@@ -1,6 +1,7 @@
 import type { InSim } from "node-insim";
 import {
   ButtonStyle,
+  ButtonTextColour,
   IS_TINY,
   SENDABLE_TINY_TYPES,
   TinyType,
@@ -21,7 +22,10 @@ export function drawTinyPacketButtons(inSim: InSim) {
     buttons: SENDABLE_TINY_TYPES.map((tinyTypeNumber) => ({
       ReqI: tinyTypeNumber + TINY_BUTTON_ID_OFFSET,
       Text: `${TinyType[tinyTypeNumber]} (${tinyTypeNumber})`,
-      BStyle: ButtonStyle.ISB_DARK | ButtonStyle.ISB_CLICK,
+      BStyle:
+        ButtonStyle.ISB_LIGHT |
+        ButtonTextColour.UNSELECTED_TEXT |
+        ButtonStyle.ISB_CLICK,
       onClick: handleButtonClick,
     })),
   });

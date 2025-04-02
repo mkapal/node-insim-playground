@@ -13,7 +13,7 @@ export function getPacketLabel<
   Data extends Record<string, unknown>,
 >(packetConstructor: new (data?: Data) => P, hasModal = false): string {
   return `${packetConstructor.name} (${new packetConstructor().Type})${
-    hasModal ? " ..." : "   "
+    hasModal ? " >" : "  "
   }`;
 }
 
