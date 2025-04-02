@@ -1,6 +1,6 @@
+import type { InSim, InSimPacketEvents } from "node-insim";
 import type { IS_BTC, IS_BTN_Data, IS_BTT } from "node-insim/packets";
 import { ButtonFunction, IS_BTN, PacketType } from "node-insim/packets";
-import type { InSim, InSimPacketEvents } from "node-insim/protocols";
 
 let clickId = 0;
 

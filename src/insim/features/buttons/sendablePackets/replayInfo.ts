@@ -17,14 +17,14 @@ export function drawReplayInfoPacketButton(inSim: InSim, row: number) {
   let reqI = 1,
     mpr = 1,
     paused = 0,
-    options: ReplayOptions = 0,
+    options: ReplayOptions | 0 = 0,
     cTime = 0;
 
-  const isLoopEnabled = (flags: ReplayOptions) =>
+  const isLoopEnabled = (flags: ReplayOptions | 0) =>
     Boolean(flags & ReplayOptions.RIPOPT_LOOP);
-  const isSkinsEnabled = (flags: ReplayOptions) =>
+  const isSkinsEnabled = (flags: ReplayOptions | 0) =>
     Boolean(flags & ReplayOptions.RIPOPT_SKINS);
-  const isPhysicsEnabled = (flags: ReplayOptions) =>
+  const isPhysicsEnabled = (flags: ReplayOptions | 0) =>
     Boolean(flags & ReplayOptions.RIPOPT_FULL_PHYS);
 
   drawButton(inSim, {

@@ -21,7 +21,7 @@ export function drawObjectControlPacketButton(inSim: InSim, row: number) {
   let action = OCOAction.OCO_ZERO,
     index = ObjectIndex.AXO_START_LIGHTS,
     identifier = 0,
-    data: OCOMainLights | OCOAutocrossStartLights = 0;
+    data: OCOMainLights | OCOAutocrossStartLights | 0 = 0;
 
   drawButton(inSim, {
     Text: getPacketLabel(IS_OCO),

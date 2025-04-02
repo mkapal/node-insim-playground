@@ -12,7 +12,8 @@
     "start:outgauge": "tsx watch ./src/outgauge/index.ts",
     "format": "prettier --write \"./**/*.{js,ts,md,json,yml,yaml}\"",
     "lint": "eslint \"./src/**/*\" --ext .js,.ts",
-    "lint:fix": "eslint \"./src/**/*\" --ext .js,.ts --fix"
+    "lint:fix": "eslint \"./src/**/*\" --ext .js,.ts --fix",
+    "tsc": "tsc"
   },
   "dependencies": {
     "debug": "^4.4.0",

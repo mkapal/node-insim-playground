@@ -68,7 +68,9 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("ReqI", reqI),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (reqI = parsedValue);
+      if (!isNaN(parsedValue)) {
+        reqI = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -101,7 +103,9 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("UCID", ucId),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (ucId = parsedValue);
+      if (!isNaN(parsedValue)) {
+        ucId = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -173,7 +177,9 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("B1", b1),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (b1 = parsedValue);
+      if (!isNaN(parsedValue)) {
+        b1 = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -206,7 +212,9 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("B2", b2),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (b2 = parsedValue);
+      if (!isNaN(parsedValue)) {
+        b2 = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -239,7 +247,9 @@ export function drawTargetToConnectionPacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("B3", b3),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (b3 = parsedValue);
+      if (!isNaN(parsedValue)) {
+        b3 = parsedValue;
+      }
 
       button.update({
         ReqI: 1,

@@ -12,11 +12,11 @@ import { getPacketLabel, toggleFlag } from "../../../utils";
 import { BUTTON_HEIGHT, TOP_OFFSET } from "../constants";
 
 export function drawSingleCharacterPacketButtons(inSim: InSim, row: number) {
-  let buttonFlags: CharacterModifiers = 0;
+  let buttonFlags: CharacterModifiers | 0 = 0;
 
-  const isShiftEnabled = (flags: CharacterModifiers) =>
+  const isShiftEnabled = (flags: CharacterModifiers | 0) =>
     Boolean(flags & CharacterModifiers.SHIFT);
-  const isCtrlEnabled = (flags: CharacterModifiers) =>
+  const isCtrlEnabled = (flags: CharacterModifiers | 0) =>
     Boolean(flags & CharacterModifiers.CTRL);
 
   drawButton(inSim, {

@@ -184,7 +184,9 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     W: 6,
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (x = parsedValue);
+      if (!isNaN(parsedValue)) {
+        x = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -210,7 +212,9 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Y coordinate (1 m = 16)", y),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (y = parsedValue);
+      if (!isNaN(parsedValue)) {
+        y = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -236,7 +240,9 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Z coordinate (1 m = 16)", z),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (z = parsedValue);
+      if (!isNaN(parsedValue)) {
+        z = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -262,7 +268,9 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Flags", flags),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (flags = parsedValue);
+      if (!isNaN(parsedValue)) {
+        flags = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -288,7 +296,9 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Index", index),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (index = parsedValue);
+      if (!isNaN(parsedValue)) {
+        index = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -314,7 +324,9 @@ export function drawJoinRequestResponsePacketButton(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Heading", heading),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (heading = parsedValue);
+      if (!isNaN(parsedValue)) {
+        heading = parsedValue;
+      }
 
       button.update({
         ReqI: 1,

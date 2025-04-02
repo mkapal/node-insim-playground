@@ -24,7 +24,7 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     time = 0,
     viewPLID = 0;
   let inGameCam: ViewIdentifier = ViewIdentifier.VIEW_FOLLOW;
-  const flags: AllowedStateFlags = 0;
+  const flags: AllowedStateFlags | 0 = 0;
 
   drawButton(inSim, {
     Text: getPacketLabel(IS_CPP),
@@ -73,7 +73,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("X coordinate (1 m = 65536)", x),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (x = parsedValue);
+      if (!isNaN(parsedValue)) {
+        x = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -99,7 +101,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Y coordinate (1 m = 65536)", y),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (y = parsedValue);
+      if (!isNaN(parsedValue)) {
+        y = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -125,7 +129,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Z coordinate (1 m = 65536)", z),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (z = parsedValue);
+      if (!isNaN(parsedValue)) {
+        z = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -151,7 +157,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Heading", heading),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (heading = parsedValue);
+      if (!isNaN(parsedValue)) {
+        heading = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -178,7 +186,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Pitch", pitch),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (pitch = parsedValue);
+      if (!isNaN(parsedValue)) {
+        pitch = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -205,7 +215,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Roll", roll),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (roll = parsedValue);
+      if (!isNaN(parsedValue)) {
+        roll = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -222,7 +234,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("FOV (degrees)", fov),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (fov = parsedValue);
+      if (!isNaN(parsedValue)) {
+        fov = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -259,7 +273,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("Time (ms)", time),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (time = parsedValue);
+      if (!isNaN(parsedValue)) {
+        time = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
@@ -286,7 +302,9 @@ export function drawCameraPositionPacketButtons(inSim: InSim, row: number) {
     Text: buttonNumberTextWithCaption("ViewPLID", viewPLID),
     onType: ({ packet, button }) => {
       const parsedValue = parseInt(packet.Text, 10);
-      !isNaN(parsedValue) && (viewPLID = parsedValue);
+      if (!isNaN(parsedValue)) {
+        viewPLID = parsedValue;
+      }
 
       button.update({
         ReqI: 1,
