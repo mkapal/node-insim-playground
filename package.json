@@ -8,8 +8,10 @@
   "author": "Martin Kapal <flamecze@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:insim": "tsx watch ./src/insim/index.ts",
-    "start:outgauge": "tsx watch ./src/outgauge/index.ts",
+    "start:insim": "tsx watch src/insim/index.tsx",
+    "start:outgauge": "tsx watch src/outgauge/index.tsx",
+    "build:insim": "tsup src/insim/index.tsx",
+    "build:outgauge": "tsup src/outgauge/index.tsx",
     "format": "prettier --write \"./**/*.{js,ts,md,json,yml,yaml}\"",
     "lint": "eslint \"./src/**/*\" --ext .js,.ts",
     "lint:fix": "eslint \"./src/**/*\" --ext .js,.ts --fix",
@@ -17,22 +19,26 @@
   },
   "dependencies": {
     "debug": "^4.4.0",
-    "dotenv": "^16.4.7",
-    "node-insim": "3.1.0",
+    "dotenv": "^16.5.0",
+    "node-insim": "^4.6.3",
+    "react": "^18.3.1",
+    "react-node-insim": "^0.0.13",
     "supports-color": "^10.0.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.12",
-    "@types/node": "^22.13.17",
-    "@typescript-eslint/eslint-plugin": "^8.29.0",
-    "@typescript-eslint/parser": "^8.29.0",
+    "@types/node": "^22.14.0",
+    "@types/react": "18.3.12",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "8.29.1",
     "eslint": "^8.57.1",
-    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "prettier": "^3.5.3",
+    "tsup": "^8.4.0",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "files": [
     "**/*.js",

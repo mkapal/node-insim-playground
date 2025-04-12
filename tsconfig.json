@@ -4,15 +4,20 @@
     "outDir": "./dist",
     "strict": true,
     "declaration": true,
-    "noEmit": true,
     "moduleResolution": "Node",
     "target": "es2015",
-    "module": "commonjs",
+    "module": "NodeNext",
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "esModuleInterop": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "ts-node": {
+    "esm": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
