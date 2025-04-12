@@ -4,8 +4,10 @@
     "outDir": "./dist",
     "strict": true,
     "declaration": true,
-    "moduleResolution": "Node",
-    "target": "es2015",
+    "moduleDetection": "force",
+    "moduleResolution": "nodenext",
+    "lib": ["ES2022"],
+    "target": "ES2022",
     "module": "NodeNext",
     "jsx": "react-jsx",
     "skipLibCheck": true,
@@ -14,7 +16,8 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "verbatimModuleSyntax": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "esm": true

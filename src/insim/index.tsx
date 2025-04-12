@@ -3,7 +3,7 @@ import "../env";
 import { InSimFlags } from "node-insim/packets";
 import { createRoot } from "react-node-insim";
 
-import { App } from "./App";
+import { App } from "./App.js";
 
 const root = createRoot({
   name: "NodeInSimPlay",

@@ -16,8 +16,8 @@ import {
 import { useState } from "react";
 import { Button, useOnConnect, useOnPacket, VStack } from "react-node-insim";
 
-import { BTN_H } from "../shared/buttonDimensions";
-import { getStringEnumValues } from "../shared/enumUtils";
+import { BTN_H } from "../shared/buttonDimensions.js";
+import { getStringEnumValues } from "../shared/enumUtils.js";
 
 const LABEL_WIDTH = 24;
 const VALUE_WIDTH = 22;
