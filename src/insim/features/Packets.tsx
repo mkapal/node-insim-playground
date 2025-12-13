@@ -1,4 +1,4 @@
-import type { Packet } from "node-insim/packets";
+import type { InSimPacketInstance } from "node-insim/packets";
 import {
   PacketType,
   packetTypeToClass,
@@ -31,7 +31,7 @@ export function Packets() {
     keyof typeof PacketType | null
   >(null);
 
-  const handlePacketReceived = (packet: Packet) => {
+  const handlePacketReceived = (packet: InSimPacketInstance<PacketType>) => {
     packetsReceived
       .filter(({ packetType }) => packetType === packet.Type)
       .forEach(({ timeout }) => {
