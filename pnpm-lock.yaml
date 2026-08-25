@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      chalk:
+        specifier: ^4.1.2
+        version: 4.1.2
       debug:
         specifier: ^4.4.1
         version: 4.4.1(supports-color@10.2.0)

@@ -1,8 +1,8 @@
 import type { InSim } from "node-insim";
 import {
+  type InSimPacketInstance,
   type IS_BTC,
   IS_SFP,
-  type IS_STA,
   IS_TINY,
   PacketType,
   RaceState,
@@ -23,7 +23,8 @@ const LABEL_WIDTH = 24;
 const VALUE_WIDTH = 22;
 
 export function GameState() {
-  const [state, setState] = useState<IS_STA | null>(null);
+  const [state, setState] =
+    useState<InSimPacketInstance<PacketType.ISP_STA> | null>(null);
 
   useOnConnect((_, inSim) => {
     inSim.send(

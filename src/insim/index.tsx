@@ -2,7 +2,7 @@ import "../env";
 
 import { InSim } from "node-insim";
 import { InSimFlags, IS_ISI_ReqI } from "node-insim/packets";
-import { createRoot } from "react-node-insim";
+import { ConnectionsPlayersProvider, createRoot } from "react-node-insim";
 
 import { App } from "./App.js";
 
@@ -17,4 +17,8 @@ inSim.connect({
 
 const root = createRoot(inSim);
 
-root.render(<App />);
+root.render(
+  <ConnectionsPlayersProvider>
+    <App />
+  </ConnectionsPlayersProvider>,
+);
